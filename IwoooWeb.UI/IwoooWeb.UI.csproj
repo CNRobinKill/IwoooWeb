@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ajaxAspx\ajaxShow.aspx" />
     <Content Include="img\ashok.jpg" />
     <Content Include="img\bg_direction_nav.png" />
     <Content Include="img\border-b.png" />
@@ -140,7 +141,9 @@
     <Content Include="img\prettyPhoto\light_square\default_thumbnail.gif" />
     <Content Include="img\prettyPhoto\light_square\loader.gif" />
     <Content Include="img\prettyPhoto\light_square\sprite.png" />
+    <Content Include="img\wait.gif" />
     <Content Include="Index.aspx" />
+    <Content Include="IwoooTrends.aspx" />
     <Content Include="js\bootstrap-old.js" />
     <Content Include="js\bootstrap-old2.js" />
     <Content Include="js\bootstrap.js" />
@@ -177,12 +180,26 @@
     <Content Include="WebControl\Social.ascx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ajaxAspx\ajaxShow.aspx.cs">
+      <DependentUpon>ajaxShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajaxAspx\ajaxShow.aspx.designer.cs">
+      <DependentUpon>ajaxShow.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IwoooTrends.aspx.cs">
+      <DependentUpon>IwoooTrends.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IwoooTrends.aspx.designer.cs">
+      <DependentUpon>IwoooTrends.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebControl\Footer.ascx.cs">
@@ -234,6 +251,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

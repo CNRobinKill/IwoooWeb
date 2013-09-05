@@ -14,7 +14,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta charset="utf-8"/>
-  <title>Metro Mania</title>
+  <title>爱沃计算机科技有限公司</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content=""/>
   <meta name="keywords" content=""/>
@@ -50,16 +50,16 @@
     <form id="form1" runat="server">
         <ucHeader:Header ID="Header" runat="server" />
         <ucNavigationBar:NavigationBar ID="NavigationBar" runat="server" />
-    <div class="contain">
-        <div class="container">
-            <ucSlider:Slider ID="Slider1" runat="server" />
+        <div class="contain">
+            <div class="container">
+                <ucSlider:Slider ID="Slider" runat="server" />
 
 
 
+            </div>
         </div>
-    </div>
-        <ucSocial:Social ID="Social1" runat="server" />
-        <ucFooter:Footer ID="Footer1" runat="server" />
+        <ucSocial:Social ID="Social" runat="server" />
+        <ucFooter:Footer ID="Footer" runat="server" />
 
     </form>
     <!-- JS -->

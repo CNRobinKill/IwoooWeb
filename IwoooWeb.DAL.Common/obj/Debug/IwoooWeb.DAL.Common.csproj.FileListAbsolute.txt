@@ -7,3 +7,8 @@ C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\bin\Debug\IwoooWeb
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.csprojResolveAssemblyReference.cache
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.dll
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.pdb
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\bin\Debug\IwoooWeb.DAL.Common.dll
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\bin\Debug\IwoooWeb.DAL.Common.pdb
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.csprojResolveAssemblyReference.cache
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.dll
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.pdb

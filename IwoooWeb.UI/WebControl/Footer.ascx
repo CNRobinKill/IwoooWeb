@@ -62,8 +62,8 @@
 
       <div class="span12">
           <div class="copy">
-            <h6>Metro <span class="color">Mania</span></h6>
-            <p>Copyright © <a href="#">Your Site</a> - <a href="index.html">Home</a> | <a href="aboutus.html">About Us</a> | <a href="faq.html">FAQ</a> | <a href="contactus.html">Contact Us</a></p>
+            <h6>I <span class="color">wooo</span></h6>
+            <p>Copyright © <a href="http://www.iwooo.com">爱沃计算机科技有限公司</a> - <a href="Index.aspx">Home</a> | <a href="AboutUs.aspx">About Us</a> | <a href="\ContactUs.aspx">Contact Us</a></p>
           </div>
       </div>
     </div>

@@ -7,3 +7,8 @@ C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.UI\bin\IwoooWeb.UI.pdb
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.UI\obj\Debug\IwoooWeb.UI.csprojResolveAssemblyReference.cache
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.UI\obj\Debug\IwoooWeb.UI.dll
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.UI\obj\Debug\IwoooWeb.UI.pdb
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.UI\bin\IwoooWeb.UI.dll
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.UI\bin\IwoooWeb.UI.pdb
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.UI\obj\Debug\IwoooWeb.UI.csprojResolveAssemblyReference.cache
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.UI\obj\Debug\IwoooWeb.UI.dll
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.UI\obj\Debug\IwoooWeb.UI.pdb

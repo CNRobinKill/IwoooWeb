@@ -5,8 +5,8 @@
     <div class="row">
       <div class="span6">
         <div class="logo">
-          <h1><a href="#">Metro <span class="color">Mania</span></a></h1>
-          <div class="hmeta">Responsive Metro Styled Theme</div>
+          <h1><a href="#">I<span class="color">wooo</span></a></h1>
+          <div class="hmeta">Welcome To Iwooo</div>
         </div>
       </div>
       <div class="span6">

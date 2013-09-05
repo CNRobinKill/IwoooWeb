@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ajaxAspx\ajaxShow.aspx" />
+    <Content Include="BaiDuMap.html" />
+    <Content Include="ContactUs.aspx" />
     <Content Include="img\ashok.jpg" />
     <Content Include="img\bg_direction_nav.png" />
     <Content Include="img\border-b.png" />
@@ -186,6 +188,13 @@
     </Compile>
     <Compile Include="ajaxAspx\ajaxShow.aspx.designer.cs">
       <DependentUpon>ajaxShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

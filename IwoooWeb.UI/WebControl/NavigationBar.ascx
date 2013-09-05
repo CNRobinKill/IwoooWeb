@@ -13,7 +13,7 @@
                    <li><a href="IwoooTrends.aspx">爱沃动态</a></li>
                    <li><a href="portfolio.html">产品中心</a></li>
                    <li><a href="portfolio.html">服务支持</a></li>
-                   <li><a href="contactus.html">联系我们</a></li>
+                   <li><a href="ContactUs.aspx">联系我们</a></li>
                  </ul>
                </div>
               </div>

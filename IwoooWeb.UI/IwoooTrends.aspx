@@ -51,7 +51,6 @@
         <ucNavigationBar:NavigationBar ID="NavigationBar" runat="server" />
         <div class="contain">
             <div class="container">
-                <div class="container">
 
   <hr>
                 <div class="row">
@@ -66,7 +65,7 @@
 
               <div class="row">
                 <div class="span4">                  
-                          <div class="f-block b-green" onclick="divAjaxShow('CompanyIntroduction')">
+                          <div class="f-block b-green" onclick="divAjaxShow('CompanyIntroduction')" style="cursor:pointer">
                                 <i class="icon-briefcase"></i>                 
                                 <h4>介绍爱沃</h4>
                                 <p>我们是否有些信息吸引到您？合作只因我们双方了解，现在由您对我们团队进行了解开始。</p>
@@ -74,7 +73,7 @@
                 </div>
 
                 <div class="span4">
-                          <div class="f-block b-purple" onclick="divAjaxShow('CompanyNews')">
+                          <div class="f-block b-purple" onclick="divAjaxShow('CompanyNews')" style="cursor:pointer">
                                 <i class="icon-briefcase"></i>
                                 <h4>爱沃新闻</h4>
                                 <p>这里可以让您了解到我们团队经历的一些有趣故事以及最新动态。</p>
@@ -82,7 +81,7 @@
                 </div>
 
                 <div class="span4">
-                          <div class="f-block b-lblue" onclick="divAjaxShow('JoinUs')">
+                          <div class="f-block b-lblue" onclick="divAjaxShow('JoinUs')" style="cursor:pointer">
                                 <i class="icon-briefcase"></i>
                                 <h4>加入我们</h4>
                                 <p>如果你对我们团队感兴趣，如果你是我们在寻找的人，那么赶紧加入我们吧。</p>
@@ -94,8 +93,7 @@
                 
     <hr>
                     <div id="divAjaxShow"></div>
-                <div class="border"></div>
-            </div>
+
 
             </div>
         </div>
@@ -121,30 +119,34 @@
         function divAjaxShow(str1) {
             var xmlhttp;
             var htmlNow = document.getElementById('divAjaxShow').innerHTML;
-            var e = htmlNow.indexOf("-->") - 4;
-            var str2 = htmlNow.substr(4, e);
-            if (str1 == str2) {
-                return;
-            }
-
-            document.getElementById('divAjaxShow').innerHTML = "";
+            if (htmlNow != "") {
+                var e = htmlNow.indexOf("-->") - 4;
+                var str2 = htmlNow.substr(4, e);
+                if (str1 == str2) {
+                    return;
+                };
+            };
 
             if (window.XMLHttpRequest) {
                 xmlhttp = new XMLHttpRequest();
             } else {
                 xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
+            };
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    document.getElementById('divAjaxShow').innerHTML = "";
                     var text = xmlhttp.responseText;
                     var l = text.indexOf("\r");
                     text = text.substr(0, l);
-                    $("#divAjaxShow").html(text).slideDown();
+                    if (htmlNow == "") {
+                        $("#divAjaxShow").html(text).hide().slideDown();
+                    } else {
+                        $("#divAjaxShow").html(text).fadeOut("fast").fadeIn("fast");
+                    };
                     //document.getElementById('divAjaxShowCompanyIntroduction').innerHTML = text;
-                } else {
-                    document.getElementById('divAjaxShow').innerHTML = "<div class='row'><div class='span12'>  <div class='well c-soon'><img alt='wait' src='/img/wait.gif'></img></div></div></div>";
-                }
+                };
+                //else {
+                //    document.getElementById("divAjaxShow").innerHTML = "<div class='row'><div class='span12'>  <div class='well c-soon'><img alt='wait' src='/img/wait.gif'></img></div></div></div>";
+                //}
             };
             xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?q=' + str1, true);
             xmlhttp.send();

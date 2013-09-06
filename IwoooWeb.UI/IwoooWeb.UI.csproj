@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ajaxAspx\ajaxShow.aspx" />
+    <Content Include="ajaxAspx\sendEmail.aspx" />
     <Content Include="BaiDuMap.html" />
     <Content Include="ContactUs.aspx" />
     <Content Include="img\ashok.jpg" />
@@ -189,6 +190,13 @@
     <Compile Include="ajaxAspx\ajaxShow.aspx.designer.cs">
       <DependentUpon>ajaxShow.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ajaxAspx\sendEmail.aspx.cs">
+      <DependentUpon>sendEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ajaxAspx\sendEmail.aspx.designer.cs">
+      <DependentUpon>sendEmail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ContactUs.aspx.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -260,7 +268,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\IwoooWeb.DAL\IwoooWeb.DAL.csproj">
+      <Project>{4ec7af1a-bc59-4000-99cd-776cda86c3be}</Project>
+      <Name>IwoooWeb.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

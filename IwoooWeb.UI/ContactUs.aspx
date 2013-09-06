@@ -49,109 +49,107 @@
     <form id="form1" runat="server">
         <ucHeader:Header ID="Header" runat="server" />
         <ucNavigationBar:NavigationBar ID="NavigationBar" runat="server" />
-        <div class="contain">
+            <div class="contain">
             <div class="container">
 
-  <h2>Contact Us</h2>
-  <p class="big grey">欢迎亲临本公司作客</p>
-  <hr>
+            <h2>Contact Us</h2>
+            <p class="big grey">欢迎亲临本公司作客</p>
+            <hr>
             
-  <div class="contact">
+            <div class="contact">
                         <div class="row">
-                           <div class="span12">
-                              <!-- BaiDu maps -->
-                              <div class="gmap">
-                                 <!-- BaiDu Maps. Replace the below iframe with your BaiDu Maps embed code -->
-                                 <iframe height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="BaiDuMap.html"></iframe>
-                              </div>
+                            <div class="span12">
+                                <!-- BaiDu maps -->
+                                <div class="gmap">
+                                    <!-- BaiDu Maps. Replace the below iframe with your BaiDu Maps embed code -->
+                                    <iframe height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="BaiDuMap.html"></iframe>
+                                </div>
                               
-                           </div>
+                            </div>
                         </div>
                         <div class="row">
-                           <div class="span6">
-                              <div class="cwell">
-                                 <!-- Contact form -->
+                            <div class="span6">
+                                <div class="cwell">
+                                    <!-- Contact form -->
                                     <h5>在线留言</h5>
                                     <div class="form">
-                                      <!-- Contact form (not working)-->
-                                      <form class="form-horizontal">
-                                          <!-- Name -->
-                                          <div class="control-group">
+                                        <!-- Contact form (not working)-->
+                                        <div class="form-horizontal">
+                                            <!-- Name -->
+                                            <div class="control-group">
                                             <label class="control-label" for="name">姓名</label>
                                             <div class="controls">
-                                              <input type="text" class="input-medium" id="name">
+                                                <input type="text" class="input-medium" id="txtName" name="txtName" runat="server">
                                             </div>
-                                          </div>
-                                          <!-- Email -->
-                                          <div class="control-group">
+                                            </div>
+                                            <!-- Email -->
+                                            <div class="control-group">
                                             <label class="control-label" for="email">邮箱</label>
                                             <div class="controls">
-                                              <input type="text" class="input-medium" id="email">
+                                                <input type="text" class="input-medium" id="txtEmail" name="txtEmail" runat="server">
                                             </div>
-                                          </div>
-                                          <!-- Website -->
-                                          <div class="control-group">
+                                            </div>
+                                            <!-- Website -->
+                                            <div class="control-group">
                                             <label class="control-label" for="telphone">联系电话</label>
                                             <div class="controls">
-                                              <input type="text" class="input-medium" id="telphone">
+                                                <input type="text" class="input-medium" id="txtTelphone" name="txtTelphone" runat="server">
                                             </div>
-                                          </div>
-                                          <!-- Comment -->
-                                          <div class="control-group">
+                                            </div>
+                                            <!-- Comment -->
+                                            <div class="control-group">
                                             <label class="control-label" for="comment">内容</label>
                                             <div class="controls">
-                                              <textarea class="input-madium" id="comment" rows="3"></textarea>
+                                                <textarea class="input-madium" id="txtComment" rows="3" name="txtComment" runat="server"></textarea>
                                             </div>
-                                          </div>
-                                          <!-- Buttons -->
-                                          <div class="form-actions">
-                                             <!-- Buttons -->
-                                            <button type="submit" class="btn">发送留言</button>
-                                            <button type="reset" class="btn">重置</button>
-                                          </div>
-                                      </form>
+                                            </div>
+                                            <!-- Buttons -->
+                                            <div class="form-actions">
+                                                <!-- Buttons -->
+                                            <button id="sendMessage" type="submit" class="btn" onclick="SendMessage()">发送留言</button>
+                                            <button type="reset" class="btn" onclick="CleanLeaveMessage()">重置</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                 </div>
-                           </div>
-                           <div class="span6">
-                                 <div class="cwell">
+                               </div>
+                            </div>
+                            <div class="span6">
+                                    <div class="cwell">
                                     <!-- Address section -->
-                                       <h5>联系地址</h5>
-                                       <div class="address">
-                                           <address>
-                                              <!-- Company name -->
-                                              <h6>Responsive Web, Inc.</h6>
-                                              <!-- Address -->
-                                              795 Folsom Ave, Suite 600<br>
-                                              San Francisco, CA 94107<br>
-                                              <!-- Phone number -->
-                                              <abbr title="Phone">P:</abbr> (123) 456-7890.
-                                           </address>
-                                            
-                                           <address>
-                                              <!-- Name -->
-                                              <h6>Full Name</h6>
-                                              <!-- Email -->
-                                              <a href="mailto:#">first.last@gmail.com</a>
-                                           </address>
-                                           
-                                       </div>
-                                 </div>
-                           </div>
+                                        <h5>联系地址</h5>
+                                        <div class="address">
+                                            <address>
+                                                <!-- Company name -->
+                                                <h6><b>广州爱沃计算机科技有限公司</b></h6>
+                                                <!-- Address -->
+                                                中国 广州市天河路490号<br>
+                                                壬丰大厦2311A室<br>
+                                                <abbr title="PostCode">邮政编号：</abbr>510630<br />
+                                                <!-- Phone number -->
+                                                <abbr title="Phone">联系电话：</abbr> +(86)(020) 38732479 38732489 38732499 38731850.<br />
+                                                <!-- Email -->
+                                                <abbr title="Email">联系邮箱：</abbr>
+                                                <a href="mailto:sales@iwooo.com">sales@iwooo.com</a>
+                                                <a href="mailto:info@iwooo.com">info@iwooo.com</a>
+                                                <a href="mailto:support@iwooo.com">support@iwooo.com</a>
+                                            </address>                                    
+                                        </div>
+                                    </div>
+                            </div>
                         </div>
                         
-                     </div> 
+                        </div> 
 
 
-  </div>
-        </div>
+            </div>
+            </div>
         <ucSocial:Social ID="Social" runat="server" />
         <ucFooter:Footer ID="Footer" runat="server" />
     </form>
 
     <!-- JS -->
     <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script> 
+<%--    <script src="js/bootstrap.js"></script> 
     <script src="js/jquery.isotope.js"></script> <!-- Isotope for gallery -->
     <script src="js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto for images -->
     <script src="js/jquery.cslider.js"></script> <!-- Parallax slider -->
@@ -161,7 +159,48 @@
     <script src="js/jquery.flexslider-min.js"></script> <!-- Flex slider -->
 
     <script src="js/easing.js"></script> <!-- Easing -->
-    <script src="js/custom.js"></script>
-
+    <script src="js/custom.js"></script>--%>
+    <script>
+        function CleanLeaveMessage() {
+            $("#txtName").val("");
+            $("#txtEmail").val("");
+            $("#txtTelphone").val("");
+            $("#txtComment").val("");
+        };
+        function SendMessage() {
+            var xmlhttp;
+            var name = $.trim($("#txtName").val());
+            var email = $.trim($("#txtEmail").val());
+            var telphone = $.trim($("#txtTelphone").val());
+            var comment = $.trim($("#txtComment").val());
+            if (name == "" || email == "" || telphone == "" || comment == "") {
+                alert("需填写所有信息");
+                return;
+            };
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            };
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var text = xmlhttp.responseText;
+                    var l = text.indexOf("\r");
+                    text = text.substr(0, l);
+                    if (text == "1") {
+                        $("#sendMessage").text("发送成功");
+                    } else {
+                        $("#sendMessage").text("发送失败");
+                        $("#sendMessage").removeAttr("disabled");
+                    }
+                } else {
+                    $("#sendMessage").attr("disabled", true);
+                    $("#sendMessage").text("发送中..");
+                };
+            };
+            xmlhttp.open("GET", "/ajaxAspx/sendEmail.aspx?txtName=" + name + "&txtEmail=" + email + "&txtTelphone=" + telphone + "&txtComment=" + comment, true);
+            xmlhttp.send();
+        };
+    </script>
 </body>
 </html>

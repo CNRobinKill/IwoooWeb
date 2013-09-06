@@ -103,7 +103,7 @@
 
     <!-- JS -->
     <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script> 
+<%--    <script src="js/bootstrap.js"></script>
     <script src="js/jquery.isotope.js"></script> <!-- Isotope for gallery -->
     <script src="js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto for images -->
     <script src="js/jquery.cslider.js"></script> <!-- Parallax slider -->
@@ -113,7 +113,7 @@
     <script src="js/jquery.flexslider-min.js"></script> <!-- Flex slider -->
 
     <script src="js/easing.js"></script> <!-- Easing -->
-    <script src="js/custom.js"></script>
+    <script src="js/custom.js"></script>--%>
 
     <script type="text/javascript">
         function divAjaxShow(str1) {
@@ -142,11 +142,7 @@
                     } else {
                         $("#divAjaxShow").html(text).fadeOut("fast").fadeIn("fast");
                     };
-                    //document.getElementById('divAjaxShowCompanyIntroduction').innerHTML = text;
                 };
-                //else {
-                //    document.getElementById("divAjaxShow").innerHTML = "<div class='row'><div class='span12'>  <div class='well c-soon'><img alt='wait' src='/img/wait.gif'></img></div></div></div>";
-                //}
             };
             xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?q=' + str1, true);
             xmlhttp.send();

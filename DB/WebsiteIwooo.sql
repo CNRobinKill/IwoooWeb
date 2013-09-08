@@ -137,7 +137,7 @@ CREATE TABLE Information.Informations
 (
 	informationid	INT				NOT NULL IDENTITY,
 	informationname	NVARCHAR(200)	NOT NULL,
-	description		NVARCHAR(300)	NULL,
+	description		text	NULL,
 	categoryid		INT				NOT NULL,
 	CONSTRAINT PK_Information_Informations PRIMARY KEY(informationid),
 	CONSTRAINT FK_Informations_Categories FOREIGN KEY(categoryid) REFERENCES Information.Categories(categoryid)

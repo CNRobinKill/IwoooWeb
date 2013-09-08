@@ -99,6 +99,7 @@
         </div>
         <ucSocial:Social ID="Social" runat="server" />
         <ucFooter:Footer ID="Footer" runat="server" />
+        <span style="display:none" id="hideIndex">1</span>
     </form>
 
     <!-- JS -->
@@ -118,7 +119,7 @@
     <script type="text/javascript">
         function divAjaxShow(str1) {
             var xmlhttp;
-            var htmlNow = document.getElementById('divAjaxShow').innerHTML;
+            var htmlNow = document.getElementById("divAjaxShow").innerHTML;
             if (htmlNow != "") {
                 var e = htmlNow.indexOf("-->") - 4;
                 var str2 = htmlNow.substr(4, e);
@@ -140,11 +141,89 @@
                     if (htmlNow == "") {
                         $("#divAjaxShow").html(text).hide().slideDown();
                     } else {
-                        $("#divAjaxShow").html(text).fadeOut("fast").fadeIn("fast");
+                        $("#divAjaxShow").html(text).fadeIn("fast");
                     };
+                } else {
+                    $("#divAjaxShow").fadeOut("fast");
                 };
             };
             xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?q=' + str1, true);
+            xmlhttp.send();
+        };
+        function listLiComment(str1) {
+            var xmlhttp;
+            var htmlNow = document.getElementById("divLiComment").innerHTML;
+            if (htmlNow != "") {
+                var e = htmlNow.indexOf("-->") - 4;
+                var str2 = htmlNow.substr(4, e);
+                if (str1 == str2) {
+                    return;
+                };
+            };
+
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            };
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var text = xmlhttp.responseText;
+                    var l = text.indexOf("\r");
+                    text = text.substr(0, l);
+                    if (htmlNow == "") {
+                        $("#divLiComment").html(text).hide().slideDown();
+                    } else {
+                        $("#divLiComment").html(text).fadeIn("fast");
+                    };
+                } else {
+                    $("#divLiComment").fadeOut("fast");
+                };
+            };
+            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?r=' + str1, true);
+            xmlhttp.send();
+        };
+
+        function showNewContent(str1) {
+            var xmlhttp;
+
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            };
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var text = xmlhttp.responseText;
+                    var l = text.indexOf("\r");
+                    text = text.substr(0, l);
+                    $("#divAjaxShow").html(text).fadeIn("fast");
+                } else {
+                    $("#divAjaxShow").fadeOut("fast");
+                };
+            };
+            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?n=' + str1, true);
+            xmlhttp.send();
+        };
+
+        function selectIndex(str1) {
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            };
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var text = xmlhttp.responseText;
+                    var l = text.indexOf("\r");
+                    text = text.substr(0, l);
+                    $("#divAjaxShow").html(text).fadeIn("fast");
+                } else {
+                    $("#divAjaxShow").fadeOut("fast");
+                };
+            };
+            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?i=' + str1, true);
             xmlhttp.send();
         };
      </script>

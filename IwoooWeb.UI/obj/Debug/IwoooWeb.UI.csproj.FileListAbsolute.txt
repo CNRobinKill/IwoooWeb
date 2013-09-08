@@ -14,3 +14,7 @@ C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.UI\obj\Debug\IwoooWeb.UI.dll
 C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.UI\obj\Debug\IwoooWeb.UI.pdb
 C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.UI\bin\IwoooWeb.DAL.dll
 C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.UI\bin\IwoooWeb.DAL.pdb
+C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.UI\bin\IwoooWeb.DAL.dll
+C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.UI\bin\IwoooWeb.DAL.pdb
+C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.UI\bin\IwoooWeb.DAL.Common.dll
+C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.UI\bin\IwoooWeb.DAL.Common.pdb

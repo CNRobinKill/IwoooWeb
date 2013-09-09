@@ -206,7 +206,7 @@
             xmlhttp.send();
         };
 
-        function selectIndex(str1) {
+        function selectIndex(str1,str2) {
             var xmlhttp;
             if (window.XMLHttpRequest) {
                 xmlhttp = new XMLHttpRequest();
@@ -218,12 +218,20 @@
                     var text = xmlhttp.responseText;
                     var l = text.indexOf("\r");
                     text = text.substr(0, l);
-                    $("#divAjaxShow").html(text).fadeIn("fast");
+                    if (str2 == 1) {
+                        $("#divAjaxShow").html(text).fadeIn("fast");
+                    } else {
+                        $("#companyNewsTable").html(text).fadeIn("fast");
+                    };
                 } else {
-                    $("#divAjaxShow").fadeOut("fast");
+                    if (str2 == 1) {
+                        $("#divAjaxShow").fadeOut("fast");
+                    } else {
+                        $("#companyNewsTable").fadeOut("fast");
+                    };                  
                 };
             };
-            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?i=' + str1, true);
+            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?i=' + str1 + '&j=' + str2, true);
             xmlhttp.send();
         };
      </script>

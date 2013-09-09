@@ -50,7 +50,7 @@ namespace IwoooWeb.UI.ajaxAspx
                             for (int i = 1; i < index; i++)
                             {
                                 int n = i + 1;
-                                http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text())\">" + n + "</span>";
+                                http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">" + n + "</span>";
                             }
                         }
                         else
@@ -58,19 +58,19 @@ namespace IwoooWeb.UI.ajaxAspx
                             for (int i = 1; i < 5; i++)
                             {
                                 int n = i + 1;
-                                http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text())\">" + n + "</span>";
+                                http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">" + n + "</span>";
                             }
                             http2 = http2 + "<span class='dots'>…</span>";
                             for (int i = index-4; i < index; i++)
                             {
                                 int n = i + 1;
-                                http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text())\">" + n + "</span>";
+                                http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">" + n + "</span>";
                             }
                         }
                         http2 = http2 + "<span style='cursor:pointer'>Next</span>";
                         //ajaxHttp2 = ajaxHttp2.Substring(a, b).Replace("\n", "").Replace("\r", "");
                         string ajaxHttp2 = "<!--CountLine--><div class='paging'>" + http2 + "</div><!--CountLineEnd-->";
-                        hint = "<!--CompanyNewsTable-->" + ajaxHttp1 + ajaxHttp2 + "<!--CompanyNewsTableEnd-->\r";
+                        hint = "<!--CompanyNews--><!--CompanyNewsTable--><div id='companyNewsTable'>" + ajaxHttp1 + "</div><!--CompanyNewsTableEnd-->" + ajaxHttp2 + "<!--CompanyNewsEnd-->\r";
                         //hint = "<!--CompanyNews-->";
                     }
 
@@ -118,7 +118,7 @@ namespace IwoooWeb.UI.ajaxAspx
                 if (Request.QueryString["n"] != null)
                 {
                     string n = Request.QueryString["n"];
-                    hint = "<div><button class='btn' onclick=\"selectIndex($(\'#hideIndex\').text())\">返回</button></div>" + DAL.CompanyNewsDAL.GetNewContentByNewTittle(n);
+                    hint = "<div><button class='btn' onclick=\"selectIndex($(\'#hideIndex\').text(),1)\">返回</button></div>" + DAL.CompanyNewsDAL.GetNewContentByNewTittle(n);
                     if (hint == "")
                     {
                         Response.Write("页面出错，可能有非法值注入！");
@@ -128,7 +128,7 @@ namespace IwoooWeb.UI.ajaxAspx
                         Response.Write(hint);
                     }
                 }
-                if (Request.QueryString["i"] != null)
+                if (Request.QueryString["i"] != null && Request.QueryString["j"]=="1")
                 {
                     string idx = Request.QueryString["i"];
                     tbCompanyNews.DataSource = DAL.CompanyNewsDAL.GetCompanyNews(idx);
@@ -150,7 +150,7 @@ namespace IwoooWeb.UI.ajaxAspx
                         for (int i = 1; i < index; i++)
                         {
                             int n = i + 1;
-                            http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text())\">" + n + "</span>";
+                            http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">" + n + "</span>";
                         }
                     }
                     else
@@ -158,18 +158,44 @@ namespace IwoooWeb.UI.ajaxAspx
                         for (int i = 1; i < 5; i++)
                         {
                             int n = i + 1;
-                            http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text())\">" + n + "</span>";
+                            http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">" + n + "</span>";
                         }
                         http2 = http2 + "<span class='dots'>…</span>";
                         for (int i = index - 4; i < index; i++)
                         {
                             int n = i + 1;
-                            http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text())\">" + n + "</span>";
+                            http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">" + n + "</span>";
                         }
                     }
                     http2 = http2 + "<span style='cursor:pointer'>Next</span>";
                     string ajaxHttp2 = "<!--CountLine--><div class='paging'>" + http2 + "</div><!--CountLineEnd-->";
-                    hint = "<!--CompanyNewsTable-->" + ajaxHttp1 + ajaxHttp2 + "<!--CompanyNewsTableEnd-->\r";
+                    hint = "<!--CompanyNews--><!--CompanyNewsTable--><div id='companyNewsTable'>" + ajaxHttp1 + "</div><!--CompanyNewsTableEnd-->" + ajaxHttp2 + "<!--CompanyNewsEnd-->\r";
+                    if (hint == "")
+                    {
+                        Response.Write("页面出错，可能有非法值注入！");
+                    }
+                    else
+                    {
+                        Response.Write(hint);
+                    }
+                }
+
+                if (Request.QueryString["i"] != null && Request.QueryString["j"] == "0")
+                {
+                    string idx = Request.QueryString["i"];
+                    tbCompanyNews.DataSource = DAL.CompanyNewsDAL.GetCompanyNews(idx);
+                    tbCompanyNews.DataKeyNames = new string[] { "newTittle" };
+                    tbCompanyNews.DataBind();
+                    if (tbCompanyNews.HeaderRow != null)
+                    {
+                        tbCompanyNews.HeaderRow.Cells[0].Text = "#";
+                        tbCompanyNews.HeaderRow.Cells[1].Text = "Tittle";
+                        tbCompanyNews.HeaderRow.Cells[2].Text = "CreateTime";
+                    }
+
+                    string ajaxHttp1 = GridViewToHtml(tbCompanyNews);
+                    ajaxHttp1 = ajaxHttp1.Replace("\n", "").Replace("\r", "");
+                    hint =  ajaxHttp1 ;
                     if (hint == "")
                     {
                         Response.Write("页面出错，可能有非法值注入！");

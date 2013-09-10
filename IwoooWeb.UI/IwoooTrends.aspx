@@ -9,7 +9,7 @@
 
 <!DOCTYPE html>
 
-<html lang="en" class="csstransforms csstransforms3d csstransitions js cssanimations csstransitions">
+<html class="csstransforms csstransforms3d csstransitions js cssanimations csstransitions">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -208,6 +208,11 @@
 
         function selectIndex(str1,str2) {
             var xmlhttp;
+            if (str2 == 0) {
+                if ($("#hideIndex").text() == str1) {
+                    return;
+                };
+            }
             if (window.XMLHttpRequest) {
                 xmlhttp = new XMLHttpRequest();
             } else {
@@ -215,6 +220,7 @@
             };
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    $("#hideIndex").text(str1);
                     var text = xmlhttp.responseText;
                     var l = text.indexOf("\r");
                     text = text.substr(0, l);

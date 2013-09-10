@@ -27,7 +27,7 @@ namespace IwoooWeb.DAL
             SqlParameter[] paras ={
                                     new SqlParameter("@newTittle",newTittle)
                                 };
-            return Common.SqlHelper.ExecuteScalar(SPGetNewContentByNewTittle, paras).ToString();
+            return (string)Common.SqlHelper.ExecuteScalar(SPGetNewContentByNewTittle, paras);
         }
 
         public static int GetCompanyNewsIndex()

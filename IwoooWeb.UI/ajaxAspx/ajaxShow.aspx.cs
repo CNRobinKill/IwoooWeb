@@ -44,7 +44,7 @@ namespace IwoooWeb.UI.ajaxAspx
                         //int b = ajaxHttp2.IndexOf("<!--CountLineEnd-->") + 10;
                         ajaxHttp1 = ajaxHttp1.Replace("\n", "").Replace("\r", "");
                         int index = DAL.CompanyNewsDAL.GetCompanyNewsIndex();
-                        string http2 = "<span class='current'>1</span>";
+                        string http2 = "<span class='current' style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">1</span>";
                         if (index <= 10)
                         {
                             for (int i = 1; i < index; i++)
@@ -67,7 +67,7 @@ namespace IwoooWeb.UI.ajaxAspx
                                 http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">" + n + "</span>";
                             }
                         }
-                        http2 = http2 + "<span style='cursor:pointer'>Next</span>";
+                        http2 = http2 + "<span style='cursor:pointer' onclick=\"selectIndex(parseInt($('#hideIndex').text())+1,0)\">Next</span>";
                         //ajaxHttp2 = ajaxHttp2.Substring(a, b).Replace("\n", "").Replace("\r", "");
                         string ajaxHttp2 = "<!--CountLine--><div class='paging'>" + http2 + "</div><!--CountLineEnd-->";
                         hint = "<!--CompanyNews--><!--CompanyNewsTable--><div id='companyNewsTable'>" + ajaxHttp1 + "</div><!--CompanyNewsTableEnd-->" + ajaxHttp2 + "<!--CompanyNewsEnd-->\r";
@@ -144,7 +144,7 @@ namespace IwoooWeb.UI.ajaxAspx
                     string ajaxHttp1 = GridViewToHtml(tbCompanyNews);
                     ajaxHttp1 = ajaxHttp1.Replace("\n", "").Replace("\r", "");
                     int index = DAL.CompanyNewsDAL.GetCompanyNewsIndex();
-                    string http2 = "<span class='current'>1</span>";
+                    string http2 = "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">1</span>";
                     if (index <= 10)
                     {
                         for (int i = 1; i < index; i++)
@@ -167,7 +167,7 @@ namespace IwoooWeb.UI.ajaxAspx
                             http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">" + n + "</span>";
                         }
                     }
-                    http2 = http2 + "<span style='cursor:pointer'>Next</span>";
+                    http2 = http2 + "<span style='cursor:pointer' onclick=\"selectIndex(parseInt($('#hideIndex').text())+1,0)\">Next</span>";
                     string ajaxHttp2 = "<!--CountLine--><div class='paging'>" + http2 + "</div><!--CountLineEnd-->";
                     hint = "<!--CompanyNews--><!--CompanyNewsTable--><div id='companyNewsTable'>" + ajaxHttp1 + "</div><!--CompanyNewsTableEnd-->" + ajaxHttp2 + "<!--CompanyNewsEnd-->\r";
                     if (hint == "")

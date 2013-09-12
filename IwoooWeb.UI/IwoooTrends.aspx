@@ -194,6 +194,7 @@
             };
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
                     var text = xmlhttp.responseText;
                     var l = text.indexOf("\r");
                     text = text.substr(0, l);
@@ -221,6 +222,8 @@
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     $("#hideIndex").text(str1);
+                    $("div.paging >span.current").removeClass();
+                    $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
                     var text = xmlhttp.responseText;
                     var l = text.indexOf("\r");
                     text = text.substr(0, l);

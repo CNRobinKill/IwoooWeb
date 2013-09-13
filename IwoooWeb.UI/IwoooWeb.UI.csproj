@@ -162,6 +162,7 @@
     <Content Include="js\jquery.prettyPhoto.js" />
     <Content Include="js\jquery.tweet.js" />
     <Content Include="js\modernizr.custom.28468.js" />
+    <Content Include="Product.aspx" />
     <Content Include="style\blue.css" />
     <Content Include="style\bootstrap-responsive.css" />
     <Content Include="style\bootstrap.css" />
@@ -217,6 +218,13 @@
     </Compile>
     <Compile Include="IwoooTrends.aspx.designer.cs">
       <DependentUpon>IwoooTrends.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebControl\Footer.ascx.cs">

@@ -39,9 +39,6 @@ namespace IwoooWeb.UI.ajaxAspx
                         }
 
                         string ajaxHttp1 = GridViewToHtml(tbCompanyNews);
-                        //string ajaxHttp2 = divCountLine.InnerHtml;
-                        //int a = ajaxHttp2.IndexOf("<!--CountLine-->");
-                        //int b = ajaxHttp2.IndexOf("<!--CountLineEnd-->") + 10;
                         ajaxHttp1 = ajaxHttp1.Replace("\n", "").Replace("\r", "");
                         int index = DAL.CompanyNewsDAL.GetCompanyNewsIndex();
                         string http2 = "<span class='current' style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">1</span>";
@@ -60,7 +57,7 @@ namespace IwoooWeb.UI.ajaxAspx
                                 int n = i + 1;
                                 http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">" + n + "</span>";
                             }
-                            http2 = http2 + "<span class='dots'>…</span>";
+                            http2 = http2 + "<span class='dots' style='cursor:pointer' onclick=\"changeIndex(\'2\')\">…</span>";
                             for (int i = index-4; i < index; i++)
                             {
                                 int n = i + 1;
@@ -68,20 +65,12 @@ namespace IwoooWeb.UI.ajaxAspx
                             }
                         }
                         http2 = http2 + "<span style='cursor:pointer' onclick=\"selectIndex(parseInt($('#hideIndex').text())+1,0)\">Next</span>";
-                        //ajaxHttp2 = ajaxHttp2.Substring(a, b).Replace("\n", "").Replace("\r", "");
                         string ajaxHttp2 = "<!--CountLine--><div class='paging'>" + http2 + "</div><!--CountLineEnd-->";
                         hint = "<!--CompanyNews--><!--CompanyNewsTable--><div id='companyNewsTable'>" + ajaxHttp1 + "</div><!--CompanyNewsTableEnd-->" + ajaxHttp2 + "<!--CompanyNewsEnd-->\r";
-                        //hint = "<!--CompanyNews-->";
                     }
 
                     if (q == "JoinUs")
                     {
-
-                        //string ajaxHttp = strContent.InnerHtml;
-                        //int a = ajaxHttp.IndexOf("<!--JoinUs-->");
-                        //int b = ajaxHttp.IndexOf("<!--JoinUsEnd-->") + 10;
-                        //ajaxHttp = ajaxHttp.Substring(a, b).Replace("\n","").Replace("\r","").Replace("\\","");
-                        //hint = ajaxHttp + "\r";
                         string liText = "";
                         for(int i=0;i<4;i++)
                         {
@@ -90,7 +79,46 @@ namespace IwoooWeb.UI.ajaxAspx
                         }
                         string li = liText;
                         string liComment = "";
-                        hint = "<!--JoinUs--> <!--JoinUsLi--><div class='price-a pricel center' style='width:240px;float:left'> <div class='phead-top b-blue'>  <h4>我们正在寻找</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--JoinUsLiEnd-->   <!--JoinUsLiComment--><div class='well c-soon' style=' width:600px;float:right' id='divLiComment'>" + liComment + "</div>  <!--JoinUsLiCommentEnd--> <!--JoinUsEnd-->";
+                        hint = "<!--JoinUs--> <!--JoinUsLi--><div class='price-a pricel center' style='width:240px;float:left'> <div class='phead-top b-lblue'>  <h4>我们正在寻找</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--JoinUsLiEnd-->   <!--JoinUsLiComment--><div class='well c-soon' style=' width:600px;float:right' id='divLiComment'>" + liComment + "</div>  <!--JoinUsLiCommentEnd--> <!--JoinUsEnd-->";
+                    }
+
+                    if (q == "SoftWare")
+                    {
+                        string liText = "";
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string text = ".Net软件开发工程师" + i;
+                            liText += "<li style='cursor:pointer' onclick='listLiComment(" + "\"" + text + "\"" + ")'>" + text + "</li>";
+                        }
+                        string li = liText;
+                        string liComment = "";
+                        hint = "<!--SoftWare--> <!--SoftWareLi--><div class='price-a pricel center' style='width:240px;float:left'> <div class='phead-top b-orange'>  <h4>软件展示</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--SoftWareLiEnd-->   <!--SoftWareLiComment--><div class='well c-soon' style=' width:600px;float:right' id='divLiComment'>" + liComment + "</div>  <!--SoftWareLiCommentEnd--> <!--SoftWareEnd-->";
+                    }
+
+                    if (q == "HardWare")
+                    {
+                        string liText = "";
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string text = ".Net软件开发工程师" + i;
+                            liText += "<li style='cursor:pointer' onclick='listLiComment(" + "\"" + text + "\"" + ")'>" + text + "</li>";
+                        }
+                        string li = liText;
+                        string liComment = "";
+                        hint = "<!--HardWare--> <!--HardWareLi--><div class='price-a pricel center' style='width:240px;float:left'> <div class='phead-top b-blue'>  <h4>硬件展示</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--HardWareLiEnd-->   <!--HardWareLiComment--><div class='well c-soon' style=' width:600px;float:right' id='divLiComment'>" + liComment + "</div>  <!--HardWareLiCommentEnd--> <!--HardWareEnd-->";
+                    }
+
+                    if (q == "Services")
+                    {
+                        string liText = "";
+                        for (int i = 0; i < 4; i++)
+                        {
+                            string text = ".Net软件开发工程师" + i;
+                            liText += "<li style='cursor:pointer' onclick='listLiComment(" + "\"" + text + "\"" + ")'>" + text + "</li>";
+                        }
+                        string li = liText;
+                        string liComment = "";
+                        hint = "<!--Services--> <!--ServicesLi--><div class='price-a pricel center' style='width:240px;float:left'> <div class='phead-top b-red'>  <h4>服务展示</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--ServicesLiEnd-->   <!--ServicesLiComment--><div class='well c-soon' style=' width:600px;float:right' id='divLiComment'>" + liComment + "</div>  <!--ServicesLiCommentEnd--> <!--ServicesEnd-->";
                     }
 
                     if (hint == "")
@@ -102,6 +130,7 @@ namespace IwoooWeb.UI.ajaxAspx
                         Response.Write(hint);
                     }
                 }
+
                 if (Request.QueryString["r"] != null)
                 {
                     string r = Request.QueryString["r"];
@@ -115,6 +144,7 @@ namespace IwoooWeb.UI.ajaxAspx
                         Response.Write(hint);
                     }
                 }
+
                 if (Request.QueryString["n"] != null)
                 {
                     string n = Request.QueryString["n"];
@@ -160,7 +190,7 @@ namespace IwoooWeb.UI.ajaxAspx
                             int n = i + 1;
                             http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">" + n + "</span>";
                         }
-                        http2 = http2 + "<span class='dots'>…</span>";
+                        http2 = http2 + "<span class='dots' style='cursor:pointer' onclick=\"changeIndex(\'2\')\">…</span>";
                         for (int i = index - 4; i < index; i++)
                         {
                             int n = i + 1;

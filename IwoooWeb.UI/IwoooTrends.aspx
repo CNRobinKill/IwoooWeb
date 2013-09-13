@@ -55,7 +55,7 @@
   <hr>
                 <div class="row">
                     <div class="span12">
-                    <h2>欢迎来到爱沃</h2>
+                    <h5><b>欢迎来到爱沃</b></h5>
                     <p>爱沃计算机科技有限公司，是中国区专业IT信息系统提供商，致力于为众多用户及合作伙伴提供完善的IT服务、IT产品及IT信息方案。</p>
                     <hr>
                     </div>                 
@@ -210,7 +210,7 @@
         function selectIndex(str1,str2) {
             var xmlhttp;
             if (str2 == 0) {
-                if ($("#hideIndex").text() == str1) {
+                if ($("#hideIndex").text() == str1 || parseInt($("div.paging span").eq(-2).text()) < str1) {
                     return;
                 };
             }
@@ -222,8 +222,6 @@
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     $("#hideIndex").text(str1);
-                    $("div.paging >span.current").removeClass();
-                    $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
                     var text = xmlhttp.responseText;
                     var l = text.indexOf("\r");
                     text = text.substr(0, l);
@@ -232,6 +230,9 @@
                     } else {
                         $("#companyNewsTable").html(text).fadeIn("fast");
                     };
+                    changeIndex(str2);
+                    $("div.paging >span.current").removeClass();
+                    $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");                 
                 } else {
                     if (str2 == 1) {
                         $("#divAjaxShow").fadeOut("fast");
@@ -240,9 +241,59 @@
                     };                  
                 };
             };
-            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?i=' + str1 + '&j=' + str2, true);
+            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?i=' + str1 + '&j=' + str2 + '&s=' + $("#hideIndex").text(), true);
             xmlhttp.send();
         };
+        function changeIndex(str1) {
+            if (str1 == 0) {
+                if (parseInt($("#hideIndex").text()) <= parseInt($("div.paging span").eq(4).text())) {
+                    return;
+                };
+                if (parseInt($("#hideIndex").text()) < parseInt($("div.paging span").eq(-2).text()) - 3) {
+                    if (parseInt($("div.paging span").eq(4).text()) < parseInt($("div.paging span").eq(-2).text()) - 8) {
+                        for (var i = 0; i < 5; i++) {
+                            $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(4).text()) + i - 1);
+                        };
+                        $("div.paging >span.current").removeClass();
+                        $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
+                    } else {
+                        for (var i = 0; i < 10; i++) {
+                            $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(9).text()) + i - 9);
+                        };
+                        $("div.paging span").eq(5).attr('onclick', 'selectIndex($(this).text(),0)');
+                    };
+                };
+            };
+            if (str1 == 1) {
+                if (parseInt($("div.paging span").eq(4).text()) < parseInt($("#hideIndex").text()) || parseInt($("#hideIndex").text()) < parseInt($("div.paging span").eq(0).text())) {
+                    if (parseInt($("div.paging span").eq(-2).text()) - 8 < parseInt($("#hideIndex").text())) {
+                        for (var i = 0; i < 10; i++) {
+                            $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(9).text()) + i - 9);
+                        };
+                        $("div.paging span").eq(5).attr('onclick', 'selectIndex($(this).text(),0)');
+                    } else {
+                        for (var i = 0; i < 5; i++) {
+                            $("div.paging span").eq(i).text(parseInt($("#hideIndex").text()) + i - 1);
+                        };
+                    };
+                };
+            };
+            if (str1 == 2) {
+                if (parseInt($("div.paging span").eq(4).text()) < parseInt($("div.paging span").eq(-2).text()) - 8) {
+                    for (var i = 0; i < 5; i++) {
+                        $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(4).text()) + i - 1);
+                    };
+                    $("div.paging >span.current").removeClass();
+                    $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
+                } else {
+                    for (var i = 0; i < 10; i++) {
+                        $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(9).text()) + i - 9);
+                    };
+                    $("div.paging span").eq(5).attr('onclick', 'selectIndex($(this).text(),0)');
+                };
+            };
+        };
+                
      </script>
 </body>
 </html>

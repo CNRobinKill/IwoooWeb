@@ -9,7 +9,7 @@
 
 <!DOCTYPE html>
 
-<html class="csstransforms csstransforms3d csstransitions js cssanimations csstransitions">
+<html lang="en" class="csstransforms csstransforms3d csstransitions js cssanimations csstransitions">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -104,7 +104,7 @@
 
     <!-- JS -->
     <script src="js/jquery.js"></script>
-<%--    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script src="js/jquery.isotope.js"></script> <!-- Isotope for gallery -->
     <script src="js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto for images -->
     <script src="js/jquery.cslider.js"></script> <!-- Parallax slider -->
@@ -114,9 +114,10 @@
     <script src="js/jquery.flexslider-min.js"></script> <!-- Flex slider -->
 
     <script src="js/easing.js"></script> <!-- Easing -->
-    <script src="js/custom.js"></script>--%>
+    <script src="js/custom.js"></script>
 
     <script type="text/javascript">
+
         function divAjaxShow(str1) {
             var xmlhttp;
             var htmlNow = document.getElementById("divAjaxShow").innerHTML;
@@ -150,7 +151,8 @@
             xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?q=' + str1, true);
             xmlhttp.send();
         };
-        function listLiComment(str1) {
+
+        function listLiComment(str1, str3) {
             var xmlhttp;
             var htmlNow = document.getElementById("divLiComment").innerHTML;
             if (htmlNow != "") {
@@ -180,7 +182,7 @@
                     $("#divLiComment").fadeOut("fast");
                 };
             };
-            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?r=' + str1, true);
+            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?r=' + str1 + '&l=' + str3, true);
             xmlhttp.send();
         };
 
@@ -194,7 +196,6 @@
             };
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
                     var text = xmlhttp.responseText;
                     var l = text.indexOf("\r");
                     text = text.substr(0, l);
@@ -244,6 +245,8 @@
             xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?i=' + str1 + '&j=' + str2 + '&s=' + $("#hideIndex").text(), true);
             xmlhttp.send();
         };
+
+
         function changeIndex(str1) {
             if (str1 == 0) {
                 if (parseInt($("#hideIndex").text()) <= parseInt($("div.paging span").eq(4).text())) {
@@ -254,14 +257,14 @@
                         for (var i = 0; i < 5; i++) {
                             $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(4).text()) + i - 1);
                         };
-                        $("div.paging >span.current").removeClass();
-                        $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
                     } else {
                         for (var i = 0; i < 10; i++) {
                             $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(9).text()) + i - 9);
                         };
                         $("div.paging span").eq(5).attr('onclick', 'selectIndex($(this).text(),0)');
                     };
+                    $("div.paging >span.current").removeClass();
+                    $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
                 };
             };
             if (str1 == 1) {
@@ -283,14 +286,14 @@
                     for (var i = 0; i < 5; i++) {
                         $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(4).text()) + i - 1);
                     };
-                    $("div.paging >span.current").removeClass();
-                    $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
                 } else {
                     for (var i = 0; i < 10; i++) {
                         $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(9).text()) + i - 9);
                     };
                     $("div.paging span").eq(5).attr('onclick', 'selectIndex($(this).text(),0)');
                 };
+                $("div.paging >span.current").removeClass();
+                $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
             };
         };
                 

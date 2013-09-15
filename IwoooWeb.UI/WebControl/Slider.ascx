@@ -5,20 +5,16 @@
         <!-- Slider (Parallax Slider) -->
           <div id="da-slider" class="da-slider" style="background-position: 4600% 0%;">
             <div class="da-slide da-slide-fromright da-slide-current">
-              <div class="da-blue">
                 <h2><span>Metro Mania</span></h2>
                 <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
                 <a href="#" class="da-link">Read more</a>
                 <div class="da-img"><img src="img/parallax/1.png" alt="image01"></div>
-              </div>
             </div>
             <div class="da-slide da-slide-toleft">
-              <div class="da-green">
                 <h2><span>Easy management</span></h2>
                 <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
                 <a href="#" class="da-link">Read more</a>
                 <div class="da-img"><img src="img/parallax/2.png" alt="image01"></div>
-              </div>
             </div>
             <div class="da-slide da-slide-toleft">
               <h2><span>Revolution</span></h2>
@@ -36,7 +32,8 @@
               <span class="da-arrows-prev"></span>
               <span class="da-arrows-next"></span>
             </nav>
-          <nav class="da-dots"><span class="da-dots-current"></span><span class=""></span><span class=""></span><span class=""></span></nav></div>
+          <nav class="da-dots"><span class="da-dots-current"></span><span class=""></span><span class=""></span><span class=""></span></nav>
+          </div>
       </div>
     </div>
 <!-- Slider Ends -->

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -72,53 +73,57 @@ namespace IwoooWeb.UI.ajaxAspx
                     if (q == "JoinUs")
                     {
                         string liText = "";
-                        for(int i=0;i<4;i++)
+                        DataTable dt = DAL.JoinUsDAL.GetJoinUs().Tables[0];
+                        for(int i=0;i<dt.Rows.Count;i++)
                         {
-                            string text = ".Net软件开发工程师" + i;
-                            liText += "<li style='cursor:pointer' onclick='listLiComment(" + "\"" + text + "\"" + ")'>" + text + "</li>";
+                            string text = dt.Rows[i][0].ToString();
+                            liText += "<li style='cursor:pointer' onclick=\"listLiComment(\'" + text + "\',\'JoinUs\'" + ")\">" + text + "</li>";
                         }
                         string li = liText;
                         string liComment = "";
-                        hint = "<!--JoinUs--> <!--JoinUsLi--><div class='price-a pricel center' style='width:240px;float:left'> <div class='phead-top b-lblue'>  <h4>我们正在寻找</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--JoinUsLiEnd-->   <!--JoinUsLiComment--><div class='well c-soon' style=' width:600px;float:right' id='divLiComment'>" + liComment + "</div>  <!--JoinUsLiCommentEnd--> <!--JoinUsEnd-->";
+                        hint = "<!--JoinUs--> <!--JoinUsLi--><div class='price-a pricel center' style='width:180px;float:left'> <div class='phead-top b-lblue'>  <h4>我们正在寻找</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--JoinUsLiEnd-->   <!--JoinUsLiComment--><div class='well c-soon' style=' width:660px;float:right' id='divLiComment'>" + liComment + "</div>  <!--JoinUsLiCommentEnd--> <!--JoinUsEnd-->";
                     }
 
                     if (q == "SoftWare")
                     {
                         string liText = "";
-                        for (int i = 0; i < 4; i++)
+                        DataTable dt = DAL.SoftWareDAL.GetSoftWareType().Tables[0];
+                        for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            string text = ".Net软件开发工程师" + i;
-                            liText += "<li style='cursor:pointer' onclick='listLiComment(" + "\"" + text + "\"" + ")'>" + text + "</li>";
+                            string text = dt.Rows[i][0].ToString();
+                            liText += "<li style='cursor:pointer'  onclick=\"listLiComment(\'" + text + "\',\'SoftWare\'" + ")\">" + text + "</li>";
                         }
                         string li = liText;
                         string liComment = "";
-                        hint = "<!--SoftWare--> <!--SoftWareLi--><div class='price-a pricel center' style='width:240px;float:left'> <div class='phead-top b-orange'>  <h4>软件展示</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--SoftWareLiEnd-->   <!--SoftWareLiComment--><div class='well c-soon' style=' width:600px;float:right' id='divLiComment'>" + liComment + "</div>  <!--SoftWareLiCommentEnd--> <!--SoftWareEnd-->";
+                        hint = "<!--SoftWare--> <!--SoftWareLi--><div class='price-a pricel center' style='width:180px;float:left'> <div class='phead-top b-orange'>  <h4>软件展示</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--SoftWareLiEnd-->   <!--SoftWareLiComment--><div class='well c-soon' style=' width:660px;float:right' id='divLiComment'>" + liComment + "</div>  <!--SoftWareLiCommentEnd--> <!--SoftWareEnd-->";
                     }
 
                     if (q == "HardWare")
                     {
                         string liText = "";
-                        for (int i = 0; i < 4; i++)
+                        DataTable dt = DAL.HardWareDAL.GetHardWareType().Tables[0];
+                        for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            string text = ".Net软件开发工程师" + i;
-                            liText += "<li style='cursor:pointer' onclick='listLiComment(" + "\"" + text + "\"" + ")'>" + text + "</li>";
+                            string text = dt.Rows[i][0].ToString();
+                            liText += "<li style='cursor:pointer' onclick=\"listLiComment(\'" + text + "\',\'HardWare\'" + ")\">" + text + "</li>";
                         }
                         string li = liText;
                         string liComment = "";
-                        hint = "<!--HardWare--> <!--HardWareLi--><div class='price-a pricel center' style='width:240px;float:left'> <div class='phead-top b-blue'>  <h4>硬件展示</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--HardWareLiEnd-->   <!--HardWareLiComment--><div class='well c-soon' style=' width:600px;float:right' id='divLiComment'>" + liComment + "</div>  <!--HardWareLiCommentEnd--> <!--HardWareEnd-->";
+                        hint = "<!--HardWare--> <!--HardWareLi--><div class='price-a pricel center' style='width:180px;float:left'> <div class='phead-top b-blue'>  <h4>硬件展示</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--HardWareLiEnd-->   <!--HardWareLiComment--><div class='well c-soon' style=' width:660px;float:right' id='divLiComment'>" + liComment + "</div>  <!--HardWareLiCommentEnd--> <!--HardWareEnd-->";
                     }
 
                     if (q == "Services")
                     {
                         string liText = "";
-                        for (int i = 0; i < 4; i++)
+                        DataTable dt = DAL.ServicesDAL.GetServicesType().Tables[0];
+                        for (int i = 0; i < dt.Rows.Count; i++)
                         {
-                            string text = ".Net软件开发工程师" + i;
-                            liText += "<li style='cursor:pointer' onclick='listLiComment(" + "\"" + text + "\"" + ")'>" + text + "</li>";
+                            string text = dt.Rows[i][0].ToString();
+                            liText += "<li style='cursor:pointer' onclick=\"listLiComment(\'" + text + "\',\'Services\'" + ")\">" + text + "</li>";
                         }
                         string li = liText;
                         string liComment = "";
-                        hint = "<!--Services--> <!--ServicesLi--><div class='price-a pricel center' style='width:240px;float:left'> <div class='phead-top b-red'>  <h4>服务展示</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--ServicesLiEnd-->   <!--ServicesLiComment--><div class='well c-soon' style=' width:600px;float:right' id='divLiComment'>" + liComment + "</div>  <!--ServicesLiCommentEnd--> <!--ServicesEnd-->";
+                        hint = "<!--Services--> <!--ServicesLi--><div class='price-a pricel center' style='width:180px;float:left'> <div class='phead-top b-red'>  <h4>服务展示</h4>    </div>  <div class='phead-bottom'></div>  <div class='arrow-down'></div>  <div class='plist'>  <ul class='nav' style='font-weight:600;font-size:14px'>   <!--Li-->" + li + "<!--LiEnd-->  </ul> </div> <div class='pbutton button'></div></div> <!--ServicesLiEnd-->   <!--ServicesLiComment--><div class='well c-soon' style=' width:660px;float:right' id='divLiComment'>" + liComment + "</div>  <!--ServicesLiCommentEnd--> <!--ServicesEnd-->";
                     }
 
                     if (hint == "")
@@ -131,10 +136,116 @@ namespace IwoooWeb.UI.ajaxAspx
                     }
                 }
 
-                if (Request.QueryString["r"] != null)
+                if (Request.QueryString["r"] != null && Request.QueryString["l"] != null)
                 {
                     string r = Request.QueryString["r"];
-                    hint = "<!--" + Request.QueryString["r"] + "--><div>" + Request.QueryString["r"]+"</div>";
+                    string l = Request.QueryString["l"];
+                    if (l == "JoinUs")
+                    {
+                        hint = "<!--" + r + "--><div>" + DAL.JoinUsDAL.GetPositionContentByPosition(r) + "</div>";
+                    }
+                    if (l == "SoftWare")
+                    {
+                        //hint = "<!--" + Request.QueryString["r"] + "--><div>" + Request.QueryString["r"] + "</div>";
+                        DataTable dt = DAL.SoftWareDAL.GetSoftWare(r, "1").Tables[0];
+                        string html = "";
+                        int m = 0;
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            int n = (i / 3) * 220;
+                            string img = dt.Rows[i][2].ToString();
+                            string imgtxt = dt.Rows[i][1].ToString();
+                            html += "<div class='element one three isotope-item' onclick=\"showProductComment(\'" + imgtxt + "\','SoftWare')\" style=' cursor:pointer; position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(" + m + "px, " + n + "px, 0px);'><img src='" + img + "' alt=''/><div class='pcap'><h4>" + imgtxt + "</h4> </div></div>";
+                            m += 220;
+                            if (m > 440)
+                            {
+                                m = 0;
+                            }
+                        }
+                        hint = "<!--" + r + "--><div class='row'><div class='span12'><div id='portfolio' style='position: relative; overflow: hidden; height: 700px;' class='isotope'><div id='productComment'>" + html + " </div></div></div></div>";
+                    }
+                    if (l == "HardWare")
+                    {
+                        //hint = "<!--" + Request.QueryString["r"] + "--><div>" + Request.QueryString["r"] + "</div>";
+                        DataTable dt = DAL.HardWareDAL.GetHardWare(r, "1").Tables[0];
+                        string html = "";
+                        int m = 0;
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            int n = (i / 3) * 220;
+                            string img = dt.Rows[i][2].ToString();
+                            string imgtxt = dt.Rows[i][1].ToString();
+                            html += "<div class='element one three isotope-item' onclick=\"showProductComment(\'" + imgtxt + "\','HardWare')\" style=' cursor:pointer; position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(" + m + "px, " + n + "px, 0px);'><img src='" + img + "' alt=''/><div class='pcap'><h4>" + imgtxt + "</h4> </div></div>";
+                            m += 220;
+                            if (m > 440)
+                            {
+                                m = 0;
+                            }
+                        }
+                        hint = "<!--" + r + "--><div class='row'><div class='span12'><div id='portfolio' style='position: relative; overflow: hidden; height: 700px;' class='isotope'><div id='productComment'>" + html + " </div></div></div></div>";
+                    }
+                    if (l == "Services")
+                    {
+                        //hint = "<!--" + Request.QueryString["r"] + "--><div>" + Request.QueryString["r"] + "</div>";
+                        DataTable dt = DAL.ServicesDAL.GetServices(r, "1").Tables[0];
+                        string html = "";
+                        int m = 0;
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            int n = (i / 3) * 220;
+                            string img = dt.Rows[i][2].ToString();
+                            string imgtxt = dt.Rows[i][1].ToString();
+                            html += "<div class='element one three isotope-item' onclick=\"showProductComment(\'" + imgtxt + "\','Services')\" style=' cursor:pointer; position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(" + m + "px, " + n + "px, 0px);'><img src='" + img + "' alt=''/><div class='pcap'><h4>" + imgtxt + "</h4> </div></div>";
+                            m += 220;
+                            if (m > 440)
+                            {
+                                m = 0;
+                            }
+                        }
+                        hint = "<!--" + r + "--><div class='row'><div class='span12'><div id='portfolio' style='position: relative; overflow: hidden; height: 700px;' class='isotope'><div id='productComment'>" + html + " </div></div></div></div>";
+                    }
+                    if (l == "SoftWare" || l == "HardWare" || l == "Services")
+                    {
+                        int index = 0;
+                        if (l == "SoftWare")
+                        {
+                             index = DAL.SoftWareDAL.GetSoftWareIndex();
+                        }
+                        if (l == "HardWare")
+                        {
+                            index = DAL.HardWareDAL.GetHardWareIndex();
+                        }
+                        if (l == "Services")
+                        {
+                            index = DAL.ServicesDAL.GetServicesIndex();
+                        }
+                        string http2 = "<span class='current' style='cursor:pointer' onclick=\"selectIndex($(this).text(),0,\'" + l + "\')\">1</span>";
+                        if (index <= 10)
+                        {
+                            for (int i = 1; i < index; i++)
+                            {
+                                int n = i + 1;
+                                http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0,\'" + l + "\')\">" + n + "</span>";
+                            }
+                        }
+                        else
+                        {
+                            for (int i = 1; i < 5; i++)
+                            {
+                                int n = i + 1;
+                                http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0,\'" + l + "\')\">" + n + "</span>";
+                            }
+                            http2 = http2 + "<span class='dots' style='cursor:pointer' onclick=\"changeIndex(\'2\')\">…</span>";
+                            for (int i = index - 4; i < index; i++)
+                            {
+                                int n = i + 1;
+                                http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0,\'" + l + "\')\">" + n + "</span>";
+                            }
+                        }
+                        http2 = http2 + "<span style='cursor:pointer' onclick=\"selectIndex(parseInt($('#hideIndex').text())+1,0,\'" + l + "\')\">Next</span>";
+                        string ajaxHttp2 = "<!--CountLine--><div class='paging'>" + http2 + "</div><!--CountLineEnd-->";
+                        hint = hint + ajaxHttp2 + "\r";
+                    }
                     if (hint == "")
                     {
                         Response.Write("页面出错，可能有非法值注入！");
@@ -158,6 +269,33 @@ namespace IwoooWeb.UI.ajaxAspx
                         Response.Write(hint);
                     }
                 }
+
+                if (Request.QueryString["z"] != null)
+                {
+                    string z = Request.QueryString["z"];
+                    string b = Request.QueryString["b"];
+                    if (b == "SoftWare")
+                    {
+                        hint = "<div><button class='btn' onclick=\"selectIndex($(\'#hideIndex\').text(),1,'SoftWare')\">返回</button></div>" + DAL.SoftWareDAL.GetSoftWareContentBySoftWareName(z);
+                    }
+                    if (b == "HardWare")
+                    {
+                        hint = "<div><button class='btn' onclick=\"selectIndex($(\'#hideIndex\').text(),1,'HardWare')\">返回</button></div>" + DAL.HardWareDAL.GetHardWareContentByHardWareName(z);
+                    }
+                    if (b == "Services")
+                    {
+                        hint = "<div><button class='btn' onclick=\"selectIndex($(\'#hideIndex\').text(),1,'Services')\">返回</button></div>" + DAL.ServicesDAL.GetServicesContentByServicesName(z);
+                    }
+                    if (hint == "")
+                    {
+                        Response.Write("页面出错，可能有非法值注入！");
+                    }
+                    else
+                    {
+                        Response.Write(hint);
+                    }
+                }
+
                 if (Request.QueryString["i"] != null && Request.QueryString["j"]=="1")
                 {
                     string idx = Request.QueryString["i"];
@@ -235,6 +373,96 @@ namespace IwoooWeb.UI.ajaxAspx
                         Response.Write(hint);
                     }
                 }
+
+                if (Request.QueryString["t"] != null)
+                {
+                    string idx = Request.QueryString["t"];
+                    string o = Request.QueryString["o"];
+                    string u = Request.QueryString["u"];
+                    string p = Request.QueryString["p"];
+                    DataTable dt = null;
+                    if (u == "SoftWare")
+                    {
+                        dt = DAL.SoftWareDAL.GetSoftWare(o, idx).Tables[0];
+                    }
+                    if (u == "HardWare")
+                    {
+                        dt = DAL.HardWareDAL.GetHardWare(o, idx).Tables[0];
+                    }
+                    if (u == "Services")
+                    {
+                        dt = DAL.ServicesDAL.GetServices(o, idx).Tables[0];
+                    }
+                    string html = "";
+                    int m = 0;
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        int n = (i / 3) * 220;
+                        string img = dt.Rows[i][2].ToString();
+                        string imgtxt = dt.Rows[i][1].ToString();
+                        html += "<div class='element one three isotope-item' onclick=\"showProductComment(\'" + imgtxt + "\',\'"+u+"\')\" style=' cursor:pointer; position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(" + m + "px, " + n + "px, 0px);'><img src='" + img + "' alt=''/><div class='pcap'><h4>" + imgtxt + "</h4> </div></div>";
+                        m += 220;
+                        if (m > 440)
+                        {
+                            m = 0;
+                        }
+                    }
+                    hint = "<!--" + o + "--><div class='row'><div class='span12'><div id='portfolio' style='position: relative; overflow: hidden; height: 700px;' class='isotope'><div id='productComment'>" + html + " </div></div></div></div>";
+                    if (p == "1")
+                    {
+                        if (u == "SoftWare" || u == "HardWare" || u == "Services")
+                        {
+                            int index = 0;
+                            if (u == "SoftWare")
+                            {
+                                index = DAL.SoftWareDAL.GetSoftWareIndex();
+                            }
+                            if (u == "HardWare")
+                            {
+                                index = DAL.HardWareDAL.GetHardWareIndex();
+                            }
+                            if (u == "Services")
+                            {
+                                index = DAL.ServicesDAL.GetServicesIndex();
+                            }
+                            string http2 = "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0,\'" + u + "\')\">1</span>";
+                            if (index <= 10)
+                            {
+                                for (int i = 1; i < index; i++)
+                                {
+                                    int n = i + 1;
+                                    http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0,\'" + u + "\')\">" + n + "</span>";
+                                }
+                            }
+                            else
+                            {
+                                for (int i = 1; i < 5; i++)
+                                {
+                                    int n = i + 1;
+                                    http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0,\'" + u + "\')\">" + n + "</span>";
+                                }
+                                http2 = http2 + "<span class='dots' style='cursor:pointer' onclick=\"changeIndex(\'2\')\">…</span>";
+                                for (int i = index - 4; i < index; i++)
+                                {
+                                    int n = i + 1;
+                                    http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0,\'" + u + "\')\">" + n + "</span>";
+                                }
+                            }
+                            http2 = http2 + "<span style='cursor:pointer' onclick=\"selectIndex(parseInt($('#hideIndex').text())+1,0,\'" + u + "\')\">Next</span>";
+                            string ajaxHttp2 = "<!--CountLine--><div class='paging'>" + http2 + "</div><!--CountLineEnd-->";
+                            hint = hint + ajaxHttp2 + "\r";
+                        }
+                    }
+                    if (hint == "")
+                    {
+                        Response.Write("页面出错，可能有非法值注入！");
+                    }
+                    else
+                    {
+                        Response.Write(hint);
+                    }
+                }
+
             }
         }
 
@@ -261,7 +489,6 @@ namespace IwoooWeb.UI.ajaxAspx
                 e.Row.Attributes.Add("style", "cursor:pointer");
             }
         }
-
 
     }
 }

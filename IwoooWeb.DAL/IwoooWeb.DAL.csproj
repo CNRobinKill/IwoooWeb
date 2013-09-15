@@ -40,8 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompanyNewsDAL.cs" />
+    <Compile Include="SuccessStoriesDAL.cs" />
+    <Compile Include="HardWareDAL.cs" />
+    <Compile Include="JoinUsDAL.cs" />
     <Compile Include="SendEmail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicesDAL.cs" />
+    <Compile Include="SoftWareDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IwoooWeb.DAL.Common\IwoooWeb.DAL.Common.csproj">

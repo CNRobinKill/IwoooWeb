@@ -5,7 +5,7 @@
     <div class="row">
       <div class="span6">
         <div class="logo">
-          <h1><a href="#">I<span class="color">wooo</span></a></h1>
+          <h1><a href="#">I<span class="color">WOOO</span></a></h1>
           <div class="hmeta">Welcome To Iwooo</div>
         </div>
       </div>

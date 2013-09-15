@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
 
-      <div class="widgets">
+      <%--<div class="widgets">
         <div class="span4">
           <div class="fwidget">
 
@@ -58,12 +58,12 @@
             </ul>
           </div>
         </div>
-      </div>
+      </div>--%>
 
       <div class="span12">
           <div class="copy">
-            <h6>I <span class="color">wooo</span></h6>
-            <p>Copyright © <a href="http://www.iwooo.com">爱沃计算机科技有限公司</a> - <a href="Index.aspx">Home</a> | <a href="AboutUs.aspx">About Us</a> | <a href="\ContactUs.aspx">Contact Us</a></p>
+            <h6>I<span class="color">WOOO</span></h6>
+            <p>Copyright © <a href="http://www.iwooo.com">爱沃计算机科技有限公司</a> - <a href="Index.aspx">Home</a> | <a href="AboutUs.aspx">About Us</a> | <a href="ContactUs.aspx">Contact Us</a></p>
           </div>
       </div>
     </div>

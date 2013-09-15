@@ -176,6 +176,7 @@
     <Content Include="style\red.css" />
     <Content Include="style\slider.css" />
     <Content Include="style\style.css" />
+    <Content Include="SuccessStories.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebControl\Footer.ascx" />
     <Content Include="WebControl\Header.ascx" />
@@ -227,6 +228,13 @@
       <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuccessStories.aspx.cs">
+      <DependentUpon>SuccessStories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuccessStories.aspx.designer.cs">
+      <DependentUpon>SuccessStories.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebControl\Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

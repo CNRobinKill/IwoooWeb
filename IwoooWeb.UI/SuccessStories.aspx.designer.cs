@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 namespace IwoooWeb.UI {
-
-
-    public partial class Product{
+    
+    
+    public partial class SuccessStories {
         
         /// <summary>
         /// form1 控件。

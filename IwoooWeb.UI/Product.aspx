@@ -9,12 +9,12 @@
 
 <!DOCTYPE html>
 
-<html class="csstransforms csstransforms3d csstransitions js cssanimations csstransitions">
+<html lang="en" class="csstransforms csstransforms3d csstransitions js cssanimations csstransitions">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta charset="utf-8"/>
-  <title>爱沃动态</title>
+  <title>产品中心</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content=""/>
   <meta name="keywords" content=""/>
@@ -92,7 +92,9 @@
             </div>
                 
     <hr>
-                    <div id="divAjaxShow"></div>
+                    
+                        <div id="divAjaxShow"></div>
+                    
 
 
             </div>
@@ -100,11 +102,13 @@
         <ucSocial:Social ID="Social" runat="server" />
         <ucFooter:Footer ID="Footer" runat="server" />
         <span style="display:none" id="hideIndex">1</span>
+        <span style="display:none" id="hideLi"></span>
+        <span style="display:none" id="hidePage"></span>
     </form>
 
     <!-- JS -->
     <script src="js/jquery.js"></script>
-<%--    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script src="js/jquery.isotope.js"></script> <!-- Isotope for gallery -->
     <script src="js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto for images -->
     <script src="js/jquery.cslider.js"></script> <!-- Parallax slider -->
@@ -114,7 +118,7 @@
     <script src="js/jquery.flexslider-min.js"></script> <!-- Flex slider -->
 
     <script src="js/easing.js"></script> <!-- Easing -->
-    <script src="js/custom.js"></script>--%>
+    <script src="js/custom.js"></script>
 
     <script type="text/javascript">
         function divAjaxShow(str1) {
@@ -135,6 +139,8 @@
             };
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    $("#hidePage").text(str1);
+                    $("#hideIndex").text("1");
                     var text = xmlhttp.responseText;
                     var l = text.indexOf("\r");
                     text = text.substr(0, l);
@@ -150,7 +156,7 @@
             xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?q=' + str1, true);
             xmlhttp.send();
         };
-        function listLiComment(str1) {
+        function listLiComment(str1,str3) {
             var xmlhttp;
             var htmlNow = document.getElementById("divLiComment").innerHTML;
             if (htmlNow != "") {
@@ -168,6 +174,7 @@
             };
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    $("#hideLi").text(str1);
                     var text = xmlhttp.responseText;
                     var l = text.indexOf("\r");
                     text = text.substr(0, l);
@@ -180,119 +187,120 @@
                     $("#divLiComment").fadeOut("fast");
                 };
             };
-            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?r=' + str1, true);
+            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?r=' + str1 + '&l=' + str3, true);
             xmlhttp.send();
         };
 
-        //function showNewContent(str1) {
-        //    var xmlhttp;
+        function showProductComment(str1,str2) {
+            var xmlhttp;
 
-        //    if (window.XMLHttpRequest) {
-        //        xmlhttp = new XMLHttpRequest();
-        //    } else {
-        //        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        //    };
-        //    xmlhttp.onreadystatechange = function () {
-        //        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        //            $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
-        //            var text = xmlhttp.responseText;
-        //            var l = text.indexOf("\r");
-        //            text = text.substr(0, l);
-        //            $("#divAjaxShow").html(text).fadeIn("fast");
-        //        } else {
-        //            $("#divAjaxShow").fadeOut("fast");
-        //        };
-        //    };
-        //    xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?n=' + str1, true);
-        //    xmlhttp.send();
-        //};
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            };
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var text = xmlhttp.responseText;
+                    var l = text.indexOf("\r");
+                    text = text.substr(0, l);
+                    $("#divLiComment").html(text).fadeIn("fast");
+                } else {
+                    $("#divLiComment").fadeOut("fast");
+                };
+            };
+            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?z=' + str1 + '&b=' + str2, true);
+            xmlhttp.send();
+        };
 
-        //function selectIndex(str1, str2) {
-        //    var xmlhttp;
-        //    if (str2 == 0) {
-        //        if ($("#hideIndex").text() == str1 || parseInt($("div.paging span").eq(-2).text()) < str1) {
-        //            return;
-        //        };
-        //    }
-        //    if (window.XMLHttpRequest) {
-        //        xmlhttp = new XMLHttpRequest();
-        //    } else {
-        //        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        //    };
-        //    xmlhttp.onreadystatechange = function () {
-        //        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        //            $("#hideIndex").text(str1);
-        //            var text = xmlhttp.responseText;
-        //            var l = text.indexOf("\r");
-        //            text = text.substr(0, l);
-        //            if (str2 == 1) {
-        //                $("#divAjaxShow").html(text).fadeIn("fast");
-        //            } else {
-        //                $("#companyNewsTable").html(text).fadeIn("fast");
-        //            };
-        //            changeIndex(str2);
-        //            $("div.paging >span.current").removeClass();
-        //            $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
-        //        } else {
-        //            if (str2 == 1) {
-        //                $("#divAjaxShow").fadeOut("fast");
-        //            } else {
-        //                $("#companyNewsTable").fadeOut("fast");
-        //            };
-        //        };
-        //    };
-        //    xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?i=' + str1 + '&j=' + str2 + '&s=' + $("#hideIndex").text(), true);
-        //    xmlhttp.send();
-        //};
-        //function changeIndex(str1) {
-        //    if (str1 == 0) {
-        //        if (parseInt($("#hideIndex").text()) <= parseInt($("div.paging span").eq(4).text())) {
-        //            return;
-        //        };
-        //        if (parseInt($("#hideIndex").text()) < parseInt($("div.paging span").eq(-2).text()) - 3) {
-        //            if (parseInt($("div.paging span").eq(4).text()) < parseInt($("div.paging span").eq(-2).text()) - 8) {
-        //                for (var i = 0; i < 5; i++) {
-        //                    $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(4).text()) + i - 1);
-        //                };
-        //                $("div.paging >span.current").removeClass();
-        //                $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
-        //            } else {
-        //                for (var i = 0; i < 10; i++) {
-        //                    $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(9).text()) + i - 9);
-        //                };
-        //                $("div.paging span").eq(5).attr('onclick', 'selectIndex($(this).text(),0)');
-        //            };
-        //        };
-        //    };
-        //    if (str1 == 1) {
-        //        if (parseInt($("div.paging span").eq(4).text()) < parseInt($("#hideIndex").text()) || parseInt($("#hideIndex").text()) < parseInt($("div.paging span").eq(0).text())) {
-        //            if (parseInt($("div.paging span").eq(-2).text()) - 8 < parseInt($("#hideIndex").text())) {
-        //                for (var i = 0; i < 10; i++) {
-        //                    $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(9).text()) + i - 9);
-        //                };
-        //                $("div.paging span").eq(5).attr('onclick', 'selectIndex($(this).text(),0)');
-        //            } else {
-        //                for (var i = 0; i < 5; i++) {
-        //                    $("div.paging span").eq(i).text(parseInt($("#hideIndex").text()) + i - 1);
-        //                };
-        //            };
-        //        };
-        //    };
-        //    if (str1 == 2) {
-        //        if (parseInt($("div.paging span").eq(4).text()) < parseInt($("div.paging span").eq(-2).text()) - 8) {
-        //            for (var i = 0; i < 5; i++) {
-        //                $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(4).text()) + i - 1);
-        //            };
-        //            $("div.paging >span.current").removeClass();
-        //            $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
-        //        } else {
-        //            for (var i = 0; i < 10; i++) {
-        //                $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(9).text()) + i - 9);
-        //            };
-        //            $("div.paging span").eq(5).attr('onclick', 'selectIndex($(this).text(),0)');
-        //        };
-        //    };
-        //};
+        function selectIndex(str1, str2,str3) {
+            var xmlhttp;
+            if (str2 == 0) {
+                if ($("#hideIndex").text() == str1 || parseInt($("div.paging span").eq(-2).text()) < str1) {
+                    return;
+                };
+            }
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            };
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    $("#hideIndex").text(str1);
+                    var text = xmlhttp.responseText;
+                    var l = text.indexOf("\r");
+                    text = text.substr(0, l);
+                    if (str2 == 1) {
+                        $("#divLiComment").html(text).fadeIn("fast");
+                    } else {
+                        $("#productComment").html(text).fadeIn("fast");
+                    };
+                    changeIndex(str2);
+                    $("div.paging >span.current").removeClass();
+                    $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
+                } else {
+                    if (str2 == 1) {
+                        $("#divLiComment").fadeOut("fast");
+                    } else {
+                        $("#productComment").fadeOut("fast");
+                    };
+                };
+            };
+            xmlhttp.open("GET", '/ajaxAspx/ajaxShow.aspx?t=' + str1 + '&p=' + str2 + '&o=' + $("#hideLi").text() + '&u=' + str3, true);
+            xmlhttp.send();
+        };
+
+        function changeIndex(str1) {
+            var hidePage = $("#hidePage").text();
+            if (str1 == 0) {
+                if (parseInt($("#hideIndex").text()) <= parseInt($("div.paging span").eq(4).text())) {
+                    return;
+                };
+                if (parseInt($("#hideIndex").text()) < parseInt($("div.paging span").eq(-2).text()) - 3) {
+                    if (parseInt($("div.paging span").eq(4).text()) < parseInt($("div.paging span").eq(-2).text()) - 8) {
+                        for (var i = 0; i < 5; i++) {
+                            $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(4).text()) + i - 1);
+                        };
+                    } else {
+                        for (var i = 0; i < 10; i++) {
+                            $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(9).text()) + i - 9);
+                        };
+                        $("div.paging span").eq(5).attr('onclick', 'selectIndex($(this).text(),0,\'' + hidePage + '\')');
+                    };
+                    $("div.paging >span.current").removeClass();
+                    $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
+                };
+            };
+            if (str1 == 1) {
+                if (parseInt($("div.paging span").eq(4).text()) < parseInt($("#hideIndex").text()) || parseInt($("#hideIndex").text()) < parseInt($("div.paging span").eq(0).text())) {
+                    if (parseInt($("div.paging span").eq(-2).text()) - 8 < parseInt($("#hideIndex").text())) {
+                        for (var i = 0; i < 10; i++) {
+                            $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(9).text()) + i - 9);
+                        };
+                        $("div.paging span").eq(5).attr('onclick', 'selectIndex($(this).text(),0,\'' + hidePage + '\')');
+                    } else {
+                        for (var i = 0; i < 5; i++) {
+                            $("div.paging span").eq(i).text(parseInt($("#hideIndex").text()) + i - 1);
+                        };
+                    };
+                };
+            };
+            if (str1 == 2) {
+                if (parseInt($("div.paging span").eq(4).text()) < parseInt($("div.paging span").eq(-2).text()) - 8) {
+                    for (var i = 0; i < 5; i++) {
+                        $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(4).text()) + i - 1);
+                    };
+                } else {
+                    for (var i = 0; i < 10; i++) {
+                        $("div.paging span").eq(i).text(parseInt($("div.paging span").eq(9).text()) + i - 9);
+                    };
+                    $("div.paging span").eq(5).attr('onclick', 'selectIndex($(this).text(),0,\'' + hidePage + '\')');
+                };
+                $("div.paging >span.current").removeClass();
+                $("div.paging >span").map(function () { if ($(this).text() == $("#hideIndex").text()) return this; }).addClass("current");
+            };
+        };
 
      </script>
 </body>

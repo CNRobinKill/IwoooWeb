@@ -61,7 +61,7 @@ namespace IwoooWeb.UI.ajaxAspx
                             http2 = http2 + "<span class='dots' style='cursor:pointer' onclick=\"changeIndex(\'2\')\">…</span>";
                             for (int i = index-4; i < index; i++)
                             {
-                                int n = i + 1;
+                                int n = i;
                                 http2 += "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0)\">" + n + "</span>";
                             }
                         }
@@ -146,7 +146,6 @@ namespace IwoooWeb.UI.ajaxAspx
                     }
                     if (l == "SoftWare")
                     {
-                        //hint = "<!--" + Request.QueryString["r"] + "--><div>" + Request.QueryString["r"] + "</div>";
                         DataTable dt = DAL.SoftWareDAL.GetSoftWare(r, "1").Tables[0];
                         string html = "";
                         int m = 0;
@@ -166,7 +165,6 @@ namespace IwoooWeb.UI.ajaxAspx
                     }
                     if (l == "HardWare")
                     {
-                        //hint = "<!--" + Request.QueryString["r"] + "--><div>" + Request.QueryString["r"] + "</div>";
                         DataTable dt = DAL.HardWareDAL.GetHardWare(r, "1").Tables[0];
                         string html = "";
                         int m = 0;
@@ -186,7 +184,6 @@ namespace IwoooWeb.UI.ajaxAspx
                     }
                     if (l == "Services")
                     {
-                        //hint = "<!--" + Request.QueryString["r"] + "--><div>" + Request.QueryString["r"] + "</div>";
                         DataTable dt = DAL.ServicesDAL.GetServices(r, "1").Tables[0];
                         string html = "";
                         int m = 0;

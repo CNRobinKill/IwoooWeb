@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 namespace IwoooWeb.UI {
-
-
-    public partial class Product{
+    
+    
+    public partial class Product {
         
         /// <summary>
         /// form1 控件。
@@ -38,15 +38,6 @@ namespace IwoooWeb.UI {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::IwoooWeb.UI.WebControl.NavigationBar NavigationBar;
-        
-        /// <summary>
-        /// accordion2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl accordion2;
         
         /// <summary>
         /// Social 控件。

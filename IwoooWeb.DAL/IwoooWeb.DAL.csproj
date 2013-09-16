@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompanyNewsDAL.cs" />
+    <Compile Include="SliderDAL.cs" />
     <Compile Include="SuccessStoriesDAL.cs" />
     <Compile Include="HardWareDAL.cs" />
     <Compile Include="JoinUsDAL.cs" />

@@ -1,6 +1,8 @@
+
 *{
 	border-radius: 0px !important;
 }
+
 
 body{
 	color: #666;
@@ -10,7 +12,7 @@ body{
 }
 
 h1,h2,h3,h4,h5,h6{
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Microsoft YaHei" ! important;
 	font-weight: normal !important;
 	margin: 2px 0px 5px 0px;
 	padding: 2px 0px;
@@ -51,8 +53,15 @@ h6{
 	line-height: 24px;
 }
 
+
 p{
+    font-family: "Microsoft YaHei" ! important;
 	margin: 2px 0px;
+}
+
+a
+{
+    font-family: "Microsoft YaHei" ! important;
 }
 
 a:hover,a:active,a:focus {
@@ -100,7 +109,7 @@ hr{
 
 .big{
 	font-size: 20px !important;
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Microsoft YaHei" ! important;
 	margin-bottom: 10px;
 	font-weight: 300;
 }

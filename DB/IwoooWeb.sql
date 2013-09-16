@@ -90,7 +90,8 @@ create table Slider
 	sliderName			nvarchar(100) null,
 	sliderContent		nvarchar(1000) null,
 	sliderLink			nvarchar(1000) null,
-	sliderPhoto			nvarchar(200) null
+	sliderPhoto			nvarchar(200) null,
+	sliderOrder			int
 )
 
 GO
@@ -366,6 +367,16 @@ end
 GO
 ----------SuccessStories----------
 
+----------Slider----------
+create proc [dbo].[GetSlider]
+
+as
+begin
+select sliderName,sliderContent,sliderLink,sliderPhoto from Slider  order by sliderOrder
+end
+
+GO
+----------Slider----------
 Go
 
 

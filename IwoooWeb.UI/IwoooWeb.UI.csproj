@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\LogOn.aspx" />
     <Content Include="ajaxAspx\ajaxShow.aspx" />
     <Content Include="ajaxAspx\sendEmail.aspx" />
     <Content Include="BaiDuMap.html" />
@@ -185,6 +186,13 @@
     <Content Include="WebControl\Social.ascx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\LogOn.aspx.cs">
+      <DependentUpon>LogOn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LogOn.aspx.designer.cs">
+      <DependentUpon>LogOn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ajaxAspx\ajaxShow.aspx.cs">
       <DependentUpon>ajaxShow.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -256,7 +256,7 @@ namespace IwoooWeb.UI.ajaxAspx
                 if (Request.QueryString["n"] != null)
                 {
                     string n = Request.QueryString["n"];
-                    hint = "<div><button class='btn' onclick=\"selectIndex($(\'#hideIndex\').text(),1)\">返回</button></div>" + DAL.CompanyNewsDAL.GetNewContentByNewTittle(n);
+                    hint = "<div style='text-align:right'><button class='btn' onclick=\"selectIndex($(\'#hideIndex\').text(),1)\">返回</button></div><div style='width:800px;margin:0 auto;'>" + DAL.CompanyNewsDAL.GetNewContentByNewTittle(n) + "</div>";
                     if (hint == "")
                     {
                         Response.Write("页面出错，可能有非法值注入！");

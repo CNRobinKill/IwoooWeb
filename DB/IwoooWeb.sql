@@ -165,10 +165,17 @@ create proc [dbo].[GetCompanyNews]
 	@index		nvarchar(50)
 )
 as
+if @index!='All'
+begin
 declare		@showrow	int=10
 set @index=CONVERT(int,@index)
 begin
 select * from (select ROW_NUMBER()over(order by id desc) as row,newTittle,convert(nvarchar(12),newDate,120)as newDate from CompanyNews)n where n.row>@showrow*(@index-1) and n.row<@showrow*@index+1
+end
+end
+else
+begin
+select ROW_NUMBER()over(order by id desc) as row,newTittle,convert(nvarchar(12),newDate,120)as newDate from CompanyNews
 end
 
 GO

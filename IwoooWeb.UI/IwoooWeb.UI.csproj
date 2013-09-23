@@ -57,7 +57,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AddCompanyNews.aspx" />
+    <Content Include="Admin\HomePageSetting.aspx" />
     <Content Include="Admin\LogOn.aspx" />
+    <Content Include="Admin\NewsManagement.aspx" />
+    <Content Include="Admin\PostRecruitment.aspx" />
+    <Content Include="Admin\ProductManagement.aspx" />
+    <Content Include="Admin\SystemManagement.aspx" />
     <Content Include="ajaxAspx\ajaxShow.aspx" />
     <Content Include="ajaxAspx\sendEmail.aspx" />
     <Content Include="BaiDuMap.html" />
@@ -186,12 +192,61 @@
     <Content Include="WebControl\Social.ascx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddCompanyNews.aspx.cs">
+      <DependentUpon>AddCompanyNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddCompanyNews.aspx.designer.cs">
+      <DependentUpon>AddCompanyNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HomePageSetting.aspx.cs">
+      <DependentUpon>HomePageSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HomePageSetting.aspx.designer.cs">
+      <DependentUpon>HomePageSetting.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\LogOn.aspx.cs">
       <DependentUpon>LogOn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\LogOn.aspx.designer.cs">
       <DependentUpon>LogOn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewsManagement.aspx.cs">
+      <DependentUpon>NewsManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewsManagement.aspx.designer.cs">
+      <DependentUpon>NewsManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PostRecruitment.aspx.cs">
+      <DependentUpon>PostRecruitment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PostRecruitment.aspx.designer.cs">
+      <DependentUpon>PostRecruitment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductManagement.aspx.cs">
+      <DependentUpon>ProductManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductManagement.aspx.designer.cs">
+      <DependentUpon>ProductManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SystemManagement.aspx.cs">
+      <DependentUpon>SystemManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SystemManagement.aspx.designer.cs">
+      <DependentUpon>SystemManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="ajaxAspx\ajaxShow.aspx.cs">
       <DependentUpon>ajaxShow.aspx</DependentUpon>
@@ -285,6 +340,7 @@
     <Content Include="img\parallax\Thumbs.db" />
     <Content Include="img\photos\Thumbs.db" />
     <Content Include="img\Thumbs.db" />
+    <Content Include="Admin\Admin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

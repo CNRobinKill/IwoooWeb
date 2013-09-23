@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="IwoooWeb.UI.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <!-- Stylesheets -->
+  <link href="../style/bootstrap.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style/font-awesome.css"/>
+  <link href="../style/prettyPhoto.css" rel="stylesheet"/>
+  <!-- Parallax slider -->
+  <link rel="stylesheet" href="../style/slider.css"/>
+  <!-- Flexslider -->
+  <link rel="stylesheet" href="../style/flexslider.css"/>
+
+  <link href="../style/style.css" rel="stylesheet"/>
+
+  <!-- Colors - Orange, Purple, Light Blue (lblue), Red, Green and Blue -->
+  <link href="../style/green.css" rel="stylesheet"/>
+
+  <link href="../style/bootstrap-responsive.css" rel="stylesheet"/>
+  
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../img/favicon/favicon.png"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="price-a pricel center" style="width:200px;float:left">
+                <div class="phead-top b-green">
+                <!-- Title -->
+                <h4>设置与初始化</h4>
+                </div>
+                <div class="phead-bottom">
+                <!-- Price. Use the syntax correctly. -->
+                <p></p>
+                </div>
+                <div class="arrow-down"></div>
+            <div class="plist">
+                <!-- List -->
+                <ul>
+                    <li><a href="NewsManagement.aspx">新闻管理</a></li>
+                    <li><a href="ProductManagement.aspx">产品管理</a></li>
+                    <li><a href="PostRecruitment.aspx">发布招聘</a></li>
+                    <li><a href="HomePageSetting.aspx">首页轮番</a></li>
+                    <li><a href="SystemManagement.aspx">系统管理</a></li>
+                </ul>
+            </div>
+            <div class="pbutton button">  
+                <!-- button -->
+            </div>
+        </div>
+
+    <div style="float:left;width:800px">
+        <asp:ContentPlaceHolder ID="CPH" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

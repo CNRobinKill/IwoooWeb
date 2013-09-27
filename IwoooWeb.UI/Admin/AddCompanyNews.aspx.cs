@@ -11,7 +11,10 @@ namespace IwoooWeb.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["tittle"] != null)
+            {
+ 
+            }
         }
     }
 }

@@ -11,10 +11,35 @@ namespace IwoooWeb.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["tittle"] != null)
+            if (!IsPostBack)
             {
- 
+                if (Request.QueryString["id"] != null)
+                {
+                    btnUpdNews.Visible = true;
+                    btnAddNews.Visible = false;
+                    SetCompanyNews();
+                }
+                else
+                {
+                    btnUpdNews.Visible = false;
+                    btnAddNews.Visible = true;
+                }
             }
+        }
+
+        public void SetCompanyNews()
+        {
+            txtTittle.Text = DAL.CompanyNewsDAL.GetNewContentById(Request.QueryString["id"])[0].ToString();
+        }
+
+        protected void btnAddNews_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnUpdNews_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

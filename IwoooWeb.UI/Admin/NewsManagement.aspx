@@ -7,7 +7,7 @@
     </div>
     <hr />
     <div>
-        <asp:GridView ID="tbCompanyNews" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-hover table-bordered" OnSelectedIndexChanging="tbCompanyNews_SelectedIndexChanging" >
+        <asp:GridView ID="tbCompanyNews" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-hover table-bordered" OnSelectedIndexChanging="tbCompanyNews_SelectedIndexChanging" OnRowDeleting="tbCompanyNews_RowDeleting" >
             <Columns>
                 <asp:BoundField DataField="row" HeaderStyle-Width="50px"> </asp:BoundField>
                 <asp:BoundField DataField="newTittle"> </asp:BoundField>

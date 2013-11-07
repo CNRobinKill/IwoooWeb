@@ -20,7 +20,7 @@ namespace IwoooWeb.UI.Admin
         public void GvDatabind()
         {
             tbCompanyNews.DataSource = DAL.CompanyNewsDAL.GetCompanyNews("All");
-            tbCompanyNews.DataKeyNames = new string[] { "newTittle" };
+            tbCompanyNews.DataKeyNames = new string[] { "id" };
             tbCompanyNews.DataBind();
             if (tbCompanyNews.HeaderRow != null)
             {
@@ -32,12 +32,18 @@ namespace IwoooWeb.UI.Admin
 
         protected void tbCompanyNews_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-            Response.Redirect("AddCompanyNews.aspx?tittle=" + tbCompanyNews.Rows[e.NewSelectedIndex].Cells[1].Text, true);
+            Response.Redirect("AddCompanyNews.aspx?id=" + tbCompanyNews.DataKeys[e.NewSelectedIndex].Value.ToString(), true);
         }
 
         protected void btnAddNews_Click(object sender, EventArgs e)
         {
             Response.Redirect("AddCompanyNews.aspx", true);
+        }
+
+        protected void tbCompanyNews_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            DAL.CompanyNewsDAL.DelCompanyNewsById(tbCompanyNews.DataKeys[e.RowIndex].Value.ToString());
+            GvDatabind();
         }
 
 

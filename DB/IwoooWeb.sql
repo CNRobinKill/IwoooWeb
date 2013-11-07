@@ -169,13 +169,11 @@ if @index!='All'
 begin
 declare		@showrow	int=10
 set @index=CONVERT(int,@index)
-begin
 select * from (select ROW_NUMBER()over(order by id desc) as row,newTittle,convert(nvarchar(12),newDate,120)as newDate from CompanyNews)n where n.row>@showrow*(@index-1) and n.row<@showrow*@index+1
-end
 end
 else
 begin
-select ROW_NUMBER()over(order by id desc) as row,newTittle,convert(nvarchar(12),newDate,120)as newDate from CompanyNews
+select ROW_NUMBER()over(order by id desc) as row,id,newTittle,convert(nvarchar(12),newDate,120)as newDate from CompanyNews
 end
 
 GO
@@ -191,12 +189,35 @@ end
 
 GO
 
+create proc [dbo].[GetNewContentById]
+(
+	@id		nvarchar(100)
+)
+as
+begin
+select newTittle,newContent from CompanyNews where id=@id
+end
+
+GO
+
 create proc [dbo].[GetCompanyNewsIndex]
 
 as
 declare		@showrow	int=9
 begin
 select case when MAX(rNo)%@showrow=0 then MAX(rNo)/@showrow else MAX(rNo)/@showrow+1 end as rIndex from (select ROW_NUMBER()over(order by id) as rNo from CompanyNews)t
+end
+
+GO
+
+create proc [dbo].[DelCompanyNewsById]
+(
+	@id		nvarchar(100)
+)
+as
+
+begin
+delete CompanyNews where id=@id
 end
 ----------CompanyNews----------
 Go

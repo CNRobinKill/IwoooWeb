@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CPH" runat="server">
     <asp:Label  runat="server" Text="新闻标题："></asp:Label>
-    <asp:TextBox ID="txtTittle" runat="server" CssClass="input-medium" Width="300px"></asp:TextBox><br />
+    <asp:TextBox ID="txtTittle" runat="server" CssClass="input-medium" Width="500px"></asp:TextBox><asp:Button ID="btnAddNews" runat="server" Text="确认添加" CssClass="btn" Visible="false" OnClick="btnAddNews_Click" /><asp:Button ID="btnUpdNews" runat="server" Text="确认修改" CssClass="btn" Visible="false" OnClick="btnUpdNews_Click" /><br />
     <asp:Label  runat="server" Text="新闻内容："></asp:Label>
     <script type="text/plain" id="editor" name="myContent"></script>
     <script type="text/javascript">

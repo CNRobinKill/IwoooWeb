@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="AddCompanyNews.aspx.cs" Inherits="IwoooWeb.UI.Admin.AddCompanyNews" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="AddCompanyNews.aspx.cs" Inherits="IwoooWeb.UI.Admin.AddCompanyNews" ValidateRequest="false"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="/ueditor/themes/default/css/ueditor.css" rel="stylesheet" />
 
     <script type="text/javascript">
         window.UEDITOR_HOME_URL = "/ueditor/";
-    </script>    
+    </script>   
     <script src="/ueditor/ueditor.config.js"></script>
     <script src="/ueditor/ueditor.all.min.js"></script>
 </asp:Content>

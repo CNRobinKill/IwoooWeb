@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace IwoooWeb.UI.Admin
 {
@@ -29,17 +30,40 @@ namespace IwoooWeb.UI.Admin
 
         public void SetCompanyNews()
         {
-            txtTittle.Text = DAL.CompanyNewsDAL.GetNewContentById(Request.QueryString["id"])[0].ToString();
+            SqlDataReader dr=DAL.CompanyNewsDAL.GetNewContentById(Request.QueryString["id"]);
+            dr.Read();
+            string tittle = dr[0].ToString();
+            string content = dr[1].ToString();
+            dr.Close();
+            txtTittle.Text = tittle;
+            ClientScript.RegisterStartupScript(this.Page.GetType(), "myscript", "<script>window.editor.ready(function(){ window.editor.setContent('" + content + "');});</script>");
+            
         }
 
         protected void btnAddNews_Click(object sender, EventArgs e)
         {
-
+            string content = Request.Form["myContent"];
+            if (DAL.CompanyNewsDAL.AddCompanyNews(txtTittle.Text.Trim(), content, DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")) > 0)
+            {
+                this.Response.Write("<script language=javascript>alert('Successfully');window.window.location.href='NewsManagement.aspx';</script>");
+            }
+            else
+            {
+                this.Response.Write("<script language=javascript>alert('Failed');</script>");
+            }
         }
 
         protected void btnUpdNews_Click(object sender, EventArgs e)
         {
-
+            string content = Request.Form["myContent"];
+            if (DAL.CompanyNewsDAL.UpdCompanyNewsById(Request.QueryString["id"], txtTittle.Text.Trim(), content) > 0)
+            {
+                this.Response.Write("<script language=javascript>alert('Updated Successfully');window.window.location.href='NewsManagement.aspx';</script>");
+            }
+            else
+            {
+                this.Response.Write("<script language=javascript>alert('Updated Failed');</script>");
+            }
         }
     }
 }

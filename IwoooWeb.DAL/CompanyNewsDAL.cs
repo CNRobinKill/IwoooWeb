@@ -10,11 +10,24 @@ namespace IwoooWeb.DAL
 { 
     public class CompanyNewsDAL
     {
+        private const string SPAddCompanyNews = "AddCompanyNews";
         private const string SPGetCompanyNews = "GetCompanyNews";
         private const string SPGetNewContentByNewTittle = "GetNewContentByNewTittle";
         private const string SPGetNewContentById = "GetNewContentById";
         private const string SPGetCompanyNewsIndex = "GetCompanyNewsIndex";
         private const string SPDelCompanyNewsById = "DelCompanyNewsById";
+        private const string SPUpdCompanyNewsById = "UpdCompanyNewsById";
+
+
+        public static int AddCompanyNews(string newTittle, string newContent, string newDate)
+        {
+            SqlParameter[] paras ={
+                                    new SqlParameter("@newTittle",newTittle),
+                                    new SqlParameter("@newContent",newContent),
+                                    new SqlParameter("@newDate",newDate)
+                                };
+            return Common.SqlHelper.ExecuteNonQuery(SPAddCompanyNews, paras);
+        }
 
         public static DataSet GetCompanyNews(string index)
         {
@@ -51,6 +64,16 @@ namespace IwoooWeb.DAL
                                     new SqlParameter("@id",id)
                                 };
             return Common.SqlHelper.ExecuteNonQuery(SPDelCompanyNewsById, paras);
+        }
+
+        public static int UpdCompanyNewsById(string id, string newTittle, string newContent)
+        {
+            SqlParameter[] paras ={
+                                    new SqlParameter("@id",id),
+                                    new SqlParameter("@newTittle",newTittle),
+                                    new SqlParameter("@newContent",newContent)
+                                };
+            return Common.SqlHelper.ExecuteNonQuery(SPUpdCompanyNewsById, paras);
         }
     }
 }

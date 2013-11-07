@@ -96,6 +96,14 @@ create table Slider
 
 GO
 
+--create table UpLoad
+--(
+--	id					int not null primary key identity,
+--	upLoadPath			nvarchar(100)
+--)
+
+--GO
+
 -------InsertData--------
 
 declare @n int
@@ -160,6 +168,20 @@ end
 GO
 
 ----------CompanyNews----------
+create proc [dbo].[AddCompanyNews]
+(
+	@newTittle		nvarchar(100),
+	@newContent		nvarchar(100),
+	@newDate		nvarchar(100)
+)
+as
+
+begin
+insert CompanyNews(newTittle,newContent,newDate) values(@newTittle,@newContent,@newDate)
+end
+
+Go
+
 create proc [dbo].[GetCompanyNews]
 (
 	@index		nvarchar(50)
@@ -169,7 +191,7 @@ if @index!='All'
 begin
 declare		@showrow	int=10
 set @index=CONVERT(int,@index)
-select * from (select ROW_NUMBER()over(order by id desc) as row,newTittle,convert(nvarchar(12),newDate,120)as newDate from CompanyNews)n where n.row>@showrow*(@index-1) and n.row<@showrow*@index+1
+select * from (select ROW_NUMBER()over(order by id desc) as row,id,newTittle,convert(nvarchar(12),newDate,120)as newDate from CompanyNews)n where n.row>@showrow*(@index-1) and n.row<@showrow*@index+1
 end
 else
 begin
@@ -210,6 +232,20 @@ end
 
 GO
 
+create proc [dbo].[UpdCompanyNewsById]
+(
+	@id				nvarchar(100),
+	@newTittle		nvarchar(100),
+	@newContent		nvarchar(100)
+)
+as
+
+begin
+update CompanyNews set newTittle=@newTittle,newContent=@newContent where id=@id
+end
+
+Go
+
 create proc [dbo].[DelCompanyNewsById]
 (
 	@id		nvarchar(100)
@@ -219,6 +255,7 @@ as
 begin
 delete CompanyNews where id=@id
 end
+
 ----------CompanyNews----------
 Go
 ----------JoinUs----------
@@ -396,16 +433,55 @@ GO
 ----------SuccessStories----------
 
 ----------Slider----------
+create proc [dbo].[AddSlider]
+(
+	@sliderName				nvarchar(100),
+	@sliderContent			nvarchar(500),
+	@sliderLink				nvarchar(100),
+	@sliderPhoto			nvarchar(200)
+)
+as
+begin
+declare @sliderOrder int
+select @sliderOrder=count(id) from Slider
+insert Slider(sliderName,sliderContent,sliderLink,sliderPhoto,sliderOrder) values(@sliderName,@sliderContent,@sliderLink,@sliderPhoto,@sliderOrder)
+end
+
+Go
+
 create proc [dbo].[GetSlider]
 
 as
 begin
-select sliderName,sliderContent,sliderLink,sliderPhoto from Slider  order by sliderOrder
+select id,sliderName,sliderContent,sliderLink,sliderPhoto from Slider  order by sliderOrder
 end
 
-GO
-----------Slider----------
 Go
 
+create proc [dbo].[DelSliderById]
+(
+	@id		nvarchar(100)
+)
+as
+
+begin
+declare @sliderOrder int
+select @sliderOrder=sliderOrder from Slider where id=@id
+delete Slider where id=@id
+update Slider set sliderOrder=sliderOrder-1 where sliderOrder>@sliderOrder
+end
+----------Slider----------
+Go
+------------UpLoad----------
+--create proc [dbo].[AddSlider]
+--(
+--	@upLoadPath				nvarchar(100)
+--)
+--as
+--begin
+--insert UpLoad(upLoadPath) values(@upLoadPath)
+--end
+--Go
+------------UpLoad----------
 
 

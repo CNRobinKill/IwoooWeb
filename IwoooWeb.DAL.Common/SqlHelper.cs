@@ -53,23 +53,19 @@ namespace IwoooWeb.DAL.Common
         /// <returns></returns>
         public static SqlDataReader ExecuteReader(string spName, SqlParameter[] paras)
         {
-            using (SqlConnection con = DataProvider.GetConnection())
-            {
-                using (SqlCommand com = new SqlCommand())
+                SqlConnection con = DataProvider.GetConnection();
+                SqlCommand com = new SqlCommand();
+                com.Connection = con;
+                com.CommandText = spName;
+                com.CommandType = CommandType.StoredProcedure;
+                com.CommandTimeout = 300;
+                if (paras != null)
                 {
-                    com.Connection = con;
-                    com.CommandText = spName;
-                    com.CommandType = CommandType.StoredProcedure;
-                    com.CommandTimeout = 300;
-                    if (paras != null)
-                    {
-                        com.Parameters.AddRange(paras);
-                    }
-                    con.Open();
-                    SqlDataReader reader = com.ExecuteReader(CommandBehavior.CloseConnection);
-                    return reader;
+                    com.Parameters.AddRange(paras);
                 }
-            }          
+                con.Open();
+                SqlDataReader reader = com.ExecuteReader(CommandBehavior.CloseConnection);
+                return reader;        
         }
 
         /// <summary>

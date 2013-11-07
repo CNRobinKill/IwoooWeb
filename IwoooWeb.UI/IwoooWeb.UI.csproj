@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AddCompanyNews.aspx" />
+    <Content Include="Admin\AddSliders.aspx" />
     <Content Include="Admin\HomePageSetting.aspx" />
     <Content Include="Admin\LogOn.aspx" />
     <Content Include="Admin\NewsManagement.aspx" />
@@ -357,6 +358,13 @@
     <Compile Include="Admin\AddCompanyNews.aspx.designer.cs">
       <DependentUpon>AddCompanyNews.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AddSliders.aspx.cs">
+      <DependentUpon>AddSliders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddSliders.aspx.designer.cs">
+      <DependentUpon>AddSliders.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -520,6 +528,9 @@
       <Project>{4ec7af1a-bc59-4000-99cd-776cda86c3be}</Project>
       <Name>IwoooWeb.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="uploadimg\slider\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

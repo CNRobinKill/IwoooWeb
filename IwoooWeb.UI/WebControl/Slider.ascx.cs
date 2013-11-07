@@ -16,10 +16,10 @@ namespace IwoooWeb.UI.WebControl
             string html = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                string sliderName = dt.Rows[i][0].ToString();
-                string sliderContent = dt.Rows[i][1].ToString();
-                string sliderLink = dt.Rows[i][2].ToString();
-                string sliderPhoto = dt.Rows[i][3].ToString();
+                string sliderName = dt.Rows[i][1].ToString();
+                string sliderContent = dt.Rows[i][2].ToString();
+                string sliderLink = dt.Rows[i][3].ToString();
+                string sliderPhoto = dt.Rows[i][4].ToString();
                 if (i == 0)
                 {
                     html += "<div class='da-slide da-slide-fromright da-slide-current'><h2><span>" + sliderName + "</span></h2> <p>" + sliderContent + "</p><a href=\'" + sliderLink + "\' class='da-link'>Read more</a><div class='da-img'><img src=\'" + sliderPhoto + "\' alt=\'" + sliderName + "\'></div></div>";

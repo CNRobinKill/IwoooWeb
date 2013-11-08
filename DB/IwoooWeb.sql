@@ -96,6 +96,15 @@ create table Slider
 
 GO
 
+create table SystemUser
+(
+	id					int not null primary key identity,
+	UserName			nvarchar(50) null,
+	UserPassword		nvarchar(50) null
+)
+
+GO
+
 --create table UpLoad
 --(
 --	id					int not null primary key identity,
@@ -171,7 +180,7 @@ GO
 create proc [dbo].[AddCompanyNews]
 (
 	@newTittle		nvarchar(100),
-	@newContent		nvarchar(100),
+	@newContent		text,
 	@newDate		nvarchar(100)
 )
 as
@@ -225,7 +234,7 @@ GO
 create proc [dbo].[GetCompanyNewsIndex]
 
 as
-declare		@showrow	int=9
+declare		@showrow	int=10
 begin
 select case when MAX(rNo)%@showrow=0 then MAX(rNo)/@showrow else MAX(rNo)/@showrow+1 end as rIndex from (select ROW_NUMBER()over(order by id) as rNo from CompanyNews)t
 end
@@ -236,7 +245,7 @@ create proc [dbo].[UpdCompanyNewsById]
 (
 	@id				nvarchar(100),
 	@newTittle		nvarchar(100),
-	@newContent		nvarchar(100)
+	@newContent		text
 )
 as
 
@@ -253,17 +262,30 @@ create proc [dbo].[DelCompanyNewsById]
 as
 
 begin
-delete CompanyNews where id=@id
+delete from CompanyNews where id=@id
 end
 
 ----------CompanyNews----------
 Go
 ----------JoinUs----------
+create proc [dbo].[AddJoinUs]
+(
+	@position		nvarchar(100),
+	@positionContent		text
+)
+as
+
+begin
+if not exists (select position from JoinUs where position=@position) insert into JoinUs(position,positionContent) values(@position,@positionContent)
+end
+
+Go
+
 create proc [dbo].[GetJoinUs]
 
 as
 begin
-select position from JoinUs order by position
+select id,position from JoinUs order by position
 end
 
 GO
@@ -278,7 +300,33 @@ select positionContent from JoinUs where position=@position
 end
 
 GO
+
+create proc [dbo].[UpdJoinUsById]
+(
+	@id						nvarchar(100),
+	@position				nvarchar(100),
+	@positionContent		text
+)
+as
+
+begin
+update JoinUs set position=@position,positionContent=@positionContent where id=@id
+end
+
+Go
+
+create proc [dbo].[DelJoinUsById]
+(
+	@id		nvarchar(100)
+)
+as
+
+begin
+delete from JoinUs where id=@id
+end
 ----------JoinUs----------
+
+Go
 
 ----------SoftWare----------
 
@@ -422,15 +470,67 @@ Go
 ----------Services----------
 
 ----------SuccessStories----------
+create proc [dbo].[AddSuccessStories]
+(
+	@successStoriesName			nvarchar(100),
+	@successStoriesContent		text,
+	@successStoriesYear			nvarchar(100)
+)
+as
+
+begin
+if not exists (select successStoriesName from SuccessStories where successStoriesName=@successStoriesName) insert into SuccessStories(successStoriesName,successStoriesContent,successStoriesYear) values(@successStoriesName,@successStoriesContent,@successStoriesYear)
+end
+
+Go
+
 create proc [dbo].[GetSuccessStories]
 
 as
 begin
-select successStoriesName,successStoriesContent,successStoriesYear from SuccessStories  order by CONVERT(int,successStoriesYear)
+select id,successStoriesName,successStoriesContent,successStoriesYear from SuccessStories  order by CONVERT(int,successStoriesYear)
 end
 
 GO
+
+create proc [dbo].[GetSuccessStoriesById]
+(
+	@id		nvarchar(100)
+)
+as
+begin
+select successStoriesName,successStoriesContent,successStoriesYear from SuccessStories where id=@id
+end
+
+GO
+
+create proc [dbo].[UpdSuccessStoriesById]
+(
+	@id							nvarchar(100),
+	@successStoriesName			nvarchar(100),
+	@successStoriesContent		text,
+	@successStoriesYear			nvarchar(100)
+)
+as
+
+begin
+update SuccessStories set successStoriesName=@successStoriesName,successStoriesContent=@successStoriesContent,successStoriesYear=@successStoriesYear where id=@id
+end
+
+Go
+
+create proc [dbo].[DelSuccessStoriesById]
+(
+	@id		nvarchar(100)
+)
+as
+
+begin
+delete from SuccessStories where id=@id
+end
 ----------SuccessStories----------
+
+Go
 
 ----------Slider----------
 create proc [dbo].[AddSlider]
@@ -471,7 +571,37 @@ delete Slider where id=@id
 update Slider set sliderOrder=sliderOrder-1 where sliderOrder>@sliderOrder
 end
 ----------Slider----------
+
 Go
+
+----------SystemUser----------
+if not exists(select UserName from SystemUser where UserName='SystemIwooo') insert into SystemUser(UserName,UserPassword)values('SystemIwooo','SystemIwooo')
+GO
+
+create proc [dbo].[GetSystemUser]
+
+as
+begin
+select UserName,UserPassword from SystemUser where UserName='SystemIwooo'
+end
+
+GO
+
+create proc [dbo].[UpdSystemUser]
+(
+	@userName				nvarchar(100),
+	@userPassword			nvarchar(100)
+)
+as
+
+begin
+update SystemUser set UserName=@userName,UserPassword=@userPassword
+end
+
+Go
+
+----------SystemUser----------
+
 ------------UpLoad----------
 --create proc [dbo].[AddSlider]
 --(

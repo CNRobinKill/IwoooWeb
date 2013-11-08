@@ -57,13 +57,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AddPostRecruitment.aspx" />
     <Content Include="Admin\AddCompanyNews.aspx" />
     <Content Include="Admin\AddSliders.aspx" />
+    <Content Include="Admin\AddSuccessStories.aspx" />
     <Content Include="Admin\HomePageSetting.aspx" />
     <Content Include="Admin\LogOn.aspx" />
     <Content Include="Admin\NewsManagement.aspx" />
     <Content Include="Admin\PostRecruitment.aspx" />
     <Content Include="Admin\ProductManagement.aspx" />
+    <Content Include="Admin\SuccessStoriesManagement.aspx" />
     <Content Include="Admin\SystemManagement.aspx" />
     <Content Include="ajaxAspx\ajaxShow.aspx" />
     <Content Include="ajaxAspx\sendEmail.aspx" />
@@ -351,6 +354,13 @@
     <Content Include="WebControl\Social.ascx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddPostRecruitment.aspx.cs">
+      <DependentUpon>AddPostRecruitment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddPostRecruitment.aspx.designer.cs">
+      <DependentUpon>AddPostRecruitment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AddCompanyNews.aspx.cs">
       <DependentUpon>AddCompanyNews.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -364,6 +374,13 @@
     </Compile>
     <Compile Include="Admin\AddSliders.aspx.designer.cs">
       <DependentUpon>AddSliders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddSuccessStories.aspx.cs">
+      <DependentUpon>AddSuccessStories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddSuccessStories.aspx.designer.cs">
+      <DependentUpon>AddSuccessStories.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
@@ -406,6 +423,13 @@
     </Compile>
     <Compile Include="Admin\ProductManagement.aspx.designer.cs">
       <DependentUpon>ProductManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SuccessStoriesManagement.aspx.cs">
+      <DependentUpon>SuccessStoriesManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SuccessStoriesManagement.aspx.designer.cs">
+      <DependentUpon>SuccessStoriesManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\SystemManagement.aspx.cs">
       <DependentUpon>SystemManagement.aspx</DependentUpon>

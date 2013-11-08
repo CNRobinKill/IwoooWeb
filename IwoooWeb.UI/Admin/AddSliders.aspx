@@ -2,9 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CPH" runat="server">
-    <br />
-    <br />
-    <br />
+    <div style="text-align:right">
+    <asp:Button ID="btnAddNews" runat="server" Text="确认添加" CssClass="btn" OnClick="btnAddNews_Click"  />
+    </div>
+    <hr />
     <table style="width: 100%;">
         <tr>
             <td><asp:Label  runat="server" Text="主题："></asp:Label></td>
@@ -22,11 +23,5 @@
             <td><asp:Label  runat="server" Text="展示图片："></asp:Label><br /></td>
             <td><asp:FileUpload ID="fuPic"   runat="server" /></td>
         </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
     </table>
-    
-    <asp:Button ID="btnAddNews" runat="server" Text="确认添加" CssClass="btn" OnClick="btnAddNews_Click"  />
 </asp:Content>

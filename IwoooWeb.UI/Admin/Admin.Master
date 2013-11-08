@@ -51,6 +51,7 @@
                     <li><a href="NewsManagement.aspx">新闻管理</a></li>
                     <li><a href="ProductManagement.aspx">产品管理</a></li>
                     <li><a href="PostRecruitment.aspx">发布招聘</a></li>
+                    <li><a href="SuccessStoriesManagement.aspx">案例管理</a></li>
                     <li><a href="HomePageSetting.aspx">首页轮番</a></li>
                     <li><a href="SystemManagement.aspx">系统管理</a></li>
                 </ul>
@@ -60,7 +61,7 @@
             </div>
         </div>
 
-    <div style="float:left;width:800px">
+    <div style="float:left;width:940px">
         <asp:ContentPlaceHolder ID="CPH" runat="server">
         
         </asp:ContentPlaceHolder>

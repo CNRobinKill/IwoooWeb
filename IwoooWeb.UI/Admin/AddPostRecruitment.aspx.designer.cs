@@ -10,51 +10,33 @@
 namespace IwoooWeb.UI.Admin {
     
     
-    public partial class AddSliders {
+    public partial class AddPostRecruitment {
         
         /// <summary>
-        /// btnAddNews 控件。
+        /// btnAddPosition 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddNews;
+        protected global::System.Web.UI.WebControls.Button btnAddPosition;
         
         /// <summary>
-        /// txtSliderName 控件。
+        /// btnUpdPosition 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSliderName;
+        protected global::System.Web.UI.WebControls.Button btnUpdPosition;
         
         /// <summary>
-        /// txtSliderContent 控件。
+        /// txtPosition 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSliderContent;
-        
-        /// <summary>
-        /// txtSliderLink 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSliderLink;
-        
-        /// <summary>
-        /// fuPic 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuPic;
+        protected global::System.Web.UI.WebControls.TextBox txtPosition;
     }
 }

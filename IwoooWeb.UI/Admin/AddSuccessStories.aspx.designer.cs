@@ -10,51 +10,51 @@
 namespace IwoooWeb.UI.Admin {
     
     
-    public partial class AddSliders {
+    public partial class AddSuccessStories {
         
         /// <summary>
-        /// btnAddNews 控件。
+        /// btnAddSuccessStories 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddNews;
+        protected global::System.Web.UI.WebControls.Button btnAddSuccessStories;
         
         /// <summary>
-        /// txtSliderName 控件。
+        /// btnUpdSuccessStories 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSliderName;
+        protected global::System.Web.UI.WebControls.Button btnUpdSuccessStories;
         
         /// <summary>
-        /// txtSliderContent 控件。
+        /// txtSuccessStoriesName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSliderContent;
+        protected global::System.Web.UI.WebControls.TextBox txtSuccessStoriesName;
         
         /// <summary>
-        /// txtSliderLink 控件。
+        /// txtSuccessStoriesYear 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSliderLink;
+        protected global::System.Web.UI.WebControls.TextBox txtSuccessStoriesYear;
         
         /// <summary>
-        /// fuPic 控件。
+        /// Label3 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuPic;
+        protected global::System.Web.UI.WebControls.Label Label3;
     }
 }

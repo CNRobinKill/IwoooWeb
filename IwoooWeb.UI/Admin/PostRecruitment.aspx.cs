@@ -11,7 +11,37 @@ namespace IwoooWeb.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                GvDatabind();
+            }
+        }
 
+        public void GvDatabind()
+        {
+            tbJoinUs.DataSource = DAL.JoinUsDAL.GetJoinUs();
+            tbJoinUs.DataKeyNames = new string[] { "id" };
+            tbJoinUs.DataBind();
+            if (tbJoinUs.HeaderRow != null)
+            {
+                tbJoinUs.HeaderRow.Cells[0].Text = "招聘职位";
+            }
+        }
+
+        protected void tbJoinUs_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            Response.Redirect("AddPostRecruitment.aspx?id=" + tbJoinUs.DataKeys[e.NewSelectedIndex].Value.ToString() + "&position=" + tbJoinUs.Rows[e.NewSelectedIndex].Cells[0].Text.Trim(), true);
+        }
+
+        protected void tbJoinUs_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            DAL.JoinUsDAL.DelJoinUsById(tbJoinUs.DataKeys[e.RowIndex].Value.ToString());
+            GvDatabind();
+        }
+
+        protected void btnAddPosition_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddPostRecruitment.aspx", true);
         }
     }
 }

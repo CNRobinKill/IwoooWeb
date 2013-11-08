@@ -76,7 +76,7 @@ namespace IwoooWeb.UI.ajaxAspx
                         DataTable dt = DAL.JoinUsDAL.GetJoinUs().Tables[0];
                         for(int i=0;i<dt.Rows.Count;i++)
                         {
-                            string text = dt.Rows[i][0].ToString();
+                            string text = dt.Rows[i][1].ToString();
                             liText += "<li style='cursor:pointer' onclick=\"listLiComment(\'" + text + "\',\'JoinUs\'" + ")\">" + text + "</li>";
                         }
                         string li = liText;

@@ -40,9 +40,15 @@ namespace IwoooWeb.UI.Admin
                     {
                         string newName = Guid.NewGuid() + ext; //重命名，防止重名文件
                         fuPic.SaveAs(path + newName);        //保存到服务器上了。
-                        DAL.SliderDAL.AddSlider(txtSliderName.Text.Trim(), txtSliderContent.Text.Trim(), txtSliderLink.Text.Trim(), newName);
+                        if (DAL.SliderDAL.AddSlider(txtSliderName.Text.Trim(), txtSliderContent.Text.Trim(), txtSliderLink.Text.Trim(), newName) > 0)
+                        {
+                            this.Response.Write("<script language=javascript>alert('添加成功！');window.window.location.href='HomePageSetting.aspx';</script>");
+                        }
                     }
                 }
+            }
+            else {
+                this.Response.Write("<script language=javascript>alert('请输入完整数据！');</script>");
             }
         }
 

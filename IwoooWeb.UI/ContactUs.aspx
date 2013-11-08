@@ -51,7 +51,7 @@
         <ucNavigationBar:NavigationBar ID="NavigationBar" runat="server" />
             <div class="contain">
             <div class="container">
-
+<hr>
             <h2>Contact Us</h2>
             <p class="big grey">欢迎亲临本公司作客</p>
             <hr>

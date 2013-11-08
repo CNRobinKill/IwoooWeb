@@ -22,11 +22,11 @@ namespace IwoooWeb.UI.WebControl
                 string sliderPhoto = dt.Rows[i][4].ToString();
                 if (i == 0)
                 {
-                    html += "<div class='da-slide da-slide-fromright da-slide-current'><h2><span>" + sliderName + "</span></h2> <p>" + sliderContent + "</p><a href=\'" + sliderLink + "\' class='da-link'>Read more</a><div class='da-img'><img src=\'" + sliderPhoto + "\' alt=\'" + sliderName + "\'></div></div>";
+                    html += "<div class='da-slide da-slide-fromright da-slide-current'><h2><span>" + sliderName + "</span></h2> <p>" + sliderContent + "</p><a href=\'" + sliderLink + "\' class='da-link'>Read more</a><div class='da-img'><img src=\'/uploadimg/slider/" + sliderPhoto + "\' alt=\'" + sliderName + "\'></div></div>";
                 }
                 if (i > 0)
                 {
-                    html += "<div class='da-slide da-slide-toleft'><h2><span>" + sliderName + "</span></h2> <p>" + sliderContent + "</p><a href=\'" + sliderLink + "\' class='da-link'>Read more</a><div class='da-img'><img src=\'" + sliderPhoto + "\' alt=\'" + sliderName + "\'></div></div>";
+                    html += "<div class='da-slide da-slide-toleft'><h2><span>" + sliderName + "</span></h2> <p>" + sliderContent + "</p><a href=\'" + sliderLink + "\' class='da-link'>Read more</a><div class='da-img'><img src=\'/uploadimg/slider/" + sliderPhoto + "\' alt=\'" + sliderName + "\'></div></div>";
                 }
             }
             html += "<nav class='da-arrows'><span class='da-arrows-prev'></span><span class='da-arrows-next'></span></nav><nav class='da-dots'><span class='da-dots-current'></span><span class=''></span><span class=''></span><span class=''></span></nav>";

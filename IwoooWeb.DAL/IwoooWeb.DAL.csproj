@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicesDAL.cs" />
     <Compile Include="SoftWareDAL.cs" />
+    <Compile Include="SystemUserDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IwoooWeb.DAL.Common\IwoooWeb.DAL.Common.csproj">

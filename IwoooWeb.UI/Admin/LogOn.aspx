@@ -36,7 +36,7 @@
         <div style="text-align:center;">
         用户名：<asp:TextBox ID="txtUserName" runat="server" CssClass="input-medium" Width="200"></asp:TextBox>
         密&nbsp;&nbsp;&nbsp;&nbsp;码：<asp:TextBox ID="txtPassword" runat="server" CssClass="input-medium"  Width="200" TextMode="Password"></asp:TextBox>
-        <asp:Button ID="btnLogOn" runat="server" Text="登录" CssClass="btn" />
+        <asp:Button ID="btnLogOn" runat="server" Text="登录" CssClass="btn" OnClick="btnLogOn_Click" />
         </div>
     </div>
     </form>

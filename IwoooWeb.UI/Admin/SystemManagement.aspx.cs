@@ -12,9 +12,16 @@ namespace IwoooWeb.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["userName"].ToString() == "SystemIwooo")
             {
-                lblSystemID.Text = SetSystemUser(0);
+                if (!IsPostBack)
+                {
+                    lblSystemID.Text = SetSystemUser(0);
+                }
+            }
+            else
+            {
+                Response.Redirect("LogOn.aspx", true);
             }
         }
 

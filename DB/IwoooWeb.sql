@@ -99,8 +99,8 @@ GO
 create table SystemUser
 (
 	id					int not null primary key identity,
-	UserName			nvarchar(50) null,
-	UserPassword		nvarchar(50) null
+	UserName			nvarchar(100) null,
+	UserPassword		nvarchar(100) null
 )
 
 GO
@@ -193,7 +193,7 @@ Go
 
 create proc [dbo].[GetCompanyNews]
 (
-	@index		nvarchar(50)
+	@index		nvarchar(100)
 )
 as
 if @index!='All'
@@ -329,6 +329,19 @@ end
 Go
 
 ----------SoftWare----------
+create proc [dbo].[AddSoftWare]
+(
+	@softWareType		nvarchar(100),
+	@softWareName		nvarchar(100),
+	@softWarePhoto		nvarchar(100),
+	@softWareContent	text
+)
+as
+begin
+insert into SoftWare(softWareType,softWareName,softWarePhoto,softWareContent) values (@softWareType,@softWareName,@softWarePhoto,@softWareContent)
+end
+
+Go
 
 create proc [dbo].[GetSoftWareType]
 
@@ -341,8 +354,8 @@ GO
 
 create proc [dbo].[GetSoftWare]
 (
-	@softWareType	nvarchar(50),
-	@index			nvarchar(50)
+	@softWareType	nvarchar(100),
+	@index			nvarchar(100)
 )
 as
 declare		@showrow	int=9
@@ -365,17 +378,78 @@ end
 GO
 
 create proc [dbo].[GetSoftWareIndex]
-
+(
+	@softWareType	nvarchar(100)
+)
 as
 declare		@showrow	int=9
 begin
-select case when MAX(rNo)%@showrow=0 then MAX(rNo)/@showrow else MAX(rNo)/@showrow+1 end as rIndex from (select ROW_NUMBER()over(order by id) as rNo from SoftWare)t
+select case when MAX(rNo)%@showrow=0 then MAX(rNo)/@showrow else MAX(rNo)/@showrow+1 end as rIndex from (select ROW_NUMBER()over(order by id) as rNo from SoftWare where softWareType=@softWareType)t
 end
 
 Go
+
+create proc [dbo].[GetSoftWareById]
+(
+	@id	nvarchar(100)
+)
+as
+begin
+select softWareType,softWareName,softWarePhoto,softWareContent from SoftWare where id=@id
+end
+
+Go
+
+create proc [dbo].[GetAllSoftWare]
+
+as
+begin
+select id,softWareType,softWareName,softWarePhoto,softWareContent from SoftWare order by softWareType
+end
+
+Go
+
+create proc [dbo].[UpdSoftWare]
+(
+	@id					nvarchar(100),
+	@softWareType		nvarchar(100),
+	@softWareName		nvarchar(100),
+	@softWareContent	text
+)
+as
+begin
+update SoftWare set softWareType=@softWareType,softWareName=@softWareName,softWareContent=@softWareContent where id=@id
+end
+
+Go
+
+create proc [dbo].[DelSoftWareById]
+(
+	@id		nvarchar(100)
+)
+as
+
+begin
+delete from SoftWare where id=@id
+end
 ----------SoftWare----------
 
+GO
+
 ----------HardWare----------
+create proc [dbo].[AddHardWare]
+(
+	@hardWareType		nvarchar(100),
+	@hardWareName		nvarchar(100),
+	@hardWarePhoto		nvarchar(100),
+	@hardWareContent	text
+)
+as
+begin
+insert into HardWare(hardWareType,hardWareName,hardWarePhoto,hardWareContent) values (@hardWareType,@hardWareName,@hardWarePhoto,@hardWareContent)
+end
+
+Go
 
 create proc [dbo].[GetHardWareType]
 
@@ -388,8 +462,8 @@ GO
 
 create proc [dbo].[GetHardWare]
 (
-	@hardWareType	nvarchar(50),
-	@index			nvarchar(50)
+	@hardWareType	nvarchar(100),
+	@index			nvarchar(100)
 )
 as
 declare		@showrow	int=9
@@ -412,17 +486,78 @@ end
 GO
 
 create proc [dbo].[GetHardWareIndex]
-
+(
+	@hardWareType	nvarchar(100)
+)
 as
 declare		@showrow	int=9
 begin
-select case when MAX(rNo)%@showrow=0 then MAX(rNo)/@showrow else MAX(rNo)/@showrow+1 end as rIndex from (select ROW_NUMBER()over(order by id) as rNo from HardWare)t
+select case when MAX(rNo)%@showrow=0 then MAX(rNo)/@showrow else MAX(rNo)/@showrow+1 end as rIndex from (select ROW_NUMBER()over(order by id) as rNo from HardWare where hardWareType=@hardWareType)t
 end
 
 Go
+
+create proc [dbo].[GetHardWareById]
+(
+	@id	nvarchar(100)
+)
+as
+begin
+select hardWareType,hardWareName,hardWarePhoto,hardWareContent from HardWare where id=@id
+end
+
+Go
+
+create proc [dbo].[GetAllHardWare]
+
+as
+begin
+select id,hardWareType,hardWareName,hardWarePhoto,hardWareContent from HardWare order by hardWareType
+end
+
+Go
+
+create proc [dbo].[UpdHardWare]
+(
+	@id					nvarchar(100),
+	@hardWareType		nvarchar(100),
+	@hardWareName		nvarchar(100),
+	@hardWareContent	text
+)
+as
+begin
+update HardWare set hardWareType=@hardWareType,hardWareName=@hardWareName,hardWareContent=@hardWareContent where id=@id
+end
+
+Go
+
+create proc [dbo].[DelHardWareById]
+(
+	@id		nvarchar(100)
+)
+as
+
+begin
+delete from HardWare where id=@id
+end
 ----------HardWare----------
 
+Go
+
 ----------Services----------
+create proc [dbo].[AddServices]
+(
+	@servicesType		nvarchar(100),
+	@servicesName		nvarchar(100),
+	@servicesPhoto		nvarchar(100),
+	@servicesContent	text
+)
+as
+begin
+insert into [Services](servicesType,servicesName,servicesPhoto,servicesContent) values (@servicesType,@servicesName,@servicesPhoto,@servicesContent)
+end
+
+Go
 
 create proc [dbo].[GetServicesType]
 
@@ -435,8 +570,8 @@ GO
 
 create proc [dbo].[GetServices]
 (
-	@servicesType	nvarchar(50),
-	@index			nvarchar(50)
+	@servicesType	nvarchar(100),
+	@index			nvarchar(100)
 )
 as
 declare		@showrow	int=9
@@ -459,15 +594,63 @@ end
 GO
 
 create proc [dbo].[GetServicesIndex]
-
+(
+	@servicesType	nvarchar(100)
+)
 as
 declare		@showrow	int=9
 begin
-select case when MAX(rNo)%@showrow=0 then MAX(rNo)/@showrow else MAX(rNo)/@showrow+1 end as rIndex from (select ROW_NUMBER()over(order by id) as rNo from [Services])t
+select case when MAX(rNo)%@showrow=0 then MAX(rNo)/@showrow else MAX(rNo)/@showrow+1 end as rIndex from (select ROW_NUMBER()over(order by id) as rNo from [Services] where servicesType=@servicesType)t
 end
 
 Go
+
+create proc [dbo].[GetServicesById]
+(
+	@id	nvarchar(100)
+)
+as
+begin
+select servicesType,servicesName,servicesPhoto,servicesContent from [Services] where id=@id
+end
+
+Go
+
+create proc [dbo].[GetAllServices]
+
+as
+begin
+select id,servicesType,servicesName,servicesPhoto,servicesContent from [Services] order by servicesType
+end
+
+Go
+
+create proc [dbo].[UpdServices]
+(
+	@id					nvarchar(100),
+	@servicesType		nvarchar(100),
+	@servicesName		nvarchar(100),
+	@servicesContent	text
+)
+as
+begin
+update [Services] set servicesType=@servicesType,servicesName=@servicesName,servicesContent=@servicesContent where id=@id
+end
+
+Go
+
+create proc [dbo].[DelServicesById]
+(
+	@id		nvarchar(100)
+)
+as
+
+begin
+delete from [Services] where id=@id
+end
 ----------Services----------
+
+Go
 
 ----------SuccessStories----------
 create proc [dbo].[AddSuccessStories]

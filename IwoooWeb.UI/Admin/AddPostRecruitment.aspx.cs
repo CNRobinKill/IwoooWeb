@@ -12,19 +12,26 @@ namespace IwoooWeb.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["userName"] != null && Session["userName"].ToString() == "SystemIwooo")
             {
-                if (Request.QueryString["id"] != null)
+                if (!IsPostBack)
                 {
-                    btnUpdPosition.Visible = true;
-                    btnAddPosition.Visible = false;
-                    SetPosition();
+                    if (Request.QueryString["id"] != null)
+                    {
+                        btnUpdPosition.Visible = true;
+                        btnAddPosition.Visible = false;
+                        SetPosition();
+                    }
+                    else
+                    {
+                        btnUpdPosition.Visible = false;
+                        btnAddPosition.Visible = true;
+                    }
                 }
-                else
-                {
-                    btnUpdPosition.Visible = false;
-                    btnAddPosition.Visible = true;
-                }
+            }
+            else
+            {
+                Response.Redirect("LogOn.aspx", true);
             }
         }
 

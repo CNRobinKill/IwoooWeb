@@ -11,9 +11,16 @@ namespace IwoooWeb.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["userName"].ToString() == "SystemIwooo")
             {
-                GvDatabind();
+                if (!IsPostBack)
+                {
+                    GvDatabind();
+                }
+            }
+            else
+            {
+                Response.Redirect("LogOn.aspx", true);
             }
         }
 

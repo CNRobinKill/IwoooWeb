@@ -12,19 +12,26 @@ namespace IwoooWeb.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["userName"].ToString() == "SystemIwooo")
             {
-                if (Request.QueryString["id"] != null)
+                if (!IsPostBack)
                 {
-                    btnUpdSuccessStories.Visible = true;
-                    btnAddSuccessStories.Visible = false;
-                    SetSuccessStories();
+                    if (Request.QueryString["id"] != null)
+                    {
+                        btnUpdSuccessStories.Visible = true;
+                        btnAddSuccessStories.Visible = false;
+                        SetSuccessStories();
+                    }
+                    else
+                    {
+                        btnUpdSuccessStories.Visible = false;
+                        btnAddSuccessStories.Visible = true;
+                    }
                 }
-                else
-                {
-                    btnUpdSuccessStories.Visible = false;
-                    btnAddSuccessStories.Visible = true;
-                }
+            }
+            else
+            {
+                Response.Redirect("LogOn.aspx", true);
             }
         }
 

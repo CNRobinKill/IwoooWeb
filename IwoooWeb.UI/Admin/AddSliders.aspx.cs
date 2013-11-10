@@ -12,7 +12,12 @@ namespace IwoooWeb.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["userName"].ToString() == "SystemIwooo")
+            { }
+            else
+            {
+                Response.Redirect("LogOn.aspx", true);
+            }
         }
 
         protected void btnAddNews_Click(object sender, EventArgs e)

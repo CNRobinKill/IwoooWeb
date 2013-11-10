@@ -154,7 +154,7 @@ namespace IwoooWeb.UI.ajaxAspx
                             int n = (i / 3) * 220;
                             string img = dt.Rows[i][2].ToString();
                             string imgtxt = dt.Rows[i][1].ToString();
-                            html += "<div class='element one three isotope-item' onclick=\"showProductComment(\'" + imgtxt + "\','SoftWare')\" style=' cursor:pointer; position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(" + m + "px, " + n + "px, 0px);'><img src='" + img + "' alt=''/><div class='pcap'><h4>" + imgtxt + "</h4> </div></div>";
+                            html += "<div class='element one three isotope-item' onclick=\"showProductComment(\'" + imgtxt + "\','SoftWare')\" style=' cursor:pointer; position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(" + m + "px, " + n + "px, 0px);'><img src='../uploadimg/product/" + img + "' alt=''/><div class='pcap'><h4>" + imgtxt + "</h4> </div></div>";
                             m += 220;
                             if (m > 440)
                             {
@@ -173,7 +173,7 @@ namespace IwoooWeb.UI.ajaxAspx
                             int n = (i / 3) * 220;
                             string img = dt.Rows[i][2].ToString();
                             string imgtxt = dt.Rows[i][1].ToString();
-                            html += "<div class='element one three isotope-item' onclick=\"showProductComment(\'" + imgtxt + "\','HardWare')\" style=' cursor:pointer; position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(" + m + "px, " + n + "px, 0px);'><img src='" + img + "' alt=''/><div class='pcap'><h4>" + imgtxt + "</h4> </div></div>";
+                            html += "<div class='element one three isotope-item' onclick=\"showProductComment(\'" + imgtxt + "\','HardWare')\" style=' cursor:pointer; position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(" + m + "px, " + n + "px, 0px);'><img src='../uploadimg/product/" + img + "' alt=''/><div class='pcap'><h4>" + imgtxt + "</h4> </div></div>";
                             m += 220;
                             if (m > 440)
                             {
@@ -192,7 +192,7 @@ namespace IwoooWeb.UI.ajaxAspx
                             int n = (i / 3) * 220;
                             string img = dt.Rows[i][2].ToString();
                             string imgtxt = dt.Rows[i][1].ToString();
-                            html += "<div class='element one three isotope-item' onclick=\"showProductComment(\'" + imgtxt + "\','Services')\" style=' cursor:pointer; position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(" + m + "px, " + n + "px, 0px);'><img src='" + img + "' alt=''/><div class='pcap'><h4>" + imgtxt + "</h4> </div></div>";
+                            html += "<div class='element one three isotope-item' onclick=\"showProductComment(\'" + imgtxt + "\','Services')\" style=' cursor:pointer; position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(" + m + "px, " + n + "px, 0px);'><img src='../uploadimg/product/" + img + "' alt=''/><div class='pcap'><h4>" + imgtxt + "</h4> </div></div>";
                             m += 220;
                             if (m > 440)
                             {
@@ -206,15 +206,15 @@ namespace IwoooWeb.UI.ajaxAspx
                         int index = 0;
                         if (l == "SoftWare")
                         {
-                             index = DAL.SoftWareDAL.GetSoftWareIndex();
+                             index = DAL.SoftWareDAL.GetSoftWareIndex(r);
                         }
                         if (l == "HardWare")
                         {
-                            index = DAL.HardWareDAL.GetHardWareIndex();
+                            index = DAL.HardWareDAL.GetHardWareIndex(r);
                         }
                         if (l == "Services")
                         {
-                            index = DAL.ServicesDAL.GetServicesIndex();
+                            index = DAL.ServicesDAL.GetServicesIndex(r);
                         }
                         string http2 = "<span class='current' style='cursor:pointer' onclick=\"selectIndex($(this).text(),0,\'" + l + "\')\">1</span>";
                         if (index <= 10)
@@ -397,7 +397,7 @@ namespace IwoooWeb.UI.ajaxAspx
                         int n = (i / 3) * 220;
                         string img = dt.Rows[i][2].ToString();
                         string imgtxt = dt.Rows[i][1].ToString();
-                        html += "<div class='element one three isotope-item' onclick=\"showProductComment(\'" + imgtxt + "\',\'"+u+"\')\" style=' cursor:pointer; position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(" + m + "px, " + n + "px, 0px);'><img src='" + img + "' alt=''/><div class='pcap'><h4>" + imgtxt + "</h4> </div></div>";
+                        html += "<div class='element one three isotope-item' onclick=\"showProductComment(\'" + imgtxt + "\',\'" + u + "\')\" style=' cursor:pointer; position: absolute; left: 0px; top: 0px; -webkit-transform: translate3d(" + m + "px, " + n + "px, 0px);'><img src='../uploadimg/product/" + img + "' alt=''/><div class='pcap'><h4>" + imgtxt + "</h4> </div></div>";
                         m += 220;
                         if (m > 440)
                         {
@@ -412,15 +412,15 @@ namespace IwoooWeb.UI.ajaxAspx
                             int index = 0;
                             if (u == "SoftWare")
                             {
-                                index = DAL.SoftWareDAL.GetSoftWareIndex();
+                                index = DAL.SoftWareDAL.GetSoftWareIndex(o);
                             }
                             if (u == "HardWare")
                             {
-                                index = DAL.HardWareDAL.GetHardWareIndex();
+                                index = DAL.HardWareDAL.GetHardWareIndex(o);
                             }
                             if (u == "Services")
                             {
-                                index = DAL.ServicesDAL.GetServicesIndex();
+                                index = DAL.ServicesDAL.GetServicesIndex(o);
                             }
                             string http2 = "<span style='cursor:pointer' onclick=\"selectIndex($(this).text(),0,\'" + u + "\')\">1</span>";
                             if (index <= 10)

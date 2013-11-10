@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="Admin\AddPostRecruitment.aspx" />
     <Content Include="Admin\AddCompanyNews.aspx" />
+    <Content Include="Admin\AddProducts.aspx" />
     <Content Include="Admin\AddSliders.aspx" />
     <Content Include="Admin\AddSuccessStories.aspx" />
     <Content Include="Admin\HomePageSetting.aspx" />
@@ -368,6 +369,13 @@
     <Compile Include="Admin\AddCompanyNews.aspx.designer.cs">
       <DependentUpon>AddCompanyNews.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AddProducts.aspx.cs">
+      <DependentUpon>AddProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddProducts.aspx.designer.cs">
+      <DependentUpon>AddProducts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AddSliders.aspx.cs">
       <DependentUpon>AddSliders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -554,6 +562,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="uploadimg\product\" />
     <Folder Include="uploadimg\slider\" />
   </ItemGroup>
   <PropertyGroup>

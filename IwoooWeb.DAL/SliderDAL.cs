@@ -10,33 +10,27 @@ namespace IwoooWeb.DAL
 {
     public class SliderDAL
     {
-        private const string SPAddSlider = "AddSlider";
-        private const string SPGetSlider = "GetSlider";
-        private const string SPDelSliderById = "DelSliderById";
+        //private const string SPAddSlider = "AddSlider";
+        //private const string SPGetSlider = "GetSlider";
+        //private const string SPDelSliderById = "DelSliderById";
 
 
         public static int AddSlider(string sliderName, string sliderContent, string sliderLink, string sliderPhoto)
         {
-            SqlParameter[] paras ={
-                                    new SqlParameter("@sliderName",sliderName),
-                                    new SqlParameter("@sliderContent",sliderContent),
-                                    new SqlParameter("@sliderLink",sliderLink),
-                                    new SqlParameter("@sliderPhoto",sliderPhoto)
-                                };
-            return Common.SqlHelper.ExecuteNonQuery(SPAddSlider, paras);
+            string sql = "";
+            return Common.SqlHelper.ExecuteNonQuery(sql);
         }
 
         public static DataSet GetSlider()
         {
-            return Common.SqlHelper.ExecuteDataSet(SPGetSlider, null);
+            string sql = "";
+            return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
         public static int DelSliderById(string id)
         {
-            SqlParameter[] paras ={
-                                    new SqlParameter("@id",id)
-                                };
-            return Common.SqlHelper.ExecuteNonQuery(SPDelSliderById, paras);
+            string sql = "";
+            return Common.SqlHelper.ExecuteNonQuery(sql);
         }
     }
 }

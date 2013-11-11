@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data.OleDb;
 
 namespace IwoooWeb.UI.Admin
 {
@@ -93,7 +94,7 @@ namespace IwoooWeb.UI.Admin
 
         public void SetHardWareProducts()
         {
-            SqlDataReader dr = DAL.HardWareDAL.GetHardWareById(Request.QueryString["id"]);
+            OleDbDataReader dr = DAL.HardWareDAL.GetHardWareById(Request.QueryString["id"]);
             dr.Read();
             string hardWareType = dr[0].ToString();
             string hardWareName = dr[1].ToString();
@@ -105,7 +106,7 @@ namespace IwoooWeb.UI.Admin
         }
         public void SetSoftWareProducts()
         {
-            SqlDataReader dr = DAL.SoftWareDAL.GetSoftWareById(Request.QueryString["id"]);
+            OleDbDataReader dr = DAL.SoftWareDAL.GetSoftWareById(Request.QueryString["id"]);
             dr.Read();
             string softWareType = dr[0].ToString();
             string softWareName = dr[1].ToString();
@@ -117,7 +118,7 @@ namespace IwoooWeb.UI.Admin
         }
         public void SetServicesProducts()
         {
-            SqlDataReader dr = DAL.ServicesDAL.GetServicesById(Request.QueryString["id"]);
+            OleDbDataReader dr = DAL.ServicesDAL.GetServicesById(Request.QueryString["id"]);
             dr.Read();
             string servicesType = dr[0].ToString();
             string servicesName = dr[1].ToString();

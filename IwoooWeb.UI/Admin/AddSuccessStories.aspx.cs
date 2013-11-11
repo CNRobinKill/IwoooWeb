@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data.OleDb;
 
 namespace IwoooWeb.UI.Admin
 {
@@ -38,7 +39,7 @@ namespace IwoooWeb.UI.Admin
         public void SetSuccessStories()
         {
 
-            SqlDataReader dr = DAL.SuccessStoriesDAL.GetSuccessStoriesById(Request.QueryString["id"]);
+            OleDbDataReader dr = DAL.SuccessStoriesDAL.GetSuccessStoriesById(Request.QueryString["id"]);
             dr.Read();
             string successStoriesName = dr[0].ToString();
             string content = dr[1].ToString();

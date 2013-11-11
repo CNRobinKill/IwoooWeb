@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -19,7 +20,7 @@ namespace IwoooWeb.UI.Admin
         {
             if (txtUserName.Text.Trim() != "" && txtPassword.Text.Trim() != "")
             {
-                SqlDataReader dr = DAL.SystemUserDAL.GetSystemUser();
+                OleDbDataReader dr = DAL.SystemUserDAL.GetSystemUser();
                 dr.Read();
                 string userName = dr[0].ToString();
                 string userPassword = dr[1].ToString();

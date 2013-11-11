@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data.OleDb;
 
 namespace IwoooWeb.UI.Admin
 {
@@ -37,7 +38,7 @@ namespace IwoooWeb.UI.Admin
 
         public void SetCompanyNews()
         {
-            SqlDataReader dr=DAL.CompanyNewsDAL.GetNewContentById(Request.QueryString["id"]);
+            OleDbDataReader dr=DAL.CompanyNewsDAL.GetNewContentById(Request.QueryString["id"]);
             dr.Read();
             string tittle = dr[0].ToString();
             string content = dr[1].ToString();

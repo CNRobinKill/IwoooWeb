@@ -562,6 +562,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Access\" />
     <Folder Include="uploadimg\product\" />
     <Folder Include="uploadimg\slider\" />
   </ItemGroup>

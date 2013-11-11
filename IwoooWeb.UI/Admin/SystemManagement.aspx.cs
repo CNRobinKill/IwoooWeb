@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Data.OleDb;
 
 namespace IwoooWeb.UI.Admin
 {
@@ -27,7 +28,7 @@ namespace IwoooWeb.UI.Admin
 
         public string SetSystemUser(int n)
         {
-            SqlDataReader dr = DAL.SystemUserDAL.GetSystemUser();
+            OleDbDataReader dr = DAL.SystemUserDAL.GetSystemUser();
             dr.Read();
             string reader = dr[n].ToString();
             dr.Close();

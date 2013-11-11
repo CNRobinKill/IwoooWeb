@@ -5,38 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.OleDb;
 
 namespace IwoooWeb.DAL.Common
 {
 
     /// <summary>
-    /// 数据库通用逻辑组件
+    /// Assess数据库通用逻辑组件
     /// </summary>
     public class SqlHelper
     {
         /// <summary>
         /// 多行查询（返回所有行）
         /// </summary>
-        /// <param name="spName"></param>
-        /// <param name="paras"></param>
+        /// <param name="sqlText"></param>
         /// <returns></returns>
-        public static DataSet ExecuteDataSet(string spName, SqlParameter[] paras)
+        public static DataSet ExecuteDataSet(string sqlText)
         {
             DataSet ds = new DataSet();
-            using(SqlConnection con= DataProvider.GetConnection())
+            using (OleDbConnection con = DataProvider.GetConnection())
             {
-                using (SqlCommand com=new SqlCommand())
+                using (OleDbCommand com = new OleDbCommand())
                 {
-                    SqlDataAdapter ad=new SqlDataAdapter();
+                    OleDbDataAdapter ad = new OleDbDataAdapter();
                     com.Connection = con;
                     ad.SelectCommand = com;
-                    com.CommandText = spName;
-                    com.CommandType = CommandType.StoredProcedure;
+                    com.CommandText = sqlText;
+                    com.CommandType = CommandType.Text;
                     com.CommandTimeout = 300;
-                    if (paras != null)
-                    {
-                        com.Parameters.AddRange(paras);
-                    }
                     con.Open();
                     ad.Fill(ds);
                     con.Close();
@@ -48,47 +44,37 @@ namespace IwoooWeb.DAL.Common
         /// <summary>
         /// 单行查询（返回第一行）
         /// </summary>
-        /// <param name="spName"></param>
-        /// <param name="paras"></param>
+        /// <param name="sqlText"></param>
         /// <returns></returns>
-        public static SqlDataReader ExecuteReader(string spName, SqlParameter[] paras)
+        public static OleDbDataReader ExecuteReader(string sqlText)
         {
-                SqlConnection con = DataProvider.GetConnection();
-                SqlCommand com = new SqlCommand();
+            OleDbConnection con = DataProvider.GetConnection();
+            OleDbCommand com = new OleDbCommand();
                 com.Connection = con;
-                com.CommandText = spName;
-                com.CommandType = CommandType.StoredProcedure;
+                com.CommandText = sqlText;
+                com.CommandType = CommandType.Text;
                 com.CommandTimeout = 300;
-                if (paras != null)
-                {
-                    com.Parameters.AddRange(paras);
-                }
                 con.Open();
-                SqlDataReader reader = com.ExecuteReader(CommandBehavior.CloseConnection);
+                OleDbDataReader reader = com.ExecuteReader(CommandBehavior.CloseConnection);
                 return reader;        
         }
 
         /// <summary>
         /// 单值查询（返回第一行第一列）
         /// </summary>
-        /// <param name="spName"></param>
-        /// <param name="paras"></param>
+        /// <param name="sqlText"></param>
         /// <returns></returns>
-        public static object ExecuteScalar(string spName, SqlParameter[] paras)
+        public static object ExecuteScalar(string sqlText)
         {
             object objectValue;
-            using (SqlConnection con = DataProvider.GetConnection())
+            using (OleDbConnection con = DataProvider.GetConnection())
             {
-                using (SqlCommand com = new SqlCommand())
+                using (OleDbCommand com = new OleDbCommand())
                 {
                     com.Connection = con;
-                    com.CommandText = spName;
-                    com.CommandType = CommandType.StoredProcedure;
+                    com.CommandText = sqlText;
+                    com.CommandType = CommandType.Text;
                     com.CommandTimeout = 300;
-                    if (paras != null)
-                    {
-                        com.Parameters.AddRange(paras);
-                    }
                     con.Open();
                     objectValue = com.ExecuteScalar();
                     con.Close();
@@ -100,24 +86,19 @@ namespace IwoooWeb.DAL.Common
         /// <summary>
         /// 非查询（插入，修改，删除）
         /// </summary>
-        /// <param name="spName"></param>
-        /// <param name="paras"></param>
+        /// <param name="sqlText"></param>
         /// <returns></returns>
-        public static int ExecuteNonQuery(string spName, SqlParameter[] paras)
+        public static int ExecuteNonQuery(string sqlText)
         {
             int rowsAffected;
-            using (SqlConnection con = DataProvider.GetConnection())
+            using (OleDbConnection con = DataProvider.GetConnection())
             {
-                using (SqlCommand com = new SqlCommand())
+                using (OleDbCommand com = new OleDbCommand())
                 {
                     com.Connection = con;
-                    com.CommandText = spName;
-                    com.CommandType = CommandType.StoredProcedure;
+                    com.CommandText = sqlText;
+                    com.CommandType = CommandType.Text;
                     com.CommandTimeout = 300;
-                    if (paras != null)
-                    {
-                        com.Parameters.AddRange(paras);
-                    }
                     con.Open();
                     rowsAffected = com.ExecuteNonQuery();
                     con.Close();

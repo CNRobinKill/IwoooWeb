@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,22 +11,20 @@ namespace IwoooWeb.DAL
 {
     public class SystemUserDAL
     {
-        private const string SPGetSystemUser = "GetSystemUser";
-        private const string SPUpdSystemUser = "UpdSystemUser";
+        //private const string SPGetSystemUser = "GetSystemUser";
+        //private const string SPUpdSystemUser = "UpdSystemUser";
 
 
-        public static SqlDataReader GetSystemUser()
+        public static OleDbDataReader GetSystemUser()
         {
-            return Common.SqlHelper.ExecuteReader(SPGetSystemUser, null);
+            string sql = "select UserName,UserPassword from SystemUser where UserName='SystemIwooo'";
+            return Common.SqlHelper.ExecuteReader(sql);
         }
 
         public static int UpdSystemUser(string userName, string userPassword)
         {
-            SqlParameter[] paras ={
-                                    new SqlParameter("@userName",userName),
-                                    new SqlParameter("@userPassword",userPassword)
-                                };
-            return Common.SqlHelper.ExecuteNonQuery(SPUpdSystemUser, paras);
+            string sql = "update SystemUser set UserPassword='" + userPassword + "' where UserName='" + userName + "'";
+            return Common.SqlHelper.ExecuteNonQuery(sql);
         }
 
     }

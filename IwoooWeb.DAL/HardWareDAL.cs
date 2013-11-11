@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,87 +11,68 @@ namespace IwoooWeb.DAL
 {
     public class HardWareDAL
     {
-        private const string SPGetHardWareType = "GetHardWareType";
-        private const string SPGetHardWare = "GetHardWare";
-        private const string SPGetHardWareContentByHardWareName = "GetHardWareContentByHardWareName";
-        private const string SPGetHardWareIndex = "GetHardWareIndex";
-        private const string SPAddHardWare = "AddHardWare";
-        private const string SPGetHardWareById = "GetHardWareById";
-        private const string SPGetAllHardWare = "GetAllHardWare";
-        private const string SPUpdHardWare = "UpdHardWare";
-        private const string SPDelHardWareById = "DelHardWareById";
+        //private const string SPGetHardWareType = "GetHardWareType";
+        //private const string SPGetHardWare = "GetHardWare";
+        //private const string SPGetHardWareContentByHardWareName = "GetHardWareContentByHardWareName";
+        //private const string SPGetHardWareIndex = "GetHardWareIndex";
+        //private const string SPAddHardWare = "AddHardWare";
+        //private const string SPGetHardWareById = "GetHardWareById";
+        //private const string SPGetAllHardWare = "GetAllHardWare";
+        //private const string SPUpdHardWare = "UpdHardWare";
+        //private const string SPDelHardWareById = "DelHardWareById";
 
         public static DataSet GetHardWareType()
         {
-            return Common.SqlHelper.ExecuteDataSet(SPGetHardWareType, null);
+            string sql = "";
+            return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
         public static DataSet GetHardWare(string hardWareType, string index)
         {
-            SqlParameter[] paras ={
-                                      new SqlParameter("@hardWareType",hardWareType),
-                                      new SqlParameter("@index",index)
-                                  };
-            return Common.SqlHelper.ExecuteDataSet(SPGetHardWare, paras);
+            string sql = "";
+            return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
         public static string GetHardWareContentByHardWareName(string hardWareName)
         {
-            SqlParameter[] paras ={
-                                    new SqlParameter("@hardWareName",hardWareName)
-                                };
-            return (string)Common.SqlHelper.ExecuteScalar(SPGetHardWareContentByHardWareName, paras);
+            string sql = "";
+            return (string)Common.SqlHelper.ExecuteScalar(sql);
         }
 
         public static int GetHardWareIndex(string hardWareType)
         {
-            SqlParameter[] paras ={
-                                    new SqlParameter("@hardWareType",hardWareType)
-                                };
-            return int.Parse(Common.SqlHelper.ExecuteScalar(SPGetHardWareIndex, paras).ToString());
+            string sql = "";
+            return int.Parse(Common.SqlHelper.ExecuteScalar(sql).ToString());
         }
 
         public static int AddHardWare(string hardWareType, string hardWareName, string hardWarePhoto, string hardWareContent)
         {
-            SqlParameter[] paras ={
-                                    new SqlParameter("@hardWareType",hardWareType),
-                                    new SqlParameter("@hardWareName",hardWareName),
-                                    new SqlParameter("@hardWarePhoto",hardWarePhoto),
-                                    new SqlParameter("@hardWareContent",hardWareContent)
-                                };
-            return Common.SqlHelper.ExecuteNonQuery(SPAddHardWare, paras);
+            string sql = "";
+            return Common.SqlHelper.ExecuteNonQuery(sql);
         }
 
-        public static SqlDataReader GetHardWareById(string id)
+        public static OleDbDataReader GetHardWareById(string id)
         {
-            SqlParameter[] paras ={
-                                    new SqlParameter("@id",id)
-                                };
-            return Common.SqlHelper.ExecuteReader(SPGetHardWareById, paras);
+            string sql = "";
+            return Common.SqlHelper.ExecuteReader(sql);
         }
 
         public static DataSet GetAllHardWare()
         {
-            return Common.SqlHelper.ExecuteDataSet(SPGetAllHardWare, null);
+            string sql = "";
+            return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
         public static int UpdHardWare(string id, string hardWareType, string hardWareName, string hardWareContent)
         {
-            SqlParameter[] paras ={
-                                      new SqlParameter("@id",id),
-                                    new SqlParameter("@hardWareType",hardWareType),
-                                    new SqlParameter("@hardWareName",hardWareName),
-                                    new SqlParameter("@hardWareContent",hardWareContent)
-                                };
-            return Common.SqlHelper.ExecuteNonQuery(SPUpdHardWare, paras);
+            string sql = "";
+            return Common.SqlHelper.ExecuteNonQuery(sql);
         }
 
         public static int DelHardWareById(string id)
         {
-            SqlParameter[] paras ={
-                                    new SqlParameter("@id",id)
-                                };
-            return Common.SqlHelper.ExecuteNonQuery(SPDelHardWareById, paras);
+            string sql = "";
+            return Common.SqlHelper.ExecuteNonQuery(sql);
         }
     }
 }

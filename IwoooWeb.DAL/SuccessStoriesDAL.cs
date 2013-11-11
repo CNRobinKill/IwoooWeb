@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,54 +12,42 @@ namespace IwoooWeb.DAL
     public class SuccessStoriesDAL
     {
 
-        private const string SPAddSuccessStories = "AddSuccessStories";
-        private const string SPGetSuccessStories = "GetSuccessStories";
-        private const string SPGetSuccessStoriesById = "GetSuccessStoriesById";
-        private const string SPUpdSuccessStoriesById = "UpdSuccessStoriesById";
-        private const string SPDelSuccessStoriesById = "DelSuccessStoriesById";
+        //private const string SPAddSuccessStories = "AddSuccessStories";
+        //private const string SPGetSuccessStories = "GetSuccessStories";
+        //private const string SPGetSuccessStoriesById = "GetSuccessStoriesById";
+        //private const string SPUpdSuccessStoriesById = "UpdSuccessStoriesById";
+        //private const string SPDelSuccessStoriesById = "DelSuccessStoriesById";
 
 
 
         public static int AddSuccessStories(string successStoriesName, string successStoriesContent, string successStoriesYear)
         {
-            SqlParameter[] paras ={
-                                    new SqlParameter("@successStoriesName",successStoriesName),
-                                    new SqlParameter("@successStoriesContent",successStoriesContent),
-                                    new SqlParameter("@successStoriesYear",successStoriesYear)
-                                };
-            return Common.SqlHelper.ExecuteNonQuery(SPAddSuccessStories, paras);
+            string sql = "insert into SuccessStories(successStoriesName,successStoriesContent,successStoriesYear) values('" + successStoriesName + "','" + successStoriesContent + "','" + successStoriesYear + "')";
+            return Common.SqlHelper.ExecuteNonQuery(sql);
         }
 
         public static DataSet GetSuccessStories()
         {
-            return Common.SqlHelper.ExecuteDataSet(SPGetSuccessStories, null);
+            string sql = "select id,successStoriesName,successStoriesContent,successStoriesYear from SuccessStories  order by Clng(successStoriesYear)";
+            return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
-        public static SqlDataReader GetSuccessStoriesById(string id)
+        public static OleDbDataReader GetSuccessStoriesById(string id)
         {
-            SqlParameter[] paras ={
-                                    new SqlParameter("@id",id)
-                                };
-            return Common.SqlHelper.ExecuteReader(SPGetSuccessStoriesById, paras);
+            string sql = "select successStoriesName,successStoriesContent,successStoriesYear from SuccessStories where id='" + id + "'";
+            return Common.SqlHelper.ExecuteReader(sql);
         }
 
         public static int UpdSuccessStoriesById(string id, string successStoriesName, string successStoriesContent, string successStoriesYear)
         {
-            SqlParameter[] paras ={
-                                    new SqlParameter("@id",id),
-                                    new SqlParameter("@successStoriesName",successStoriesName),
-                                    new SqlParameter("@successStoriesContent",successStoriesContent),
-                                    new SqlParameter("@successStoriesYear",successStoriesYear)
-                                };
-            return Common.SqlHelper.ExecuteNonQuery(SPUpdSuccessStoriesById, paras);
+            string sql = "update SuccessStories set successStoriesName='" + successStoriesName + "',successStoriesContent='" + successStoriesContent + "',successStoriesYear='" + successStoriesYear + "' where id='" + id + "'";
+            return Common.SqlHelper.ExecuteNonQuery(sql);
         }
 
         public static int DelSuccessStoriesById(string id)
         {
-            SqlParameter[] paras ={
-                                    new SqlParameter("@id",id)
-                                };
-            return Common.SqlHelper.ExecuteNonQuery(SPDelSuccessStoriesById, paras);
+            string sql = "delete from SuccessStories where id='" + id + "'";
+            return Common.SqlHelper.ExecuteNonQuery(sql);
         }
     }
 }

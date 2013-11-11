@@ -778,7 +778,7 @@ create proc [dbo].[UpdSystemUser]
 as
 
 begin
-update SystemUser set UserName=@userName,UserPassword=@userPassword
+update SystemUser set UserPassword=@userPassword where UserName=@userName
 end
 
 Go

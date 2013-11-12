@@ -1,0 +1,4 @@
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\bin\Release\IwoooWeb.DAL.Common.dll
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\bin\Release\IwoooWeb.DAL.Common.pdb
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Release\IwoooWeb.DAL.Common.dll
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Release\IwoooWeb.DAL.Common.pdb

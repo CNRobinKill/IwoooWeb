@@ -1,0 +1,7 @@
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\bin\Release\IwoooWeb.DAL.dll
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\bin\Release\IwoooWeb.DAL.pdb
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\bin\Release\IwoooWeb.DAL.Common.dll
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\bin\Release\IwoooWeb.DAL.Common.pdb
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\obj\Release\IwoooWeb.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\obj\Release\IwoooWeb.DAL.dll
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\obj\Release\IwoooWeb.DAL.pdb

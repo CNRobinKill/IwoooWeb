@@ -548,6 +548,7 @@
     <Content Include="ueditor\net\imageUp.ashx" />
     <Content Include="ueditor\net\scrawlUp.ashx" />
     <Content Include="ueditor\net\Web.config" />
+    <None Include="Properties\PublishProfiles\New.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

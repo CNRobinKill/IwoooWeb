@@ -11,7 +11,7 @@ namespace IwoooWeb.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["userName"] != null && Session["userName"].ToString() == "SystemIwooo")
+            if (Session["userName"] != null)
             { }
             else
             {

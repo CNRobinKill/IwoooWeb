@@ -29,7 +29,7 @@ namespace IwoooWeb.DAL
 
         public static DataSet GetSoftWare(string softWareType, string index)
         {
-            string sql = "select *  from (select count(a.id) as row,a.softWareName,a.softWarePhoto from SoftWare a inner join SoftWare b on a.id >= b.id where a.softWareType='" + softWareType + "' group by a.softWareName,a.softWarePhoto)n where n.row>9*(" + index + "-1) and n.row<9*" + index + "+1 order by Clng(n.row)";
+            string sql = "select *  from (select count(a.id) as row,a.softWareName,a.softWarePhoto from SoftWare a inner join SoftWare b on a.id >= b.id where a.softWareType='" + softWareType + "' group by a.softWareName,a.softWarePhoto)n where n.row>9*(" + index + "-1) and n.row<9*" + index + "+1 order by n.softWareName";
             return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
@@ -53,7 +53,7 @@ namespace IwoooWeb.DAL
 
         public static OleDbDataReader GetSoftWareById(string id)
         {
-            string sql = "select softWareType,softWareName,softWarePhoto,softWareContent from SoftWare where id='" + id + "'";
+            string sql = "select softWareType,softWareName,softWarePhoto,softWareContent from SoftWare where id=" + id;
             return Common.SqlHelper.ExecuteReader(sql);
         }
 
@@ -65,13 +65,13 @@ namespace IwoooWeb.DAL
 
         public static int UpdSoftWare(string id, string softWareType, string softWareName, string softWareContent)
         {
-            string sql = "update SoftWare set softWareType='" + softWareType + "',softWareName='" + softWareName + "',softWareContent='" + softWareContent + "' where id='" + id + "'";
+            string sql = "update SoftWare set softWareType='" + softWareType + "',softWareName='" + softWareName + "',softWareContent='" + softWareContent + "' where id=" + id;
             return Common.SqlHelper.ExecuteNonQuery(sql);
         }
 
         public static int DelSoftWareById(string id)
         {
-            string sql = "delete from SoftWare where id='" + id + "'";
+            string sql = "delete from SoftWare where id=" + id;
             return Common.SqlHelper.ExecuteNonQuery(sql);
         }
     }

@@ -21,32 +21,45 @@ namespace IwoooWeb.DAL
 
         public static int AddJoinUs(string position, string positionContent)
         {
-            string sql = "";
-            return Common.SqlHelper.ExecuteNonQuery(sql);
+            if (GetPosition(position) == 0)
+            {
+                string sql = "insert into JoinUs([position],positionContent) values('" + position + "','" + positionContent + "')";
+                return Common.SqlHelper.ExecuteNonQuery(sql);
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public static DataSet GetJoinUs()
         {
-            string sql = "";
+            string sql = "select id,[position] from JoinUs order by [position]";
             return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
         public static string GetPositionContentByPosition(string position)
         {
-            string sql = "";
+            string sql = "select positionContent from JoinUs where [position]='" + position + "'";
             return (string)Common.SqlHelper.ExecuteScalar(sql);
         }
 
         public static int UpdJoinUsById(string id, string position, string positionContent)
         {
-            string sql = "";
+            string sql = "update JoinUs set [position]='" + position + "',positionContent='" + positionContent + "' where id=" + id;
             return Common.SqlHelper.ExecuteNonQuery(sql);
         }
 
         public static int DelJoinUsById(string id)
         {
-            string sql = "";
+            string sql = "delete from JoinUs where id=" + id;
             return Common.SqlHelper.ExecuteNonQuery(sql);
+        }
+
+        public static int GetPosition(string position)
+        {
+            string sql = "select count([position]) from JoinUs where [position]='" + position + "'";
+            return int.Parse(Common.SqlHelper.ExecuteScalar(sql).ToString());
         }
     }
 }

@@ -24,55 +24,55 @@ namespace IwoooWeb.DAL
 
         public static DataSet GetServicesType()
         {
-            string sql = "";
+            string sql = "select servicesType from [Services] group by servicesType order by servicesType";
             return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
         public static DataSet GetServices(string servicesType, string index)
         {
-            string sql = "";
+            string sql = "select *  from (select count(a.id) as row,a.servicesName,a.servicesPhoto from Services a inner join Services b on a.id >= b.id where a.servicesType='" + servicesType + "' group by a.servicesName,a.servicesPhoto)n where n.row>9*(" + index + "-1) and n.row<9*" + index + "+1 order by n.servicesName";
             return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
         public static string GetServicesContentByServicesName(string servicesName)
         {
-            string sql = "";
+            string sql = "select servicesContent from [Services] where servicesName='" + servicesName + "'";
             return (string)Common.SqlHelper.ExecuteScalar(sql);
         }
 
         public static int GetServicesIndex(string servicesType)
         {
-            string sql = "";
+            string sql = "select  int(IIF( MAX(rNo) mod 9 = 0,MAX(rNo) / 9 , MAX(rNo) / 9 + 1)) as rIndex from (select a.id, count(*) as rNo from Services a inner join Services b on a.id >= b.id where a.servicesType='" + servicesType + "' group by a.id ) as t";
             return int.Parse(Common.SqlHelper.ExecuteScalar(sql).ToString());
         }
 
         public static int AddServices(string servicesType, string servicesName, string servicesPhoto, string servicesContent)
         {
-            string sql = "";
+            string sql = "insert into [Services](servicesType,servicesName,servicesPhoto,servicesContent) values ('" + servicesType + "','" + servicesName + "','" + servicesPhoto + "','" + servicesContent + "')";
             return Common.SqlHelper.ExecuteNonQuery(sql);
         }
 
         public static OleDbDataReader GetServicesById(string id)
         {
-            string sql = "";
+            string sql = "select servicesType,servicesName,servicesPhoto,servicesContent from [Services] where id=" + id;
             return Common.SqlHelper.ExecuteReader(sql);
         }
 
         public static DataSet GetAllServices()
         {
-            string sql = "";
+            string sql = "select id,servicesType,servicesName,servicesPhoto,servicesContent from [Services] order by servicesType";
             return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
         public static int UpdServices(string id, string servicesType, string servicesName, string servicesContent)
         {
-            string sql = "";
+            string sql = "update [Services] set servicesType='" + servicesType + "',servicesName='" + servicesName + "',servicesContent='" + servicesContent + "' where id=" + id;
             return Common.SqlHelper.ExecuteNonQuery(sql);
         }
 
         public static int DelServicesById(string id)
         {
-            string sql = "";
+            string sql = "delete from [Services] where id=" + id;
             return Common.SqlHelper.ExecuteNonQuery(sql);
         }
     }

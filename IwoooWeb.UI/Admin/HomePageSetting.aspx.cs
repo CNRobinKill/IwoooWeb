@@ -11,7 +11,7 @@ namespace IwoooWeb.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["userName"].ToString() == "SystemIwooo")
+            if (Session["userName"] != null)
             {
                 if (!IsPostBack)
                 {
@@ -39,7 +39,7 @@ namespace IwoooWeb.UI.Admin
 
         protected void tbSlider_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            DAL.SliderDAL.DelSliderById(tbSlider.DataKeys[e.RowIndex].Value.ToString());
+            DAL.SliderDAL.UpdSliderOrder(tbSlider.DataKeys[e.RowIndex].Value.ToString());
         }
 
         protected void btnAddSlider_Click(object sender, EventArgs e)

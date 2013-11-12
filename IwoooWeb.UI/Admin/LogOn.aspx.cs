@@ -13,7 +13,13 @@ namespace IwoooWeb.UI.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session["userName"] != null)
+                {
+                    Response.Redirect("SystemManagement.aspx", true);
+                }
+            }
         }
 
         protected void btnLogOn_Click(object sender, EventArgs e)
@@ -28,7 +34,7 @@ namespace IwoooWeb.UI.Admin
                 if (txtUserName.Text.Trim() == userName && txtPassword.Text.Trim() == userPassword)
                 {
                     Session["userName"] = txtUserName.Text.Trim();
-                    Session.Timeout = 6000;
+                    Session.Timeout = 600;
                     Response.Redirect("SystemManagement.aspx",true);
                 }
             }

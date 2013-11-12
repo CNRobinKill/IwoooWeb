@@ -17,20 +17,43 @@ namespace IwoooWeb.DAL
 
         public static int AddSlider(string sliderName, string sliderContent, string sliderLink, string sliderPhoto)
         {
-            string sql = "";
+            string sliderOrder = GetCountSlider();
+            string sql = "insert into Slider(sliderName,sliderContent,sliderLink,sliderPhoto,sliderOrder) values('" + sliderName + "','" + sliderContent + "','" + sliderLink + "','" + sliderPhoto + "','"+sliderOrder+"')";
             return Common.SqlHelper.ExecuteNonQuery(sql);
         }
 
         public static DataSet GetSlider()
         {
-            string sql = "";
+            string sql = "select id,sliderName,sliderContent,sliderLink,sliderPhoto from Slider  order by sliderOrder";
             return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
         public static int DelSliderById(string id)
         {
-            string sql = "";
+            string sql = "delete Slider where id=" + id;
             return Common.SqlHelper.ExecuteNonQuery(sql);
         }
+
+        public static string GetCountSlider()
+        {
+            string sql = "select count(id) from Slider";
+            return Common.SqlHelper.ExecuteScalar(sql).ToString();
+        }
+
+        public static string GetSliderOrder(string id)
+        {
+            string sql = "select sliderOrder from Slider where id=" + id;
+            return Common.SqlHelper.ExecuteScalar(sql).ToString();
+        }
+
+        public static int UpdSliderOrder(string id)
+        {
+            string sliderOrder = GetSliderOrder(id);
+            DelSliderById(id);
+            string sql = "update Slider set sliderOrder=sliderOrder-1 where sliderOrder>" + sliderOrder;
+            return Common.SqlHelper.ExecuteNonQuery(sql);
+        }
+
+
     }
 }

@@ -1,4 +1,4 @@
-C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\bin\Release\IwoooWeb.DAL.Common.dll
-C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\bin\Release\IwoooWeb.DAL.Common.pdb
-C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Release\IwoooWeb.DAL.Common.dll
-C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Release\IwoooWeb.DAL.Common.pdb
+c:\users\岳斌\documents\visual studio 2012\Projects\IwoooWeb\IwoooWeb.DAL.Common\bin\Release\IwoooWeb.DAL.Common.dll
+c:\users\岳斌\documents\visual studio 2012\Projects\IwoooWeb\IwoooWeb.DAL.Common\bin\Release\IwoooWeb.DAL.Common.pdb
+c:\users\岳斌\documents\visual studio 2012\Projects\IwoooWeb\IwoooWeb.DAL.Common\obj\Release\IwoooWeb.DAL.Common.dll
+c:\users\岳斌\documents\visual studio 2012\Projects\IwoooWeb\IwoooWeb.DAL.Common\obj\Release\IwoooWeb.DAL.Common.pdb

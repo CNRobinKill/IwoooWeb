@@ -7,13 +7,13 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DCE0B8C3-6DF5-40FB-8A8D-E1C8547E9F38}</ProjectGuid>
+    <ProjectGuid>{6C806CF4-1C91-40A4-9EFE-F84E88145A8E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IwoooWeb.UI</RootNamespace>
     <AssemblyName>IwoooWeb.UI</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -57,8 +57,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\AddPostRecruitment.aspx" />
+    <Content Include="Access\IwoooWeb.mdb" />
     <Content Include="Admin\AddCompanyNews.aspx" />
+    <Content Include="Admin\AddPostRecruitment.aspx" />
     <Content Include="Admin\AddProducts.aspx" />
     <Content Include="Admin\AddSliders.aspx" />
     <Content Include="Admin\AddSuccessStories.aspx" />
@@ -297,6 +298,7 @@
     <Content Include="ueditor\net\upload\2013-09-13\4cd9954a-18f1-4daa-85f0-75630769096d.jpg" />
     <Content Include="ueditor\net\upload\2013-09-13\685f8a43-1dc4-4ed0-86e7-523c31ddc2d4.jpg" />
     <Content Include="ueditor\net\upload\2013-09-13\f2f283a6-7535-4f51-94ee-980cf245df6b.jpg" />
+    <Content Include="ueditor\net\upload\2013-11-07\cbad7335-825e-41d6-b2dd-41c57d5e1500.jpg" />
     <Content Include="ueditor\themes\default\css\ueditor.css" />
     <Content Include="ueditor\themes\default\dialogbase.css" />
     <Content Include="ueditor\themes\default\images\anchor.gif" />
@@ -347,27 +349,34 @@
     <Content Include="ueditor\ueditor.all.min.js" />
     <Content Include="ueditor\ueditor.config.js" />
     <Content Include="ueditor\ueditor.parse.js" />
+    <Content Include="uploadimg\product\0b042f72-bd3e-4401-83c0-84dcb06a6131.png" />
+    <Content Include="uploadimg\product\74b24d48-7b0b-47fc-a776-6a8db8cbea8b.png" />
+    <Content Include="uploadimg\product\8b24b32a-b86f-4def-bc16-b6217afede4f.png" />
+    <Content Include="uploadimg\product\e3b7f6f9-72e6-493b-a902-142ee21bfdda.png" />
+    <Content Include="uploadimg\slider\561d12f1-a7a4-4698-a7b3-168b8062f928.png" />
+    <Content Include="uploadimg\slider\b710d9fc-a287-41e3-8be3-ce01f43fa65e.png" />
+    <Content Include="uploadimg\slider\dee5f04d-ed2c-49ba-b731-0f1a1f27dd91.png" />
     <Content Include="Web.config" />
     <Content Include="WebControl\Footer.ascx" />
     <Content Include="WebControl\Header.ascx" />
-    <Content Include="WebControl\Slider.ascx" />
     <Content Include="WebControl\NavigationBar.ascx" />
+    <Content Include="WebControl\Slider.ascx" />
     <Content Include="WebControl\Social.ascx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\AddPostRecruitment.aspx.cs">
-      <DependentUpon>AddPostRecruitment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\AddPostRecruitment.aspx.designer.cs">
-      <DependentUpon>AddPostRecruitment.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\AddCompanyNews.aspx.cs">
       <DependentUpon>AddCompanyNews.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\AddCompanyNews.aspx.designer.cs">
       <DependentUpon>AddCompanyNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddPostRecruitment.aspx.cs">
+      <DependentUpon>AddPostRecruitment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddPostRecruitment.aspx.designer.cs">
+      <DependentUpon>AddPostRecruitment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AddProducts.aspx.cs">
       <DependentUpon>AddProducts.aspx</DependentUpon>
@@ -511,19 +520,19 @@
     <Compile Include="WebControl\Header.ascx.designer.cs">
       <DependentUpon>Header.ascx</DependentUpon>
     </Compile>
-    <Compile Include="WebControl\Slider.ascx.cs">
-      <DependentUpon>Slider.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebControl\Slider.ascx.designer.cs">
-      <DependentUpon>Slider.ascx</DependentUpon>
-    </Compile>
     <Compile Include="WebControl\NavigationBar.ascx.cs">
       <DependentUpon>NavigationBar.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebControl\NavigationBar.ascx.designer.cs">
       <DependentUpon>NavigationBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControl\Slider.ascx.cs">
+      <DependentUpon>Slider.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControl\Slider.ascx.designer.cs">
+      <DependentUpon>Slider.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebControl\Social.ascx.cs">
       <DependentUpon>Social.ascx</DependentUpon>
@@ -534,12 +543,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Admin.Master" />
     <Content Include="img\clients\Thumbs.db" />
     <Content Include="img\favicon\Thumbs.db" />
     <Content Include="img\parallax\Thumbs.db" />
     <Content Include="img\photos\Thumbs.db" />
+    <Content Include="img\prettyPhoto\dark_rounded\Thumbs.db" />
+    <Content Include="img\prettyPhoto\dark_square\Thumbs.db" />
+    <Content Include="img\prettyPhoto\default\Thumbs.db" />
+    <Content Include="img\prettyPhoto\light_rounded\Thumbs.db" />
+    <Content Include="img\prettyPhoto\light_square\Thumbs.db" />
     <Content Include="img\Thumbs.db" />
-    <Content Include="Admin\Admin.Master" />
     <Content Include="ueditor\net\fileUp.ashx" />
     <Content Include="ueditor\net\getContent.ashx" />
     <Content Include="ueditor\net\getMovie.ashx" />
@@ -548,7 +562,7 @@
     <Content Include="ueditor\net\imageUp.ashx" />
     <Content Include="ueditor\net\scrawlUp.ashx" />
     <Content Include="ueditor\net\Web.config" />
-    <None Include="Properties\PublishProfiles\New.pubxml" />
+    <None Include="Properties\PublishProfiles\Iwooo.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -558,14 +572,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IwoooWeb.DAL\IwoooWeb.DAL.csproj">
-      <Project>{4ec7af1a-bc59-4000-99cd-776cda86c3be}</Project>
+      <Project>{69e65d76-9257-4b8e-8c38-017b4e8f6a3b}</Project>
       <Name>IwoooWeb.DAL</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Access\" />
-    <Folder Include="uploadimg\product\" />
-    <Folder Include="uploadimg\slider\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -582,7 +591,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:14113/</IISUrl>
+          <IISUrl>http://localhost:13037/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

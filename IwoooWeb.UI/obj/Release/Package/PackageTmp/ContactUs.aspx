@@ -123,7 +123,7 @@
                                                 <h6><b>广州爱沃计算机科技有限公司</b></h6>
                                                 <!-- Address -->
                                                 中国 广州市天河路五山路<br>
-                                                瑞华大厦19D<br>
+                                                瑞华大厦北塔19D<br>
                                                 <abbr title="PostCode">邮政编号：</abbr>510630<br />
                                                 <!-- Phone number -->
                                                 <abbr title="Phone">联系电话：</abbr> +(86)(020) 38732479 38732489 38732499 38731850.<br />

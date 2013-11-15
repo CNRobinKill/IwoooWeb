@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4EC7AF1A-BC59-4000-99CD-776CDA86C3BE}</ProjectGuid>
+    <ProjectGuid>{69E65D76-9257-4B8E-8C38-017B4E8F6A3B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IwoooWeb.DAL</RootNamespace>
     <AssemblyName>IwoooWeb.DAL</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,19 +40,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompanyNewsDAL.cs" />
-    <Compile Include="SliderDAL.cs" />
-    <Compile Include="SuccessStoriesDAL.cs" />
     <Compile Include="HardWareDAL.cs" />
     <Compile Include="JoinUsDAL.cs" />
-    <Compile Include="SendEmail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendEmail.cs" />
     <Compile Include="ServicesDAL.cs" />
+    <Compile Include="SliderDAL.cs" />
     <Compile Include="SoftWareDAL.cs" />
+    <Compile Include="SuccessStoriesDAL.cs" />
     <Compile Include="SystemUserDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IwoooWeb.DAL.Common\IwoooWeb.DAL.Common.csproj">
-      <Project>{375d41f7-ca65-4fcc-8ab4-e75bdd821ad4}</Project>
+      <Project>{3554fd90-e8ce-4fc6-9c9b-a76c8ab4ec43}</Project>
       <Name>IwoooWeb.DAL.Common</Name>
     </ProjectReference>
   </ItemGroup>

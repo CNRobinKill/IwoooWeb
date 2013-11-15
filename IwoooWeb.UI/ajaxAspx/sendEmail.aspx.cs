@@ -12,7 +12,7 @@ namespace IwoooWeb.UI.ajaxAspx
         protected void Page_Load(object sender, EventArgs e)
         {
             string MailBody = "<div>发送时间：" + DateTime.Now.ToString() + "<br>访客姓名：" + Request.QueryString["txtName"].Trim() + "<br>联系邮箱：" + Request.QueryString["txtEmail"].Trim() + "<br>联系电话：" + Request.QueryString["txtTelphone"].Trim() + "<br>询问内容：<br>" + Request.QueryString["txtComment"].Trim() + "</div>";
-            if (DAL.SendEmail.SendMail("GZIwooo@163.com", "smtp.163.com", "iwooo@iwooo", 25, "294233055@qq.com", "管理员", "公司网站在线留言", MailBody) == true)
+            if (DAL.SendEmail.SendMail("GZIwooo@163.com", "smtp.163.com", "iwooo@iwooo", 25, "info@iwooo.com", "管理员", "公司网站在线留言", MailBody) == true)
             {
                 Response.Write("1");
             }

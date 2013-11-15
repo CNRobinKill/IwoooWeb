@@ -2,12 +2,9 @@ c:\users\岳斌\documents\visual studio 2012\Projects\IwoooWeb\IwoooWeb.DAL.Comm
 c:\users\岳斌\documents\visual studio 2012\Projects\IwoooWeb\IwoooWeb.DAL.Common\bin\Debug\IwoooWeb.DAL.Common.pdb
 c:\users\岳斌\documents\visual studio 2012\Projects\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.dll
 c:\users\岳斌\documents\visual studio 2012\Projects\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.pdb
+c:\users\岳斌\documents\visual studio 2012\Projects\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.csprojResolveAssemblyReference.cache
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\bin\Debug\IwoooWeb.DAL.Common.dll
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\bin\Debug\IwoooWeb.DAL.Common.pdb
+C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.csprojResolveAssemblyReference.cache
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.dll
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.pdb
-C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\bin\Debug\IwoooWeb.DAL.Common.dll
-C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\bin\Debug\IwoooWeb.DAL.Common.pdb
-C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.dll
-C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.pdb
-C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL.Common\obj\Debug\IwoooWeb.DAL.Common.csprojResolveAssemblyReference.cache

@@ -1,5 +1,4 @@
 <%@ WebHandler Language="C#" Class="fileUp" %>
-<%@ Assembly Src="Uploader.cs" %>
 /**
  * Created by visual studio 2010
  * User: xuheng

@@ -11,3 +11,10 @@ C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\bin\Debug\IwoooWeb.DAL.Co
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\bin\Debug\IwoooWeb.DAL.Common.pdb
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\obj\Debug\IwoooWeb.DAL.dll
 C:\Users\岳斌\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\obj\Debug\IwoooWeb.DAL.pdb
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\bin\Debug\IwoooWeb.DAL.dll
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\bin\Debug\IwoooWeb.DAL.pdb
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\bin\Debug\IwoooWeb.DAL.Common.dll
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\bin\Debug\IwoooWeb.DAL.Common.pdb
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\obj\Debug\IwoooWeb.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\obj\Debug\IwoooWeb.DAL.dll
+C:\Users\Robin\Documents\GitHub\IwoooWeb\IwoooWeb.DAL\obj\Debug\IwoooWeb.DAL.pdb

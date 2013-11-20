@@ -74,7 +74,6 @@
     <Content Include="ajaxAspx\sendEmail.aspx" />
     <Content Include="BaiDuMap.html" />
     <Content Include="ContactUs.aspx" />
-    <Content Include="img\ashok.jpg" />
     <Content Include="img\bg_direction_nav.png" />
     <Content Include="img\border-b.png" />
     <Content Include="img\border-g.png" />
@@ -82,43 +81,9 @@
     <Content Include="img\border-o.png" />
     <Content Include="img\border-p.png" />
     <Content Include="img\border-r.png" />
-    <Content Include="img\clients\amazon.png" />
-    <Content Include="img\clients\facebook.png" />
-    <Content Include="img\clients\google.png" />
-    <Content Include="img\clients\skype.png" />
-    <Content Include="img\clients\twitter.png" />
-    <Content Include="img\clients\youtube.png" />
     <Content Include="img\dots.png" />
     <Content Include="img\favicon\favicon.png" />
-    <Content Include="img\parallax\1.png" />
-    <Content Include="img\parallax\2.png" />
-    <Content Include="img\parallax\3.png" />
-    <Content Include="img\parallax\4.png" />
     <Content Include="img\parallax\arrows.png" />
-    <Content Include="img\photos\1.jpg" />
-    <Content Include="img\photos\2.jpg" />
-    <Content Include="img\photos\3.jpg" />
-    <Content Include="img\photos\4.jpg" />
-    <Content Include="img\photos\5.jpg" />
-    <Content Include="img\photos\6.jpg" />
-    <Content Include="img\photos\7.jpg" />
-    <Content Include="img\photos\8.jpg" />
-    <Content Include="img\photos\9.jpg" />
-    <Content Include="img\photos\s1.jpg" />
-    <Content Include="img\photos\s2.jpg" />
-    <Content Include="img\photos\s3.jpg" />
-    <Content Include="img\photos\s4.jpg" />
-    <Content Include="img\photos\s5.jpg" />
-    <Content Include="img\photos\site.jpg" />
-    <Content Include="img\photos\tn_1.jpg" />
-    <Content Include="img\photos\tn_2.jpg" />
-    <Content Include="img\photos\tn_3.jpg" />
-    <Content Include="img\photos\tn_4.jpg" />
-    <Content Include="img\photos\tn_5.jpg" />
-    <Content Include="img\photos\tn_6.jpg" />
-    <Content Include="img\photos\tn_7.jpg" />
-    <Content Include="img\photos\tn_8.jpg" />
-    <Content Include="img\photos\tn_9.jpg" />
     <Content Include="img\prettyPhoto\dark_rounded\btnNext.png" />
     <Content Include="img\prettyPhoto\dark_rounded\btnPrevious.png" />
     <Content Include="img\prettyPhoto\dark_rounded\contentPattern.png" />
@@ -157,7 +122,6 @@
     <Content Include="img\prettyPhoto\light_square\default_thumbnail.gif" />
     <Content Include="img\prettyPhoto\light_square\loader.gif" />
     <Content Include="img\prettyPhoto\light_square\sprite.png" />
-    <Content Include="img\wait.gif" />
     <Content Include="Index.aspx" />
     <Content Include="IwoooTrends.aspx" />
     <Content Include="js\bootstrap-old.js" />
@@ -349,14 +313,24 @@
     <Content Include="ueditor\ueditor.all.min.js" />
     <Content Include="ueditor\ueditor.config.js" />
     <Content Include="ueditor\ueditor.parse.js" />
-    <Content Include="uploadimg\product\0b042f72-bd3e-4401-83c0-84dcb06a6131.png" />
-    <Content Include="uploadimg\product\74b24d48-7b0b-47fc-a776-6a8db8cbea8b.png" />
-    <Content Include="uploadimg\product\8b24b32a-b86f-4def-bc16-b6217afede4f.png" />
-    <Content Include="uploadimg\product\e3b7f6f9-72e6-493b-a902-142ee21bfdda.png" />
+    <Content Include="uploadimg\product\1046808e-a736-46bb-a397-a11beae41953.gif" />
+    <Content Include="uploadimg\product\1a2701ea-58f8-4337-9850-61824506a76f.jpg" />
+    <Content Include="uploadimg\product\29dd28dd-4fd7-45ac-9145-7f00194adebc.jpg" />
+    <Content Include="uploadimg\product\305215ca-586b-4796-b7f0-0f53994da341.jpg" />
+    <Content Include="uploadimg\product\35206e04-ba58-4abe-b81c-3219b4ac65e0.jpg" />
+    <Content Include="uploadimg\product\47fd043c-5e17-40cb-bcef-11ef779487b0.jpg" />
+    <Content Include="uploadimg\product\56fc93d3-806a-4898-82ee-bd676619d2d0.jpg" />
+    <Content Include="uploadimg\product\66038050-655d-4e2c-a03c-5d70d24be7b1.gif" />
+    <Content Include="uploadimg\product\9242ea5c-aba2-4f25-a856-22c3cdeafeed.jpg" />
+    <Content Include="uploadimg\product\a6a99e60-5ea1-4ece-b5fa-1bee90142d51.jpg" />
+    <Content Include="uploadimg\product\d50e7fb9-b75e-4476-a42f-b807fe0c20d2.jpg" />
+    <Content Include="uploadimg\product\f025465e-4770-45a1-b5ee-c17c9d1eb189.jpg" />
     <Content Include="uploadimg\slider\561d12f1-a7a4-4698-a7b3-168b8062f928.png" />
     <Content Include="uploadimg\slider\b710d9fc-a287-41e3-8be3-ce01f43fa65e.png" />
     <Content Include="uploadimg\slider\dee5f04d-ed2c-49ba-b731-0f1a1f27dd91.png" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebControl\Footer.ascx" />
     <Content Include="WebControl\Header.ascx" />
     <Content Include="WebControl\NavigationBar.ascx" />
@@ -544,16 +518,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Admin.Master" />
-    <Content Include="img\clients\Thumbs.db" />
-    <Content Include="img\favicon\Thumbs.db" />
-    <Content Include="img\parallax\Thumbs.db" />
-    <Content Include="img\photos\Thumbs.db" />
     <Content Include="img\prettyPhoto\dark_rounded\Thumbs.db" />
     <Content Include="img\prettyPhoto\dark_square\Thumbs.db" />
     <Content Include="img\prettyPhoto\default\Thumbs.db" />
     <Content Include="img\prettyPhoto\light_rounded\Thumbs.db" />
     <Content Include="img\prettyPhoto\light_square\Thumbs.db" />
-    <Content Include="img\Thumbs.db" />
     <Content Include="ueditor\net\fileUp.ashx" />
     <Content Include="ueditor\net\getContent.ashx" />
     <Content Include="ueditor\net\getMovie.ashx" />
@@ -563,6 +532,7 @@
     <Content Include="ueditor\net\scrawlUp.ashx" />
     <Content Include="ueditor\net\Web.config" />
     <None Include="Properties\PublishProfiles\Iwooo.pubxml" />
+    <Content Include="uploadimg\product\Thumbs.db" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -575,6 +545,10 @@
       <Project>{69e65d76-9257-4b8e-8c38-017b4e8f6a3b}</Project>
       <Name>IwoooWeb.DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\clients\" />
+    <Folder Include="img\photos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

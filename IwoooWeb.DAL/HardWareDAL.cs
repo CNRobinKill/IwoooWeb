@@ -29,7 +29,7 @@ namespace IwoooWeb.DAL
 
         public static DataSet GetHardWare(string hardWareType, string index)
         {
-            string sql = "select *  from (select count(a.id) as row,a.hardWareName,a.hardWarePhoto from HardWare a inner join HardWare b on a.id >= b.id where a.hardWareType='" + hardWareType + "' group by a.hardWareName,a.hardWarePhoto)n where n.row>9*(" + index + "-1) and n.row<9*" + index + "+1 order by n.hardWareName";
+            string sql = "select *  from (select count(a.id) as row,a.hardWareName,a.hardWarePhoto from (select * from HardWare where hardWareType='" + hardWareType + "') a left join (select * from HardWare where hardWareType='" + hardWareType + "') b on a.id >= b.id group by a.hardWareName,a.hardWarePhoto)n where n.row>9*(" + index + "-1) and n.row<9*" + index + "+1 order by n.hardWareName";
             return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
@@ -41,7 +41,7 @@ namespace IwoooWeb.DAL
 
         public static int GetHardWareIndex(string hardWareType)
         {
-            string sql = "select  int(IIF( MAX(rNo) mod 9 = 0,MAX(rNo) / 9 , MAX(rNo) / 9 + 1)) as rIndex from (select a.id, count(*) as rNo from HardWare a inner join HardWare b on a.id >= b.id where a.hardWareType='" + hardWareType + "' group by a.id ) as t";
+            string sql = "select  int(IIF( MAX(rNo) mod 9 = 0,MAX(rNo) / 9 , MAX(rNo) / 9 + 1)) as rIndex from (select a.id, count(*) as rNo from (select * from HardWare where hardWareType='" + hardWareType + "') a inner join (select * from HardWare where hardWareType='" + hardWareType + "') b on a.id >= b.id group by a.id ) as t";
             return int.Parse(Common.SqlHelper.ExecuteScalar(sql).ToString());
         }
 

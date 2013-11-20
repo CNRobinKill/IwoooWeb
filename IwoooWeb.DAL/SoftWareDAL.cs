@@ -29,7 +29,7 @@ namespace IwoooWeb.DAL
 
         public static DataSet GetSoftWare(string softWareType, string index)
         {
-            string sql = "select *  from (select count(a.id) as row,a.softWareName,a.softWarePhoto from SoftWare a inner join SoftWare b on a.id >= b.id where a.softWareType='" + softWareType + "' group by a.softWareName,a.softWarePhoto)n where n.row>9*(" + index + "-1) and n.row<9*" + index + "+1 order by n.softWareName";
+            string sql = "select *  from (select count(a.id) as row,a.softWareName,a.softWarePhoto from (select * from SoftWare where softWareType='" + softWareType + "') a left join (select * from SoftWare where softWareType='" + softWareType + "') b on a.id >= b.id group by a.softWareName,a.softWarePhoto)n where n.row>9*(" + index + "-1) and n.row<9*" + index + "+1 order by n.softWareName";
             return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
@@ -41,7 +41,7 @@ namespace IwoooWeb.DAL
 
         public static int GetSoftWareIndex(string softWareType)
         {
-            string sql = "select  int(IIF( MAX(rNo) mod 9 = 0,MAX(rNo) / 9 , MAX(rNo) / 9 + 1)) as rIndex from (select a.id, count(*) as rNo from SoftWare a inner join SoftWare b on a.id >= b.id where a.softWareType='" + softWareType + "' group by a.id ) as t";
+            string sql = "select  int(IIF( MAX(rNo) mod 9 = 0,MAX(rNo) / 9 , MAX(rNo) / 9 + 1)) as rIndex from (select a.id, count(*) as rNo from (select * from SoftWare where softWareType='" + softWareType + "') a inner join (select * from SoftWare where softWareType='" + softWareType + "') b on a.id >= b.id group by a.id ) as t";
             return int.Parse(Common.SqlHelper.ExecuteScalar(sql).ToString());
         }
 

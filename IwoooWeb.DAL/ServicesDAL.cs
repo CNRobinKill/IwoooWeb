@@ -30,7 +30,7 @@ namespace IwoooWeb.DAL
 
         public static DataSet GetServices(string servicesType, string index)
         {
-            string sql = "select *  from (select count(a.id) as row,a.servicesName,a.servicesPhoto from Services a inner join Services b on a.id >= b.id where a.servicesType='" + servicesType + "' group by a.servicesName,a.servicesPhoto)n where n.row>9*(" + index + "-1) and n.row<9*" + index + "+1 order by n.servicesName";
+            string sql = "select *  from (select count(a.id) as row,a.servicesName,a.servicesPhoto from (select * from Services where servicesType='" + servicesType + "') a left join (select * from Services where servicesType='" + servicesType + "') b on a.id >= b.id group by a.servicesName,a.servicesPhoto)n where n.row>9*(" + index + "-1) and n.row<9*" + index + "+1 order by n.servicesName";
             return Common.SqlHelper.ExecuteDataSet(sql);
         }
 
@@ -42,7 +42,7 @@ namespace IwoooWeb.DAL
 
         public static int GetServicesIndex(string servicesType)
         {
-            string sql = "select  int(IIF( MAX(rNo) mod 9 = 0,MAX(rNo) / 9 , MAX(rNo) / 9 + 1)) as rIndex from (select a.id, count(*) as rNo from Services a inner join Services b on a.id >= b.id where a.servicesType='" + servicesType + "' group by a.id ) as t";
+            string sql = "select  int(IIF( MAX(rNo) mod 9 = 0,MAX(rNo) / 9 , MAX(rNo) / 9 + 1)) as rIndex from (select a.id, count(*) as rNo from (select * from Services where servicesType='" + servicesType + "') a inner join (select * from Services where servicesType='" + servicesType + "') b on a.id >= b.id group by a.id ) as t";
             return int.Parse(Common.SqlHelper.ExecuteScalar(sql).ToString());
         }
 

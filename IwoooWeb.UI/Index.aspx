@@ -53,9 +53,6 @@
         <div class="contain">
             <div class="container">
                 <ucSlider:Slider ID="Slider" runat="server" />
-
-
-
             </div>
         </div>
         <ucSocial:Social ID="Social" runat="server" />

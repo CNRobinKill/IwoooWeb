@@ -30,7 +30,7 @@ namespace IwoooWeb.DAL
 
         public static int DelSliderById(string id)
         {
-            string sql = "delete Slider where id=" + id;
+            string sql = "delete from Slider where id=" + id;
             return Common.SqlHelper.ExecuteNonQuery(sql);
         }
 

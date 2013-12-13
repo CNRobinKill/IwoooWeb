@@ -35,7 +35,7 @@
 .da-slide .da-img{
 	position: absolute;
 	opacity: 0;
-	left: 110%;
+	left: 60%;
 }
 .da-slider-fb .da-slide h2,
 .da-slider-fb .da-slide p,
@@ -44,18 +44,18 @@
 	opacity: 1;
 }
 .da-slider-fb .da-slide .da-img{
-	left: 60%;
+	left: 50%;
 	opacity: 1;
 }
 .da-slide h2{
 	color: #555;
 	font-size: 46px;
-	width: 50%;
+	width: 38%;
 	top: 40px;
 	white-space: nowrap;
 }
 .da-slide p{
-	width: 45%;
+	width: 38%;
 	top: 105px;
 	color: #555;
 	font-size: 15px;
@@ -65,11 +65,11 @@
 }
 .da-slide .da-img{
 	text-align: center;
-	width: 30%;
+	width: 45%;
 	top: 0px;
-	height: 230px;
-	line-height: 320px;
-	left: 110%; /*60%*/
+	height: 270px;
+	line-height: 300px;
+	left: 100%; /*60%*/
 }
 .da-slide .da-link{
 	top: 200px;
@@ -174,7 +174,7 @@
 	opacity: 1;
 }
 .da-slide-current .da-img{
-	left: 60%;
+	left: 50%;
 	opacity: 1;
 }
 /* Animation classes and animations */
@@ -223,7 +223,7 @@
 }
 @-webkit-keyframes fromRightAnim4{
 	0%{ left: 110%; opacity: 0; }
-	100%{ left: 60%; opacity: 1; }
+	100%{ left: 50%; opacity: 1; }
 }
 
 @-moz-keyframes fromRightAnim1{
@@ -241,7 +241,7 @@
 }
 @-moz-keyframes fromRightAnim4{
 	0%{ left: 110%; opacity: 0; }
-	100%{ left: 60%; opacity: 1; }
+	100%{ left: 50%; opacity: 1; }
 }
 
 @-o-keyframes fromRightAnim1{
@@ -259,7 +259,7 @@
 }
 @-o-keyframes fromRightAnim4{
 	0%{ left: 110%; opacity: 0; }
-	100%{ left: 60%; opacity: 1; }
+	100%{ left: 50%; opacity: 1; }
 }
 
 @-ms-keyframes fromRightAnim1{
@@ -277,7 +277,7 @@
 }
 @-ms-keyframes fromRightAnim4{
 	0%{ left: 110%; opacity: 0; }
-	100%{ left: 60%; opacity: 1; }
+	100%{ left: 50%; opacity: 1; }
 }
 
 @keyframes fromRightAnim1{
@@ -295,7 +295,7 @@
 }
 @keyframes fromRightAnim4{
 	0%{ left: 110%; opacity: 0; }
-	100%{ left: 60%; opacity: 1; }
+	100%{ left: 50%; opacity: 1; }
 }
 /* Slide in from the left*/
 .da-slide-fromleft h2{
@@ -341,7 +341,7 @@
 }
 @-webkit-keyframes fromLeftAnim4{
 	0%{ left: -110%; opacity: 0; }
-	100%{ left: 60%; opacity: 1; }
+	100%{ left: 50%; opacity: 1; }
 }
 
 @-moz-keyframes fromLeftAnim1{
@@ -359,7 +359,7 @@
 }
 @-moz-keyframes fromLeftAnim4{
 	0%{ left: -110%; opacity: 0; }
-	100%{ left: 60%; opacity: 1; }
+	100%{ left: 50%; opacity: 1; }
 }
 
 @-o-keyframes fromLeftAnim1{
@@ -377,7 +377,7 @@
 }
 @-o-keyframes fromLeftAnim4{
 	0%{ left: -110%; opacity: 0; }
-	100%{ left: 60%; opacity: 1; }
+	100%{ left: 50%; opacity: 1; }
 }
 
 @-ms-keyframes fromLeftAnim1{
@@ -395,7 +395,7 @@
 }
 @-ms-keyframes fromLeftAnim4{
 	0%{ left: -110%; opacity: 0; }
-	100%{ left: 60%; opacity: 1; }
+	100%{ left: 50%; opacity: 1; }
 }
 
 @keyframes fromLeftAnim1{
@@ -413,7 +413,7 @@
 }
 @keyframes fromLeftAnim4{
 	0%{ left: -110%; opacity: 0; }
-	100%{ left: 60%; opacity: 1; }
+	100%{ left: 50%; opacity: 1; }
 }
 /* Slide out to the right */
 .da-slide-toright h2{
@@ -458,8 +458,8 @@
 	100%{ left: 100%; opacity: 0; }
 }
 @-webkit-keyframes toRightAnim4{
-	0%{ left: 60%;  opacity: 1; }
-	30%{ left: 55%;  opacity: 1; }
+	0%{ left: 50%;  opacity: 1; }
+	30%{ left: 45%;  opacity: 1; }
 	100%{ left: 100%; opacity: 0; }
 }
 
@@ -477,8 +477,8 @@
 	100%{ left: 100%; opacity: 0; }
 }
 @-moz-keyframes toRightAnim4{
-	0%{ left: 60%;  opacity: 1; }
-	30%{ left: 55%;  opacity: 1; }
+	0%{ left: 50%;  opacity: 1; }
+	30%{ left: 45%;  opacity: 1; }
 	100%{ left: 100%; opacity: 0; }
 }
 
@@ -496,8 +496,8 @@
 	100%{ left: 100%; opacity: 0; }
 }
 @-o-keyframes toRightAnim4{
-	0%{ left: 60%;  opacity: 1; }
-	30%{ left: 55%;  opacity: 1; }
+	0%{ left: 50%;  opacity: 1; }
+	30%{ left: 45%;  opacity: 1; }
 	100%{ left: 100%; opacity: 0; }
 }
 
@@ -515,8 +515,8 @@
 	100%{ left: 100%; opacity: 0; }
 }
 @-ms-keyframes toRightAnim4{
-	0%{ left: 60%;  opacity: 1; }
-	30%{ left: 55%;  opacity: 1; }
+	0%{ left: 50%;  opacity: 1; }
+	30%{ left: 45%;  opacity: 1; }
 	100%{ left: 100%; opacity: 0; }
 }
 
@@ -534,8 +534,8 @@
 	100%{ left: 100%; opacity: 0; }
 }
 @keyframes toRightAnim4{
-	0%{ left: 60%;  opacity: 1; }
-	30%{ left: 55%;  opacity: 1; }
+	0%{ left: 50%;  opacity: 1; }
+	30%{ left: 45%;  opacity: 1; }
 	100%{ left: 100%; opacity: 0; }
 }
 /* Slide out to the left*/
@@ -583,8 +583,8 @@
 	100%{ left: -50%; opacity: 0; }
 }
 @-webkit-keyframes toLeftAnim4{
-	0%{ left: 60%;  opacity: 1; }
-	40%{ left: 70%;  opacity: 1; }
+	0%{ left: 50%;  opacity: 1; }
+	40%{ left: 60%;  opacity: 1; }
 	90%{ left: 0%;  opacity: 0; }
 	100%{ left: -50%; opacity: 0; }
 }
@@ -605,8 +605,8 @@
 	100%{ left: -50%; opacity: 0; }
 }
 @-moz-keyframes toLeftAnim4{
-	0%{ left: 60%;  opacity: 1; }
-	40%{ left: 70%;  opacity: 1; }
+	0%{ left: 50%;  opacity: 1; }
+	40%{ left: 60%;  opacity: 1; }
 	90%{ left: 0%;  opacity: 0; }
 	100%{ left: -50%; opacity: 0; }
 }
@@ -627,8 +627,8 @@
 	100%{ left: -50%; opacity: 0; }
 }
 @-o-keyframes toLeftAnim4{
-	0%{ left: 60%;  opacity: 1; }
-	40%{ left: 70%;  opacity: 1; }
+	0%{ left: 50%;  opacity: 1; }
+	40%{ left: 60%;  opacity: 1; }
 	90%{ left: 0%;  opacity: 0; }
 	100%{ left: -50%; opacity: 0; }
 }
@@ -649,8 +649,8 @@
 	100%{ left: -50%; opacity: 0; }
 }
 @-ms-keyframes toLeftAnim4{
-	0%{ left: 60%;  opacity: 1; }
-	40%{ left: 70%;  opacity: 1; }
+	0%{ left: 50%;  opacity: 1; }
+	40%{ left: 60%;  opacity: 1; }
 	90%{ left: 0%;  opacity: 0; }
 	100%{ left: -50%; opacity: 0; }
 }
@@ -671,8 +671,8 @@
 	100%{ left: -50%; opacity: 0; }
 }
 @keyframes toLeftAnim4{
-	0%{ left: 60%;  opacity: 1; }
-	40%{ left: 70%;  opacity: 1; }
+	0%{ left: 50%;  opacity: 1; }
+	40%{ left: 60%;  opacity: 1; }
 	90%{ left: 0%;  opacity: 0; }
 	100%{ left: -50%; opacity: 0; }
 }

@@ -39,7 +39,8 @@ namespace IwoooWeb.UI.Admin
 
         protected void tbSlider_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            DAL.SliderDAL.UpdSliderOrder(tbSlider.DataKeys[e.RowIndex].Value.ToString());
+            DAL.SliderDAL.DelSliderById(tbSlider.DataKeys[e.RowIndex].Value.ToString());
+            GvDatabind();
         }
 
         protected void btnAddSlider_Click(object sender, EventArgs e)
